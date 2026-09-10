@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="jX6Z7Z1WeAhpFkBqG5g4yu">
+<head data-page-node-id="2qWHDlKBlU8O3lTCmo1jJ8">
+<meta charset="UTF-8" data-page-node-id="NIOtPbndnP5QA86FAeFD6F">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="G4jdfUsrgBvLZ4G653EPvx">
+<title>机构行为四阶段量化识别体系 | 2026-09-10</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; background: #f5f7fa; color: #1a1a2e; line-height: 1.7; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px; }
+  h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 20px; }
+
+  .tldr { background: linear-gradient(135deg, #0f6e56 0%, #085041 100%); color: #fff; padding: 24px 28px; border-radius: 12px; margin-bottom: 22px; }
+  .tldr h2 { font-size: 18px; margin-bottom: 10px; }
+  .tldr p { font-size: 14px; line-height: 1.85; opacity: 0.96; margin-bottom: 8px; }
+  .tldr .hl { background: rgba(255,255,255,0.22); padding: 1px 7px; border-radius: 4px; font-weight: 600; }
+
+  .section { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 20px; font-weight: 700; margin-bottom: 14px; border-left: 4px solid #0f6e56; padding-left: 12px; }
+  .section h3 { font-size: 16px; font-weight: 600; color: #2d2d44; margin: 18px 0 8px; }
+  .section h4 { font-size: 14px; font-weight: 600; color: #444; margin: 12px 0 6px; }
+  .section p { font-size: 14px; color: #333; margin-bottom: 8px; }
+  .section ul { margin-left: 20px; margin-bottom: 10px; }
+  .section li { font-size: 14px; color: #333; margin-bottom: 4px; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: #0f6e56; color: #fff; padding: 9px 8px; text-align: center; font-weight: 600; }
+  td { padding: 7px 8px; border-bottom: 1px solid #eee; text-align: center; color: #333; font-size: 13px; }
+  td.left { text-align: left; }
+  tr:nth-child(even) { background: #fafbfc; }
+  .score-col { font-weight: 700; color: #0f6e56; }
+
+  .stage-card { border: 1px solid #e8ecf3; border-radius: 10px; padding: 18px 20px; margin-bottom: 16px; }
+  .stage-head { display: flex; align-items: center; gap: 10px; margin-bottom: 6px; }
+  .stage-badge { font-size: 13px; font-weight: 700; color: #fff; padding: 4px 12px; border-radius: 6px; }
+  .b1 { background: #185FA5; }
+  .b2 { background: #854F0B; }
+  .b3 { background: #c62828; }
+  .b4 { background: #5d4037; }
+  .stage-intent { font-size: 13px; color: #666; }
+  .logic { font-size: 13px; color: #444; background: #f8f9fc; border-left: 3px solid #0f6e56; padding: 10px 14px; margin: 10px 0; line-height: 1.75; }
+  .logic strong { color: #0f6e56; }
+
+  .key-sig { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 12px 16px; margin: 10px 0; }
+  .key-sig h4 { color: #2e7d32; margin: 0 0 6px; font-size: 14px; }
+
+  .warn { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 12px 16px; margin: 10px 0; }
+  .warn h4 { color: #e65100; margin: 0 0 6px; font-size: 14px; }
+
+  .vs-table th.c1 { background: #185FA5; }
+  .vs-table th.c2 { background: #c62828; }
+  .vs-table td { font-size: 13px; }
+
+  .case-card { border: 1px solid #e8ecf3; border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; }
+  .case-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+  .case-name { font-size: 17px; font-weight: 700; }
+  .case-code { font-size: 13px; color: #888; margin-left: 6px; }
+  .tag { font-size: 11px; padding: 3px 10px; border-radius: 10px; font-weight: 700; color: #fff; }
+  .t-start { background: #c62828; }
+  .t-build { background: #185FA5; }
+  .t-exit { background: #5d4037; }
+  .t-wait { background: #854F0B; }
+  .case-body { font-size: 13px; color: #444; line-height: 1.85; }
+  .ev { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .ev-item { background: #f8f9fc; border-radius: 6px; padding: 5px 11px; font-size: 12px; color: #555; }
+  .ev-item .v { font-weight: 700; color: #1a1a2e; }
+  .red { color: #c62828; font-weight: 700; }
+  .green { color: #2e7d32; font-weight: 700; }
+
+  .chart-box { background: #fff; border-radius: 8px; padding: 14px; margin: 12px 0; border: 1px solid #eef1f5; }
+  .chart-title { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+  .note { font-size: 11px; color: #999; margin-top: 6px; }
+
+  .disclaimer { background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px 20px; margin-top: 18px; font-size: 13px; color: #666; line-height: 1.8; }
+  .disclaimer strong { color: #333; }
+
+  .flow { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+  .flow-item { flex: 1; min-width: 120px; text-align: center; padding: 12px 8px; border-radius: 8px; font-size: 13px; font-weight: 600; color: #fff; }
+  .f1 { background: #185FA5; }
+  .f2 { background: #854F0B; }
+  .f3 { background: #c62828; }
+  .f4 { background: #5d4037; }
+
+  @media (max-width: 640px) { .flow-item { min-width: 90px; font-size: 12px; } }
+</style>
+</head>
+<body data-page-node-id="aeSUY5FAjiSBuX4YPrEOBz">
+<div class="container" data-page-node-id="xwGDyfKSX4lEBgrfZimIQz">
+
+  <h1 data-page-node-id="sz0Wivwa1oIw5nHWtmeg1C">机构行为四阶段量化识别体系</h1>
+  <div class="subtitle" data-page-node-id="EZpDZtv5LKBCBjFCKIAxMr">建仓 → 洗盘 → 启动 → 撤离 的可量化判定指标与阈值 | 数据截至 2026-09-10（部分为盘中快照）</div>
+
+  <div class="tldr" data-page-node-id="OaRh5oaobjZcnt9BPkBAiL">
+    <h2 data-page-node-id="sFb3FlVUshApXaAltqbaOv">核心结论（TL;DR）</h2>
+    <p data-page-node-id="jrnQGTYxbOsPGhfKgndHwU">机构四阶段的本质，是<span class="hl" data-page-node-id="ogVCySkpQOVRuvlT13gOu0">"筹码从散户手里转移到机构手里，再从机构手里还给散户"</span>的过程。每个阶段都有不可伪装的量价指纹——因为机构资金体量大，买入会留痕、卖出也会留痕。</p>
+    <p data-page-node-id="55crGg33keD3W2LlYDt0KN"><strong data-page-node-id="PGtfTyVnmljt5PhtXCKqUc">最关键的三个判别锚点：</strong>①<strong data-page-node-id="HttBCiDSIqlXCVZof3AdRh">量能方向</strong>（缩量还是放量）②<strong data-page-node-id="AcihYit4mkiDeOGTWrHNp2">关键位是否失守</strong>（洗盘不破前低，出货必破前低）③<strong data-page-node-id="vqOE1jinwL68AGtiFULFnn">筹码峰是否位移</strong>（底部峰不动=机构没走，底部峰上移=机构在派发）。这三点的组合，能解决 90% 的"洗盘 vs 出货"误判。</p>
+    <p data-page-node-id="qOfo8oDbFplTZ0ZsE97kqn">下文给出每阶段 10+ 项量化指标与阈值，并用当前市场四只真实标的（沪电股份/兆易创新/中际旭创/敦煌种业）<span class="hl" data-page-node-id="BrA028sMLGxKlEdhVnuSz3">对号入座验证</span>——它们恰好分别处于启动期、建仓磨底期、撤离初期、派发期。</p>
+  </div>
+
+  <!-- 模型总览 -->
+  <div class="section" data-page-node-id="XTOfG2xlpf8MRrpHHFMjrL">
+    <h2 data-page-node-id="DRo5vTANz614EsfUQGWNEH">一、四阶段模型：主力意图与核心矛盾</h2>
+    <p data-page-node-id="YDYdUr6EIAkH6pXu6ydHX7">理解每一阶段"主力想干什么"，指标才有灵魂。机构每个阶段都有一个无法调和的核心矛盾，正是这个矛盾造就了可识别的量价指纹。</p>
+    <div class="flow" data-page-node-id="LFJR4WfgYtJn0nOfFFhPkn">
+      <div class="flow-item f1" data-page-node-id="nY6MSKvldxXudAxriwkvEg">建仓 Accumulation</div>
+      <div class="flow-item f2" data-page-node-id="RkB3YvRhIGcumyJO1arq3R">洗盘 Shakeout</div>
+      <div class="flow-item f3" data-page-node-id="x4KPWKJ9LLxcDgyRkPv3YV">启动 Markup</div>
+      <div class="flow-item f4" data-page-node-id="NQdYBDjAdEAzROT0PiP109">撤离 Distribution</div>
+    </div>
+    <table data-page-node-id="WZhqWZh5nljNrG6V6qdrhg">
+      <tr data-page-node-id="7TY334TUsGYDbeiSEPBEqd"><th style="width:12%" data-page-node-id="rGB3mzm5TMR2Yb4vDQvf3O">阶段</th><th style="width:26%" data-page-node-id="GmerVtfvHywfT2BRmyuQ3B">主力意图</th><th style="width:32%" data-page-node-id="aMOThe9WE8tfiSVf1m5W5j">核心矛盾</th><th style="width:30%" data-page-node-id="MRWMMjfwuGLJuqyiomVtup">因此产生的量价指纹</th></tr>
+      <tr data-page-node-id="c06huHLPRyQ0elVN5IL1z5">
+        <td data-page-node-id="pqiNzmx5rCfYZfbFHrwDdh"><strong data-page-node-id="c0YPZ14zsDuE3IdhbjN1kL">建仓</strong></td>
+        <td class="left" data-page-node-id="g5JE0AYgAmH9GuSPQpMA24">买够筹码，但不想抬高成本、不想被发现</td>
+        <td class="left" data-page-node-id="36LcRsOu0kZdah3e3CL9Av">要买（需要量）vs 不能拉升（怕抬价）</td>
+        <td class="left" data-page-node-id="9m8mAgxTLsJ4gns5cnOLqj">温和放量+股价横盘+OBV缓升（量在走、价不走）</td>
+      </tr>
+      <tr data-page-node-id="c4dCq5So5sAXZPEbucDtWd">
+        <td data-page-node-id="XQtl8Zxkd34FISD3PbcLBL"><strong data-page-node-id="ACYyj5N21wmsWkICbdIAo9">洗盘</strong></td>
+        <td class="left" data-page-node-id="OEBWYj3drd6b4RBDBFt3qq">吓走浮筹，但不丢失筹码、不破坏结构</td>
+        <td class="left" data-page-node-id="IvMhLxGFjowvszIAtb0zd9">要跌（吓人）vs 不能真卖（筹码不能丢）</td>
+        <td class="left" data-page-node-id="zK4Faq0Z08EFf3zC9StBUQ">缩量下跌+不破前低+快速收复（假摔）</td>
+      </tr>
+      <tr data-page-node-id="MTRI06oK3MOD6pyo7P4sDk">
+        <td data-page-node-id="mS1X7qLIvt2B5SxlDUPajh"><strong data-page-node-id="zH70aF25u2a94lE0VVK26o">启动</strong></td>
+        <td class="left" data-page-node-id="tvFBoDh6dkvGYI2EodOqqn">快速脱离成本区，吸引市场合力抬轿</td>
+        <td class="left" data-page-node-id="VBEqN8XppCNlln1wwJDRG8">要快速拉（怕人跟）vs 需要跟风盘（要人跟）</td>
+        <td class="left" data-page-node-id="fB9W5mHAfFSpWBFrYauEtV">放量突破关键位+多头排列+资金共振</td>
+      </tr>
+      <tr data-page-node-id="oCe5JAFmmq4kHU9ig3qwBZ">
+        <td data-page-node-id="viJOuDSjFm4Jo9jmFilAPb"><strong data-page-node-id="GL72sUIOdsNmZ8WucgrvHw">撤离</strong></td>
+        <td class="left" data-page-node-id="RfB3Fpdt28yBmko6917IBo">高位悄悄卖，需要乐观情绪和成交量掩护</td>
+        <td class="left" data-page-node-id="N8e1YWKCiczU3d5c6GHpoh">要卖（需要大量接盘）vs 不能崩（一崩就卖不掉）</td>
+        <td class="left" data-page-node-id="8pNpHMFel2tQx04je9Yqy8">放量滞涨+高位长上影+底部筹码峰上移</td>
+      </tr>
+    </table>
+    <p class="note" data-page-node-id="LzQcesGGUBOiCBPrqjWA5H">注：阈值为A股主板/创业板经验值，需结合个股股性、流通市值、行业属性调整。小盘股换手率天然高于大盘股，题材股波动大于蓝筹股。</p>
+  </div>
+
+  <!-- 建仓期 -->
+  <div class="section" data-page-node-id="VXvI8h8AKJaD3HBDu8CDjh">
+    <h2 data-page-node-id="LfnrY1YwMFE9jooCqaHJQ9">二、建仓期（吸筹）：量化指纹</h2>
+    <div class="stage-card" data-page-node-id="mtMyH43vqHCCCOPB5gZbf0">
+      <div class="stage-head" data-page-node-id="rHIzKq41sV59YDbRzXtpK1"><span class="stage-badge b1" data-page-node-id="rAFCkHmp5h4UeCeuEUNW1n">建仓期</span><span class="stage-intent" data-page-node-id="keULtRRqiGVNfhhxOIEnJz">主力意图：悄悄买够筹码</span></div>
+      <div class="logic" data-page-node-id="CQXRHU6k5lT8Xoos9rcsYZ"><strong data-page-node-id="5WydkarZuY43hBIIefxTbQ">核心矛盾：</strong>机构资金体量大，买入必然留痕；但一旦放量拉升就会抬高自己的成本。所以建仓期的典型形态是<span style="color:#c62828;font-weight:600" data-page-node-id="DNHlGBcoznHWnmDcg0vLow">"量在走、价不走"</span>——成交量温和放大，但股价在窄幅区间横盘。这是最经典的吸筹特征。</div>
+      <h4 data-page-node-id="plTq0nTuHaT4urx1fjtz1J">量化判定表（满分15分，≥9分判定为建仓期）</h4>
+      <table data-page-node-id="G5821pisbvNjNbllFUUzqQ">
+        <tr data-page-node-id="NJgbyFLlM905DksrtFqf4d"><th style="width:20%" data-page-node-id="EfwWeP45EZqP2GOrGWNShA">维度</th><th style="width:34%" data-page-node-id="RPhD6B6mBdte3zbSqhihme">量化指标与阈值</th><th style="width:31%" data-page-node-id="CIxeOuJNJ2uki12065ovgo">判读逻辑</th><th style="width:15%" data-page-node-id="ZIYUwT9aaGQMpGzoj5AgND">分值</th></tr>
+        <tr data-page-node-id="o74tEtDd1Xgegwocnq7C1r"><td data-page-node-id="EN8erGuGlJxB5nFUHrnPUH">量比</td><td class="left" data-page-node-id="KtRt8bTFAFLXyq2iRBZHBS">1.2 – 2.0（温和放量，非巨量）</td><td class="left" data-page-node-id="4oHfk0vwyi7wGYgTOdBWms">太大=引起关注抬价，太小=没资金</td><td class="score-col" data-page-node-id="AvC4u5FjIuvOqIlvn5QSYm">2</td></tr>
+        <tr data-page-node-id="6vRkxP18KHtM0GoH2Deg2G"><td data-page-node-id="75v7PuhRi6yQuZcR2xRpA5">换手率</td><td class="left" data-page-node-id="xHTzFFCjALqXKPDi4VoReH">日换手 2% – 5%（温和持续）</td><td class="left" data-page-node-id="NcGQJqHnmPDbA3dTwrI8G8">太高是游资脉冲，非机构建仓</td><td class="score-col" data-page-node-id="v13v5JQaulZabTNeuGqkDW">2</td></tr>
+        <tr data-page-node-id="TSSnCHSHCBQVPjFaE9J8xl"><td data-page-node-id="NkG8kmAWl9Yv6TEhtFM0VN">OBV能量潮</td><td class="left" data-page-node-id="UgzVEtw5u4Pl0W6iTEiJAw">OBV 缓慢抬升，但股价横盘（量价背离）</td><td class="left" data-page-node-id="YQoU7NUCpkUjDP8asFs2x6">最经典吸筹信号：资金进、价格不动</td><td class="score-col" data-page-node-id="XNhcabnfBAz7G6xSVfYZPk">2</td></tr>
+        <tr data-page-node-id="3bjnv2yHLtw2ozQdNIbysP"><td data-page-node-id="hkV74Z1L0wlbgcEOPovsop">阴阳量能</td><td class="left" data-page-node-id="HrDVkVG9e0JgCmEDzEg0d7">上涨日量 &gt; 下跌日量（放量阳、缩量阴）</td><td class="left" data-page-node-id="whvvEThG1H6wW7WKJar1WE">买在阳线、不卖阴线=吸筹</td><td class="score-col" data-page-node-id="SHFlWvx34OmjcC08QzPPQb">1</td></tr>
+        <tr data-page-node-id="qbh0Wg5XRdMpqAYxZWhHG1"><td data-page-node-id="eAcnhvSumE0zEuKmtH0zbq">振幅/时长</td><td class="left" data-page-node-id="L9znv1ERQiHPJuWURylVG9">日振幅 &lt;5%，横盘 ≥20 个交易日</td><td class="left" data-page-node-id="tJRgVveIzW78S8HGtO5rBy">窄幅震荡=控制价格不让涨</td><td class="score-col" data-page-node-id="BN9KWytdXHwfgqn5IzvVEx">1</td></tr>
+        <tr data-page-node-id="6bPEVrGIJbRHwNUGRzc4qd"><td data-page-node-id="LdPD22zy6KbCRv1iHi5vKB">均线形态</td><td class="left" data-page-node-id="VBb2w4PEJM2WYDqQRABL7z">MA5/MA10/MA20 粘合，长期均线走平</td><td class="left" data-page-node-id="Pb8sM85ampAjxbliADxVyq">成本趋于一致，变盘前夜</td><td class="score-col" data-page-node-id="Lfgoo8Habe3XKYAbuGCljt">1</td></tr>
+        <tr data-page-node-id="i81aXMQgSMO7zVpelHSd2k"><td data-page-node-id="cE0SLb2YG811PksyDF2Hor">MACD</td><td class="left" data-page-node-id="0rsH9ADjBHyDUZzyObWYFX">零轴下方金叉，或底背离（价新低指标不新低）</td><td class="left" data-page-node-id="GebUTZvR3AhAu2zZuScSq2">下跌动能衰竭</td><td class="score-col" data-page-node-id="XXbD8V3PhL17xEKESONeHt">1</td></tr>
+        <tr data-page-node-id="4ZlalpRgMiOxA17FGx2ROp"><td data-page-node-id="oBcNe48cJNtrdEseGN6C08">主力资金</td><td class="left" data-page-node-id="prN9ZmH6hB2dQJr6ffRBrB">连续5–10日净流入，占成交额 5%–15%</td><td class="left" data-page-node-id="8ed4koeZByyM2ezNEGKo9Y">持续但克制=机构节奏</td><td class="score-col" data-page-node-id="85ASrEnIKkTI7hNxcbsmcG">2</td></tr>
+        <tr data-page-node-id="YT3xL1gRGGpdyeE9WPAFqD"><td data-page-node-id="sKGjRTk0pLJXQQI4KsR8ld">龙虎榜</td><td class="left" data-page-node-id="Y8opju5h6i8k9gHkOYqQHS">机构专用席位净买入</td><td class="left" data-page-node-id="XV1J2UyJ39G9qQo24FUGPU">最直接的机构建仓证据</td><td class="score-col" data-page-node-id="IQvVIb5bh5CmFhgt0CqpNp">2</td></tr>
+        <tr data-page-node-id="9C1TYjBiLEdDQ5ghEnUSwD"><td data-page-node-id="GLo7JkLyLfpZkx9maxu1AX">筹码/股东</td><td class="left" data-page-node-id="w2RBHD9uV9bY3bKR0BKKob">股东户数降 ≥5%，底部形成单峰密集</td><td class="left" data-page-node-id="og0Hny4CSessXq2a52dKvV">筹码从散户向机构集中</td><td class="score-col" data-page-node-id="MbIae4mzzwqKUIqYMUZB2G">1</td></tr>
+      </table>
+      <div class="key-sig" data-page-node-id="I2P1ezFYgiUy8jYL0nIwLH"><h4 data-page-node-id="JNq33oBW9wSrAFsbgy2Zfx">最强信号（出现任意2项高度可信）</h4>
+      <p style="font-size:13px;margin:0" data-page-node-id="cwUSE0vWfvGI0Tw9w2eTq9">① OBV 抬升而股价横盘（量价背离）② 龙虎榜机构专用席位连续净买入 ③ 放量阳线 + 缩量阴线交替且重心缓慢抬升。</p></div>
+      <div class="warn" data-page-node-id="3CJEiVnWgY9WwdrBngWCGo"><h4 data-page-node-id="SRsBGDxkYjdLkyHPvpohOT">易误判提醒</h4>
+      <p style="font-size:13px;margin:0" data-page-node-id="AQPA1DgkdwEN8jIh7ksioG">低位横盘也可能是"无人问津的冷门股"（流动性枯竭）而非吸筹。区分关键：<strong data-page-node-id="hlRmsPHHLV7k8KLIlRdSML">OBV 是否抬升、量比是否 &gt;1.2</strong>。成交量极低（量比&lt;0.6）的"整理"是没人接盘，不是供给减弱。</p></div>
+    </div>
+  </div>
+
+  <!-- 洗盘期 -->
+  <div class="section" data-page-node-id="ZCRTOW7uaEsaolXwCdk8Sl">
+    <h2 data-page-node-id="64DqmS8olzwGhSb2LB6hw5">三、洗盘期（震仓）：量化指纹</h2>
+    <div class="stage-card" data-page-node-id="St2qOEKPGwFFaQQlQTA6Du">
+      <div class="stage-head" data-page-node-id="UWBslSASIBb9SWYSrukQxg"><span class="stage-badge b2" data-page-node-id="ld0junVOewjRnDeoqReGvc">洗盘期</span><span class="stage-intent" data-page-node-id="4gbs4FWfAULi8N5DjE1tbz">主力意图：吓走浮筹，但不丢筹码</span></div>
+      <div class="logic" data-page-node-id="8rbdKIeVuGcsPxt9xGR8np"><strong data-page-node-id="OZzGcWdy25g3lQxDOnPnvl">核心矛盾：</strong>主力要制造恐慌让短线客交出筹码，但自己不能真卖（一卖筹码就丢了，白建仓）。所以洗盘是<span style="color:#c62828;font-weight:600" data-page-node-id="5VRynwYPWxtlol4ZkEPaGw">"缩量假摔"</span>——只用少量筹码砸盘恐吓，跌下去没人真卖，成交量必然萎缩。<strong data-page-node-id="wzLcGcZACUsSdNxltu3ZFm">"缩量下跌"是洗盘最硬的证据。</strong></div>
+      <h4 data-page-node-id="PYmJzgKTkpa72Aw1S8KQQy">量化判定表（满分13分，≥8分判定为洗盘）</h4>
+      <table data-page-node-id="MbhsFyKE016oH6mQ8Qm3qS">
+        <tr data-page-node-id="UwzmJNizpMof2wvtMVxjRe"><th style="width:20%" data-page-node-id="XcP62Yp4VcZFUrWhFwCptB">维度</th><th style="width:34%" data-page-node-id="7BmGNfQWnTEHNeaNUejA3i">量化指标与阈值</th><th style="width:31%" data-page-node-id="pPGstMCJa1kP2yeYAonDEV">判读逻辑</th><th style="width:15%" data-page-node-id="cuD7hK5L3VWsi9azyrCgCL">分值</th></tr>
+        <tr data-page-node-id="zx3nHtdJephrTzigMXqOu2"><td data-page-node-id="mCIh2lZdPFB5vyxQGR9iVk">成交量</td><td class="left" data-page-node-id="OrkUfep17OiBe8Vpxlv6gF"><strong data-page-node-id="cVV7xV3fSDpmpCJbKeyXxs">缩量下跌</strong>：量比 &lt;0.8，量能为前期均量 50%–70%</td><td class="left" data-page-node-id="80TITacUxBEbC0BYionwn7">最硬指标：主力没卖，只是砸盘恐吓</td><td class="score-col" data-page-node-id="ZjUPZngPXajVB5ElXhxHZF">3</td></tr>
+        <tr data-page-node-id="HrnQZsklYDGRIl2s2almwk"><td data-page-node-id="Q7R79RTcHMY1LOlIOfZgVB">跌幅/关键位</td><td class="left" data-page-node-id="njUxOYXcCpdKENAEkHHYaf">回调 10%–20%，<strong data-page-node-id="7r7wZmixZv67PZwDibJiA5">不破前低/建仓平台/MA60</strong></td><td class="left" data-page-node-id="TfMPiMQCjqhCCcg06OHF7u">破位=趋势坏了，不是洗盘</td><td class="score-col" data-page-node-id="bzbQ4t6cRgEHwxspYEe4Id">2</td></tr>
+        <tr data-page-node-id="qdbjDeNAZrxqbmn36KEB2X"><td data-page-node-id="mr0zL68Hvp986kcHfF9KXu">筹码峰</td><td class="left" data-page-node-id="B532WOH7FHaevWlwbyGF91">底部筹码峰<strong data-page-node-id="89v5Zmrdd8txkcsp5sejw4">锁定不动</strong>，获利盘降至 20%–30%</td><td class="left" data-page-node-id="mC6jNhUQh8rk6LNyJRlEhx">峰不动=机构没走；获利盘降=浮筹被洗</td><td class="score-col" data-page-node-id="BWD80bXnmHoh2wWHn1MdMP">2</td></tr>
+        <tr data-page-node-id="jjANzCqOccqp4ckpUVI4pI"><td data-page-node-id="Ky0TE3FSWgD8QrE46DxISb">资金结构</td><td class="left" data-page-node-id="CeDZGC4ynyiofuNxxdhNHr">大单卖出但中小单承接；净流出占成交额 &lt;5%</td><td class="left" data-page-node-id="MPL4TwEvAHKPlb8MkFQ4Zg">看穿"大单砸、小单吸"的对倒结构</td><td class="score-col" data-page-node-id="8oUo4IgNxS3TD7GzsC5Mzv">2</td></tr>
+        <tr data-page-node-id="SjUjeDgEc1bieJXYbce0sw"><td data-page-node-id="XbYN4gbal5xmhxjZHAR2NY">时长</td><td class="left" data-page-node-id="XJXp0gC15yOufPolK7sp0c">3–10 个交易日（短促）</td><td class="left" data-page-node-id="qW04QwTTh0jGHivsr3GoBB">太久=真弱势，不是洗盘</td><td class="score-col" data-page-node-id="5Jfd7F4y0wu7yhr6D5Jc56">1</td></tr>
+        <tr data-page-node-id="OCkdkZGI7RJEhdQJm5opSn"><td data-page-node-id="By8okxCAaAS9nmXpmCdo68">K线形态</td><td class="left" data-page-node-id="Tphp9ccAFnSBhA88o8s9Vl">长下影线/锤子线/十字星（盘中砸、尾盘拉回）</td><td class="left" data-page-node-id="ez5UBTprPmLnGPce8AE0Ax">下影线=下方承接强</td><td class="score-col" data-page-node-id="9dnQD5898RLMhOoOw468Q6">1</td></tr>
+        <tr data-page-node-id="LMSDSM2s14dhcwQNhbGrom"><td data-page-node-id="8wT5rHdhXOnTUhiKAVMfES">超卖指标</td><td class="left" data-page-node-id="TZ3qYw31WgaFlcNW6kFMTx">KDJ 的 J值 &lt;20；RSI 短暂破30后快速拉回</td><td class="left" data-page-node-id="4g2eKloqtWYNSHmj3KiGHS">情绪打到冰点即止</td><td class="score-col" data-page-node-id="NAgBMzNQ0m9J9SxYh76NkV">1</td></tr>
+        <tr data-page-node-id="CWSUqU1BPYT7CRZc24pSLC"><td data-page-node-id="UcubphGINxst6UDIZeCWDE">修复速度</td><td class="left" data-page-node-id="7yUZIsuHsocuhXoaHiFCRt">3–5 日内收复跌幅</td><td class="left" data-page-node-id="g5IPnVfhruMzvOyWH2fJjd">收复快=假摔，收复慢=真跌</td><td class="score-col" data-page-node-id="uG3080JOZJmGjaTGzdNFJE">1</td></tr>
+      </table>
+      <div class="key-sig" data-page-node-id="blE79k1pkZ0adraJvgq6aC"><h4 data-page-node-id="97OXtUFKg2Lq3j81wIPIab">最强信号</h4>
+      <p style="font-size:13px;margin:0" data-page-node-id="f2rOxuWmPSivpTm0xXvN3M">缩量跌（量比&lt;0.8）+ 不破前低 + 底部筹码峰不动，三者同时出现，洗盘概率极高。此时是<span style="color:#c62828;font-weight:600" data-page-node-id="luMA71K9tgIE8AwQBMo5UW">最佳低吸点</span>。</p></div>
+    </div>
+  </div>
+
+  <!-- 启动期 -->
+  <div class="section" data-page-node-id="z4zC2RCcKQgeySzWRxZuYq">
+    <h2 data-page-node-id="Kyid6OvcnqjFv9aIifOCbL">四、启动期（拉升）：量化指纹</h2>
+    <div class="stage-card" data-page-node-id="U4bOGNNFxChULqWvlahqSY">
+      <div class="stage-head" data-page-node-id="jXj53vSeIr4yOZznJ3aIkB"><span class="stage-badge b3" data-page-node-id="UsOA7dYquGEhrMYxgaYegl">启动期</span><span class="stage-intent" data-page-node-id="DrackwlpyYqEH0WDsPcBMJ">主力意图：脱离成本区，吸引合力</span></div>
+      <div class="logic" data-page-node-id="BiNaseeuXzkTEgFb8XBpDg"><strong data-page-node-id="7iOeyvXc0QYsEhbppYOTY6">核心矛盾：</strong>主力既想快速拉升（少给跟风机会），又需要市场合力把股价推得更高（需要人跟）。结果是<span style="color:#c62828;font-weight:600" data-page-node-id="uw5BH2PmZPGZFn4AbEhwSR">"放量突破关键位"</span>——必须用真金白银突破前高/平台/年线，这是最确定、赔率最好的介入窗口。</div>
+      <h4 data-page-node-id="PtiV0vLMe9R1LtnwlGo6KM">量化判定表（满分19分，≥12分判定为启动）</h4>
+      <table data-page-node-id="vlr1E9i4RoGz5E1X0cHwO9">
+        <tr data-page-node-id="hAwUKRcjrUL57KvPEZfDVl"><th style="width:20%" data-page-node-id="uiNE3EmDpuUrEN0XSZJbEs">维度</th><th style="width:34%" data-page-node-id="ApYwxMMffAcxO2IIpgKSCF">量化指标与阈值</th><th style="width:31%" data-page-node-id="BOW7lRjMPxXKfin3zRABOb">判读逻辑</th><th style="width:15%" data-page-node-id="8IQx2wExKK6ytEjzO6G7lJ">分值</th></tr>
+        <tr data-page-node-id="w4BBI9q1VxnTt7wv89r0yF"><td data-page-node-id="kEcQwhMsEgAC44wkovHApp">突破量能</td><td class="left" data-page-node-id="hBfFMY5wVzbcjUbe7qzCF0"><strong data-page-node-id="3GeuyolqohBZLdxko1DXGm">放量突破</strong>：量比 &gt;2，量能 ≥ 均量 1.5–2 倍</td><td class="left" data-page-node-id="TFvk3gB4YcTGkDECF3xHvt">突破必须带量，无量突破多为假突破</td><td class="score-col" data-page-node-id="9zHuQz8uvInXsHsAnf7dmR">3</td></tr>
+        <tr data-page-node-id="4LWkQIDoPU2nFImPbGi6Z2"><td data-page-node-id="KrtICa0DDv0I9moUWyd8cF">价格突破</td><td class="left" data-page-node-id="RvPNmXA1gKID2rEbrhPL1h">突破平台高点/年线/关键均线，<strong data-page-node-id="sTuBFWdwUuIP0ZpJsPU1Z0">收盘站稳</strong></td><td class="left" data-page-node-id="V31BORxbHhW3sSeJebWi9V">盘中破不算，收盘站稳才算</td><td class="score-col" data-page-node-id="AeRfW3jdu9VsD894cTFRUh">2</td></tr>
+        <tr data-page-node-id="uwnWNowxOcsIgbX3EnPOQV"><td data-page-node-id="zvlzACW72XRpOKVQ6qfefv">主力资金</td><td class="left" data-page-node-id="7M8jWakoISNCYa3FSc3gDX">大幅净流入，占成交额 &gt;10%–15%，<strong data-page-node-id="JKFi8aQYR37zjMFUH5yz7b">超大单主导</strong></td><td class="left" data-page-node-id="UCjDw7oZZ09sVC9pJ7jDcq">超大单=机构，大单=游资</td><td class="score-col" data-page-node-id="ki4PFE2HZvEDL6KpWAi5Gp">2</td></tr>
+        <tr data-page-node-id="Etqzeap4T5g2Gcvzx3HQ1Z"><td data-page-node-id="guzR6lTyBtFYqIYR4Da2rv">均线</td><td class="left" data-page-node-id="s0Nei5DDxX7geCDbuYUPE7">多头排列 MA5&gt;MA10&gt;MA20，站上所有均线</td><td class="left" data-page-node-id="xgY5naB0IFM58DcVe3DU22">趋势结构确认</td><td class="score-col" data-page-node-id="xHhO7BDVe9CxcOnVZi1TTe">2</td></tr>
+        <tr data-page-node-id="Myrw4V2XP8hHYEaI1F0KLy"><td data-page-node-id="fHkaUECHAAnAzChAxR8le7">MACD</td><td class="left" data-page-node-id="60GpwpaRrV7SvOUjNU3nzm"><strong data-page-node-id="FOjR5F1LU1AqBxSTS8VGFx">零轴上方金叉（水上金叉）</strong>，红柱放大</td><td class="left" data-page-node-id="C4ovlBO5rUjelj5gScJcAK">水上金叉是最强多头信号</td><td class="score-col" data-page-node-id="vLMY45v0b3ybnTQXzIDJ69">2</td></tr>
+        <tr data-page-node-id="YWM4JnGf3cnR2pnu9EBdEm"><td data-page-node-id="9ur1L4Uu6FrRKY3odcA4GE">筹码</td><td class="left" data-page-node-id="P7Ux2LTBB8HHCqDjaveASH">获利盘上升，但<strong data-page-node-id="Fcdz52gbkvGEJI21xyey5G">底部峰仍锁定（未上移）</strong></td><td class="left" data-page-node-id="AnrHHg058zT3QrlTGl5Yne">机构还在，涨势可持续</td><td class="score-col" data-page-node-id="4bEdnAbfuS33RP2GxEo0pZ">2</td></tr>
+        <tr data-page-node-id="Iq4EG1CycvqxVQGXDfF4JV"><td data-page-node-id="3dtEXAMjoQuWZvs2OcUVbD">龙虎榜</td><td class="left" data-page-node-id="HIlugAwIdXouWAmIKfhF2C">机构净买入 + 游资接力（机构游资共振）</td><td class="left" data-page-node-id="TuYczpEwoOl0lQE6xiW3gC">共振=持续性最强</td><td class="score-col" data-page-node-id="X4BYWDCsg3wN2zEgJTXNgl">2</td></tr>
+        <tr data-page-node-id="RpGIbyHIrUBUCGMwxf53lE"><td data-page-node-id="KW1HslwUcRfADW9xrWz5FR">涨幅</td><td class="left" data-page-node-id="a0I2BldS73oUaGMhHSLS6u">涨停或大阳线 &gt;5%</td><td class="left" data-page-node-id="L4lLnOYsfhrFGb2xJuVscy">启动日的攻击力度</td><td class="score-col" data-page-node-id="pLGWc4frPykLp4W9IWqGO5">1</td></tr>
+        <tr data-page-node-id="h3wGi6rOTLJdjCSSesd3m7"><td data-page-node-id="7BS7allAdrqUFau2UBqPOR">换手率</td><td class="left" data-page-node-id="MKGEXVbyg6CZh4ZaFHSJHc">5%–10%（&gt;15% 警惕是游资非机构）</td><td class="left" data-page-node-id="wHKA67txNHAaLZRifNOEG1">换手过高=筹码不稳</td><td class="score-col" data-page-node-id="2n6UUR3Bn6pGsogO1h7lDq">1</td></tr>
+        <tr data-page-node-id="FDHLgra7YoEfN3TorYIZ9d"><td data-page-node-id="6q6BAL2vYIduKFMnj4knyx">KDJ</td><td class="left" data-page-node-id="B8noijbYZNIF3b3FHKv3eY">金叉向上，J 值从低位上穿</td><td class="left" data-page-node-id="5lDUeHl0lzijAiFDeu0o9z">短线动能确认</td><td class="score-col" data-page-node-id="b4X59o2sFsIMv5jcwQr8YF">1</td></tr>
+        <tr data-page-node-id="7GqQNNpB8lASXDTATC2o3g"><td data-page-node-id="TwzXb7kDskdOkaU7slqpsC">板块效应</td><td class="left" data-page-node-id="xJZESDIKfuUYQvCEZvfffw">同板块跟风股批量上涨（带动性强）</td><td class="left" data-page-node-id="HOwRprevpiIAAMKkEqWd1r">有板块效应的才是真龙头</td><td class="score-col" data-page-node-id="tTc5hXdDYl6VBa49iFnBLO">1</td></tr>
+      </table>
+      <div class="key-sig" data-page-node-id="HDpgVHs7AITpP6rCFkQrum"><h4 data-page-node-id="4JQLjqPvojmfBytbMhehdl">最强信号</h4>
+      <p style="font-size:13px;margin:0" data-page-node-id="Z0J4HyUhmoKs8zujsIqVar">放量（≥1.5倍）+ 突破关键位收盘站稳 + 超大单主导净流入 + 水上金叉，四者共振即为<span style="color:#c62828;font-weight:600" data-page-node-id="YZYC6SX8NJyYI5z0u1ktV0">高质量启动</span>。若叠加"缩量续创新高"（如启动后几日量缩价升），说明浮筹已清洗干净，是最健康的形态。</p></div>
+    </div>
+  </div>
+
+  <!-- 撤离期 -->
+  <div class="section" data-page-node-id="iGk9Y4R6Ow6yYhDZzc0TX7">
+    <h2 data-page-node-id="5RDFtMQJ6FLkHTDCACe2x2">五、撤离期（派发）：量化指纹</h2>
+    <div class="stage-card" data-page-node-id="fnEkco0wxEMW0ITqhAFD8p">
+      <div class="stage-head" data-page-node-id="KAcTODbShmkeiuznhkcGTu"><span class="stage-badge b4" data-page-node-id="RJBC8G5hXeBeC4wRgH1wVA">撤离期</span><span class="stage-intent" data-page-node-id="GpSDzZRc6dg2l7ZVkQCyXl">主力意图：高位悄悄卖，需要接盘侠</span></div>
+      <div class="logic" data-page-node-id="EH57shMs4p9DeIaeXD4ipn"><strong data-page-node-id="LXYguVeo03o6P5GziO8G7G">核心矛盾：</strong>机构要卖出巨额筹码，必须有成交量掩护、有乐观情绪接盘；但一旦崩盘就再也卖不掉。所以派发期必然<span style="color:#c62828;font-weight:600" data-page-node-id="XLxujpXJ9LNRSh0i2FXBbT">"放量滞涨"</span>——成交量很大（在出货）但股价不涨（卖压压住了买盘）。<strong data-page-node-id="DfYQwrYOYXoUY53XJBSCrk">"放量不涨"是出货的第一警报。</strong></div>
+      <h4 data-page-node-id="xYhDKJtSmxYfMFk7qDGRmu">量化判定表（满分23分，≥14分判定为撤离）</h4>
+      <table data-page-node-id="GEDWiCWdSlpTcfBgy8lbCi">
+        <tr data-page-node-id="nlsVjTocpc63Rox5puBVjG"><th style="width:20%" data-page-node-id="Up3prlMRortn0T2e7X3Bfh">维度</th><th style="width:34%" data-page-node-id="nzbiAntFxGNoGA5FQyoJA8">量化指标与阈值</th><th style="width:31%" data-page-node-id="OjmnVXXgkXBi6muElJoWSw">判读逻辑</th><th style="width:15%" data-page-node-id="akEZvuu31wCEWYy6jFl3lW">分值</th></tr>
+        <tr data-page-node-id="M4ScyyERgpUiHOv9rhDcCR"><td data-page-node-id="UizA2RHjTwUBgjEYEjqRNL">量价背离</td><td class="left" data-page-node-id="9u78csJqFY2i12sqVLK69A"><strong data-page-node-id="sP2228WqXHNsrbxSfhxFih">放量滞涨</strong>：量比 &gt;2 但涨幅 &lt;2%</td><td class="left" data-page-node-id="hy7R37MMAcDsscHYa789IB">出货第一警报：有量无价=在卖</td><td class="score-col" data-page-node-id="Av4VWDzeKGGuDPesONRDFA">3</td></tr>
+        <tr data-page-node-id="ad6XlBltADDyKtkHv8Y0QZ"><td data-page-node-id="96KX0jGqWFdr1GY1KyTSj9">筹码峰位移</td><td class="left" data-page-node-id="7urzF0HkD4MKvLLJmkpxFJ">底部筹码峰<strong data-page-node-id="phyNHo6uDYJ6x7HhVa1uRp">上移/消失</strong>，高位形成新密集峰</td><td class="left" data-page-node-id="9YMHEOARmna9Vx3Nn4R5oM">最致命证据：机构已交完筹码</td><td class="score-col" data-page-node-id="RyoeZhXeowQCsxlyCD5K2L">3</td></tr>
+        <tr data-page-node-id="NSiOg640n7D0fQlTYFONCC"><td data-page-node-id="m9eJG987cnXV3MKMSkWnc8">换手率</td><td class="left" data-page-node-id="CXhz9XAaVRG4cO3D7nBnYl">异常放大，日换手 &gt;15%–20%</td><td class="left" data-page-node-id="eZXEO1QOR9RTuTAFOGjAVj">高换手是出货的必要条件</td><td class="score-col" data-page-node-id="k9D6vryA24USKk7Eu822Yx">2</td></tr>
+        <tr data-page-node-id="WgIgm9FkrygJLmoxaDc9Qa"><td data-page-node-id="jYqCW5UPN2e44kqwgbjUCQ">K线形态</td><td class="left" data-page-node-id="rBXJJe6GJXBx57xMfH0BZz">长上影/射击之星/高位十字/冲高回落，振幅加大</td><td class="left" data-page-node-id="hp9hzwVOjbgCkEpbCLkm8j">上影线=上方卖压重</td><td class="score-col" data-page-node-id="bLDb7iwBNQdXtybfUHaGwD">2</td></tr>
+        <tr data-page-node-id="BcdXXOggYlNwrEOkeP8UW7"><td data-page-node-id="Pxh6POfqtlGZ9SxSJiee1x">主力资金</td><td class="left" data-page-node-id="63JopNbFpqouPKis8rigXF">净流出，<strong data-page-node-id="71TCr4kAx31VgF3ZtJ2UrD">超大单卖 + 中小单买</strong>（散户接盘）</td><td class="left" data-page-node-id="VfIOARjvWN6JULsTFtyw57">筹码从机构流向散户</td><td class="score-col" data-page-node-id="HtBRidGNwF6vltHFwJmNx4">2</td></tr>
+        <tr data-page-node-id="R2kUs56oiAg5bkzWYPLCbB"><td data-page-node-id="G9eU1iALjDfDc1eqhswCYT">技术背离</td><td class="left" data-page-node-id="6IIgvkZ6t1dbdJGShqgtIm">MACD/RSI 顶背离（价新高、指标不新高）</td><td class="left" data-page-node-id="SNJPW9bQDudFFEedbQGR6P">上涨动能衰竭</td><td class="score-col" data-page-node-id="qMylQXTgaB0vp9hLwOSdFA">2</td></tr>
+        <tr data-page-node-id="U4CYpfPQdlaJACGll5MFYw"><td data-page-node-id="9ySfds12IFyFtt41FJ2opv">龙虎榜</td><td class="left" data-page-node-id="yWSUfW7A6GSWQH2XnC9Prs">机构专用席位净卖出</td><td class="left" data-page-node-id="jxXVgljr5s7kfhRrwSj5rY">机构在高位撤退</td><td class="score-col" data-page-node-id="mWnolfLEqIc2ZamMSp6J7b">2</td></tr>
+        <tr data-page-node-id="BgEPW05yzJaUK8mxyEynxO"><td data-page-node-id="CJMwxfcMFUenDW3Jtct09I">关键支撑</td><td class="left" data-page-node-id="EurDIItLI9HAU2GnnLSOC7">跌破 MA20/MA60 且不快速收复</td><td class="left" data-page-node-id="rd7K3rIGoJlLxR8Pk6Hcwz">趋势结构破坏</td><td class="score-col" data-page-node-id="cIOOt2rnszKDOjF18a9AOz">2</td></tr>
+        <tr data-page-node-id="vonaajMNXp75iJ8fhRPt4b"><td data-page-node-id="qIDYRKGp13jjivyZ00cCfQ">OBV背离</td><td class="left" data-page-node-id="IrHNppnpdsNWA2sTmwngI8">股价新高但 OBV 不创新高</td><td class="left" data-page-node-id="Ty8oVSEH967vWpz7oiTCKP">量能跟不上价格</td><td class="score-col" data-page-node-id="GK1Lxhm4F1amqPh4H2510b">1</td></tr>
+        <tr data-page-node-id="ZHPSYZlSxNlvI3kdqFFGE9"><td data-page-node-id="lTdjlKlaCskITDwj6RjYwR">股东户数</td><td class="left" data-page-node-id="jdZso5TOLWFZAnp0d1wKBl">大幅增加（筹码分散到散户）</td><td class="left" data-page-node-id="8icAximqwm0TimETLGWA2E">散户接盘的滞后确认</td><td class="score-col" data-page-node-id="gIDzA1y1k3C9gH6o85ezM7">1</td></tr>
+        <tr data-page-node-id="wKyjdARnYzDZybAWyVd4zi"><td data-page-node-id="55b9bEKTRL2yb2YXJABdqR">融资余额</td><td class="left" data-page-node-id="E8a8T62gfoHk5foQ3LyXZu">处历史 &gt;80% 分位（杠杆拥挤）</td><td class="left" data-page-node-id="npwvWqjUpXYudvTk9SMuba">脆弱结构，一跌就踩踏</td><td class="score-col" data-page-node-id="GG2akrZxOpxDAu33UahGrH">1</td></tr>
+        <tr data-page-node-id="6Ox5NZe1aF9uDD7I7nqd3i"><td data-page-node-id="WiYzGGYSHL7XrPFm77bHCE">估值分位</td><td class="left" data-page-node-id="klBlPBW3isa6W8qjvL8bK7">PE/PB 处历史高分位</td><td class="left" data-page-node-id="qosN1XfU3J0zSGknGwpEeB">估值缺乏安全垫</td><td class="score-col" data-page-node-id="WHNmoQ5KnJ6AFWlzEOdtiN">1</td></tr>
+      </table>
+      <div class="warn" data-page-node-id="wvwfzDBWBl5ELLTQlFTrab"><h4 data-page-node-id="QxQgBq67jxEaFWkUwPiC8a">最致命的确认信号</h4>
+      <p style="font-size:13px;margin:0" data-page-node-id="DdWT8xv1DOphNRpK9rWvK8"><strong data-page-node-id="zCq6kxicaBE78htkqO8tim">底部筹码峰上移/消失</strong>——这是机构完成派发的铁证，一旦出现无论K线多好看都要高度警惕。其次是"放量滞涨"与"超大单卖、中小单买"的资金结构。</p></div>
+    </div>
+  </div>
+
+  <!-- 洗盘vs出货 -->
+  <div class="section" data-page-node-id="ihz3lphNFbmDMyBIYF6Isw">
+    <h2 data-page-node-id="OP6TBOJW21OFRnIcixcpyo">六、关键辨析：洗盘 vs 出货（最易误判）</h2>
+    <p data-page-node-id="Prc8GlzDR2aQwnEVhPLOIY">这是实战中最高频、代价最大的误判。同一个"下跌"，洗盘是黄金坑、出货是万丈渊。以下对照表可直接用来判别。</p>
+    <table class="vs-table" data-page-node-id="UhVFvRn0DlABA4AxGWke0W">
+      <tr data-page-node-id="zRoTMdcJ44J5PN8IsLbKNp"><th style="width:16%" data-page-node-id="XgQ6NsjA0ZoM33l6BNNEp3">判别维度</th><th class="c1" style="width:42%" data-page-node-id="kDhYKgCC49Mj61OCd1eAxU">洗盘（黄金坑）</th><th class="c2" style="width:42%" data-page-node-id="Qs3joNaeuRolG3wxjrgiSU">出货（下跌中继）</th></tr>
+      <tr data-page-node-id="DnPoZNTkkpCSpbLwP9EXPF"><td data-page-node-id="mTOLwxQxnIWWX0IyBCrR95"><strong data-page-node-id="EXG4CY35EDqq9FR9NVEC3q">位置</strong></td><td class="left" data-page-node-id="thxJ8jXdjsXEDJ0lGobc2u">中低位，涨幅不大</td><td class="left" data-page-node-id="AgBKfRMUbIjjmnE6sYBTa3">高位，累计涨幅 &gt;50%</td></tr>
+      <tr data-page-node-id="yVKLjh4SYpHkPWBdEqWQEz"><td data-page-node-id="qYGArkJpshXkNnaFe7Bx6F"><strong data-page-node-id="hdWmXKn3RiM9YOyoRC7UZA">成交量</strong></td><td class="left" data-page-node-id="SDke1ojDnADMn3izwy0g0z"><span class="green" data-page-node-id="CyzSNlwPoRvmzUz8DmGVEG">缩量</span>：量比 &lt;0.8，量为均量 50%–70%</td><td class="left" data-page-node-id="V0Ew0IFR7pnXwwfPHo6G5F"><span class="red" data-page-node-id="vx6VDHXftGBQggdUyUq1Sp">放量</span>：量比 &gt;1.5–2，持续放量</td></tr>
+      <tr data-page-node-id="dhlsQ4XKZMX94U4EKFSF1Q"><td data-page-node-id="l1nhu8UWqrWvd2Zh8aEFxm"><strong data-page-node-id="h9txzhHpt97fs8H4Sv6AuG">关键位</strong></td><td class="left" data-page-node-id="CwA0ewm72zHdcFHgUj8ydF"><span class="green" data-page-node-id="t9tD7Xih18pXON0FzS8AP2">不破</span>前低 / 建仓平台 / MA60</td><td class="left" data-page-node-id="PMXbgBYR3GicarjIzIGwYE"><span class="red" data-page-node-id="v7357zCilb97rMvkeDqRkX">跌破</span>前低 / 平台，破位不回头</td></tr>
+      <tr data-page-node-id="U7NDT8ag7fdrgxE2Ba54X2"><td data-page-node-id="GNb0oRNuDSYbWnaJCPz3re"><strong data-page-node-id="iyFFhAWeQoYmBqzWwzZzck">筹码峰</strong></td><td class="left" data-page-node-id="EpkbJXj551zAuZpYQGJKtn"><span class="green" data-page-node-id="HGXLP5m9Ar4DEjnFVRvlDx">底部峰锁定不动</span>（机构没走）</td><td class="left" data-page-node-id="fgLLgsJKCUlsjTOThAGyvb"><span class="red" data-page-node-id="xR3JNyX6VVGLOare9S2lmA">底部峰上移/消失</span>（机构走完）</td></tr>
+      <tr data-page-node-id="haxg0Nyjjn60Vdonk6rkRT"><td data-page-node-id="lImXy7gTenQhQeBFA7aTkL"><strong data-page-node-id="qNO0VWBVPXo6ICZTZw3KAM">资金结构</strong></td><td class="left" data-page-node-id="E8hhlSbkbxkWVDREQl67aC">大单砸、<span class="green" data-page-node-id="fu3cIBOaGsYMcvrzyiqSuR">小单吸</span>（主力实为净吸）</td><td class="left" data-page-node-id="VIJmM9gFnBOhVMiTNS0Gyv">超大单卖、<span class="red" data-page-node-id="6hJkZcHKNCApCFGZmM1iBI">中小单买</span>（散户接盘）</td></tr>
+      <tr data-page-node-id="ocAwfbkYaArZWYRASFfB4z"><td data-page-node-id="cBiX8X0ZDFmsBB3d1HyS13"><strong data-page-node-id="kzSKDI8Q9ldF5QT6Qm2tNX">龙虎榜</strong></td><td class="left" data-page-node-id="2F3EF7UYgje2jjWWpAe0jZ"><span class="green" data-page-node-id="YaUbVJtXKEbLeo6vXoiFpR">机构席位净买入</span></td><td class="left" data-page-node-id="OHj0fZCdY3TOaNkILdjIzG"><span class="red" data-page-node-id="HFt7dh7JJX6dYCMvpatsjH">机构席位净卖出</span></td></tr>
+      <tr data-page-node-id="tt7E9zeaviFlR4F3zlJeP9"><td data-page-node-id="i3h4DdzOVVOq6T8ykHvd5Y"><strong data-page-node-id="f4A8MCJPc93BtrVNuQE97L">修复速度</strong></td><td class="left" data-page-node-id="uCAdHrFYUULlBc39cXF8cZ">3–5 日<span class="green" data-page-node-id="RApATl66oJBnCGnJ5o2cE5">快速收复</span>跌幅</td><td class="left" data-page-node-id="Y5i6bQMHsSdsBoB3yeFAGq">反弹<span class="red" data-page-node-id="MU02hutCKtyfDxFng0GVIH">递减、收复无力</span></td></tr>
+      <tr data-page-node-id="YGJqWGDyDIWAVgY1bL5dTr"><td data-page-node-id="HTtWuMKwGOx0TDwpnO1Snw"><strong data-page-node-id="u0m5qNycN7FQORr9f0g54J">获利盘</strong></td><td class="left" data-page-node-id="mECmM21TzpUfU4YxwuDvhL">降至 20%–30%（洗干净了）</td><td class="left" data-page-node-id="EHbynJnWcXIucTB5G7vs7k">&gt;80%–90%（都在盈利，随时跑）</td></tr>
+      <tr data-page-node-id="poHYPDdvPNS7cZnOhUSzI8"><td data-page-node-id="T57KkD1JMDXoum3xz2S7KI"><strong data-page-node-id="u63zYOB81QTFtHi5FWyQ9V">消息面配合</strong></td><td class="left" data-page-node-id="NTaJUMETI2YEf0LvAoJvLc"><span class="green" data-page-node-id="SbKB1C7MCkHUNrKACU0Fmu">利空频出</span>（配合打压吸筹）</td><td class="left" data-page-node-id="D1v1HkCfysb9oLZRWICGrq"><span class="red" data-page-node-id="iz7tUpNCHxg2s8FbnAHo7i">利好频出</span>（配合出货造势）</td></tr>
+      <tr data-page-node-id="T3qQhi0W1fTlgYc4NQXX4Y"><td data-page-node-id="ILIfqHtCXgu9wtz7R8Jtxa"><strong data-page-node-id="PQVf6e1r5I7YY4ClfNINcV">K线</strong></td><td class="left" data-page-node-id="wWAsiX9PU7E2qmhKyvydFE">长下影、锤子线（下方承接强）</td><td class="left" data-page-node-id="eJt8pwE9bR3RNXwsMiNAaD">长上影、射击之星（上方卖压重）</td></tr>
+    </table>
+    <div class="key-sig" data-page-node-id="26KPnwWStnGOPivstCnsAY"><h4 data-page-node-id="SMtLD5Eg4b9cAekFJxMgkx">一句话心法</h4>
+    <p style="font-size:13px;margin:0" data-page-node-id="mubkCX0JK1yNGfNDUWzjKX">跌的时候看<strong data-page-node-id="pEToHdVSiROdItjriNFUYP">量</strong>：缩量是洗盘，放量是出货；跌完看<strong data-page-node-id="hgV8qVlH7DaD9RweH7O4LZ">位</strong>：不破前低是洗盘，破位不回是出货；筹码看<strong data-page-node-id="0eZr7bZGdWOHxIviCM8b3Y">峰</strong>：底峰不动是洗盘，底峰上移是出货。</p></div>
+  </div>
+
+  <!-- 实战验证 -->
+  <div class="section" data-page-node-id="p0MM9HEfdWGCUexpwm16oM">
+    <h2 data-page-node-id="MGW2AL6s6u7MtKzKqAiX79">七、实战验证：四只标的分处四阶段</h2>
+    <p data-page-node-id="Msk0UWVHYn9KsoMylvpY2D">以下用当前市场四只真实标的对号入座（数据截至 2026-09-10）。它们恰好覆盖启动期、建仓磨底期、撤离初期、派发期四个阶段，可直接对照上文指标理解。</p>
+
+    <!-- 沪电 -->
+    <div class="case-card" data-page-node-id="BPlng3Wf6gkityUzoZVUEN">
+      <div class="case-head" data-page-node-id="9FbZJmMhHJEs279IUjPq2H">
+        <div data-page-node-id="vYD03X0WczCwia8TSNwTUz"><span class="case-name" data-page-node-id="sBfAPPPaYY52nv2OAvZ8vs">沪电股份</span><span class="case-code" data-page-node-id="ZQQyt1cPmb92HOfNMhdIrc">002463.SZ</span></div>
+        <span class="tag t-start" data-page-node-id="A87Ibo3XHkzrc8UHAIHde9">启动期（机构+北向+游资共振）</span>
+      </div>
+      <div class="case-body" data-page-node-id="X1cSwGs09mqHnv1JTmLhiV">
+        <strong data-page-node-id="fXpxKaJB9kXjFyetFTaR7B">完整演示"缩量洗盘 → 放量启动"：</strong>8/28 高点 127.64 → 9/4 低点 110.59，回调约 13%（洗盘幅度 10%–20% ✓）；期间换手率从 3.07% 逐级萎缩至 1.65%–2.57%（<span class="green" data-page-node-id="XohUQtadTvZDjwbGbyGicQ">缩量下跌 ✓</span>，量比 &lt;0.8）；<strong data-page-node-id="A7eoodufSG6AMAiJm9hoAx">9/7 放量涨停 +10%</strong>（换手 4.17%、成交 96 亿，量能是前日约 1.6 倍 → <span class="red" data-page-node-id="jdBgIPHKd3of2ldARGAglV">放量突破 ✓</span>）；此后 9/8–9/10 连续三日<strong data-page-node-id="CF3lQ7lNbkFCCEI3k72duV">缩量续创新高</strong>（124.90→127.55→128.91，换手降至 1.36%）——这是浮筹洗净后最健康的形态。<br data-page-node-id="Kjp8Pa3HcP5aMEQ7lSaz4s">
+        <strong data-page-node-id="UCtXSO7PJm2D9ngEnTdYVy">指标共振：</strong>股价站上全部均线（MA5 123.10&gt;MA10 121.77&gt;MA20 120.38，且高于 MA60/MA120/MA250 → 多头排列 ✓）；MACD 水上金叉（DIF +1.31 &gt; DEA +0.15，红柱 ✓）；BOLL 沿上轨运行。<br data-page-node-id="QrXeT0sNF3k3qZlugGULBA">
+        <strong data-page-node-id="8d4MM7D0GTlk17dfEa4zyQ">资金与机构：</strong>主力当日 +3.36 亿，5日 +4.63 亿、10日 +10.81 亿、20日 +1.54 亿<strong data-page-node-id="DjGKB3tEc8XFDfLga7cMcT">全周期为正</strong>（超大单 +2.44 亿、大单 +0.92 亿双流入 ✓）；龙虎榜净买入 17.43 亿，深股通净买约 9.13 亿，四家机构席位合计买入约 11.35 亿（<span class="red" data-page-node-id="wAxAkDN6DrSpV8tOEUzjZW">机构+北向共振 ✓</span>）。
+      </div>
+      <div class="ev" data-page-node-id="ktvvnT4DYCbKWH0EwE2S0U">
+        <span class="ev-item" data-page-node-id="doVBG3guaAHsyOpMS8OfSl">收盘 <span class="v" data-page-node-id="AhnGVqTAWDdv5I0GLsZrw7">128.91</span></span>
+        <span class="ev-item" data-page-node-id="s4gxqNaqhXGHNSbiQJyEj4">当日 <span class="v red" data-page-node-id="HBuFcQGBhBPtvZs46nmbTP">+1.07%</span></span>
+        <span class="ev-item" data-page-node-id="fzkwaCTG4rpKz5v68O0aRQ">换手 <span class="v" data-page-node-id="CDPJEpl2qcWdyPWL96vmpe">1.36%</span></span>
+        <span class="ev-item" data-page-node-id="yPCHNwfNK4jPzgALBh2gb3">主力当日 <span class="v red" data-page-node-id="NBzEKv6ctV1FxM1cC93oKL">+3.36亿</span></span>
+        <span class="ev-item" data-page-node-id="InbMofqcfRR0Bq8MXR6JmQ">主力20日 <span class="v red" data-page-node-id="qDl3u83lds6vvTMKT9kcnR">+1.54亿</span></span>
+        <span class="ev-item" data-page-node-id="ITv76twDEE4oBGJbztSB2E">龙虎榜 <span class="v red" data-page-node-id="Bv2YkRe2suOxdlUGE1jx6b">净买17.43亿</span></span>
+      </div>
+      <div class="chart-box" data-page-node-id="rDSfo1D1N4seb91LkHS7TQ">
+        <div class="chart-title" data-page-node-id="Gk95DKf3ijAnBElwf9EuBz">沪电股份：缩量洗盘 → 放量启动（量价双轴演示）</div>
+        <div id="chart1" style="width:100%;height:380px;" data-page-node-id="dwFxYmRp4N3CZX3JqnCE28"></div>
+        <p class="note" data-page-node-id="HiXJZn0cCqxZfx9yVG4iPO">数据来源：westock-data kline，2026-08-28 至 2026-09-10。蓝柱为成交额，红线为收盘价。灰色区为缩量洗盘段，红色标记为放量启动日。</p>
+      </div>
+    </div>
+
+    <!-- 兆易 -->
+    <div class="case-card" data-page-node-id="SDiZ5UX4P992HxiKoTemm3">
+      <div class="case-head" data-page-node-id="oUKAnPKKonBCdOLMyyqpNA">
+        <div data-page-node-id="rQh4L562DCgrenP9SNcPtA"><span class="case-name" data-page-node-id="Ayaz034mg2UrJRD2BE7De8">兆易创新</span><span class="case-code" data-page-node-id="Je2FCm3vhkAu7VWhgIovHF">603986.SH</span></div>
+        <span class="tag t-build" data-page-node-id="SE2gSYeifXxHjMsvCjKtUQ">建仓磨底期（超跌后，等待资金回流确认）</span>
+      </div>
+      <div class="case-body" data-page-node-id="DCsiPWnjwlNORrDFlmbqyN">
+        <strong data-page-node-id="MTpYjSdsoRU9OelorXJ7Uc">位置：</strong>近60日 <span class="green" data-page-node-id="tTFXdHFyX5wpBmF0P1DfiU">-34.59%</span>（从 52 周高点 846.66 回落至 383.31，腰斩有余），处于深度超跌后的低位区（符合建仓期"中低位"位置特征 ✓）。<br data-page-node-id="3ojgTJCPdi1guA4AGlttFA">
+        <strong data-page-node-id="oWIYa5cQDOsWFFpMu6azD9">量价：</strong>换手率从前期 5.6% 降至 2.27%，量比 0.99，日振幅仅 2.22% —— <strong data-page-node-id="IgQWkGoNbqWRoVojjSxctm">窄幅缩量横盘</strong>（振幅 &lt;5% ✓、缩量 ✓），是典型的磨底特征。<br data-page-node-id="utOVxhLsG0ypoY4cIQ9nHM">
+        <strong data-page-node-id="hoUbXbD4EMAm7V2rkNzS0F">技术（尚未转强）：</strong>股价仅勉强站上 MA5，仍低于 MA10/MA20/MA60/MA120（空头排列 ✗）；MACD 零轴下方（DIF -15.31）；KDJ 在 34–37 低位钝化；RSI 43–44 中性偏弱。<br data-page-node-id="5cnysDLSQTaykCbxwpegDi">
+        <strong data-page-node-id="lANHhw3pLqU5Yt5ZTbKhhv">资金（关键矛盾）：</strong>中期持续大幅失血——5日 -18.15 亿、10日 -33.95 亿、20日 <span class="green" data-page-node-id="ILP1Hx15vWl9Ogrk9zPS2L">-112.12 亿</span>（四票中最严重）；但<strong data-page-node-id="Jd34B5OCS61LR3CzSmkMQn">当日主力小幅净流入 +0.95 亿</strong>（超大单 +0.59 亿、大单 +0.36 亿），显示流出边际放缓。龙虎榜净卖出 2.17 亿，机构专用仍净卖出约 3.94 亿（机构尚未转为买入 ✗）。<br data-page-node-id="prHBLsuiyoyHsnKX1Yovro">
+        <strong data-page-node-id="xNhliyPpIFE1pZp1SlmxSw">判定：</strong>具备建仓期的"位置+缩量横盘"特征，但<strong data-page-node-id="8YTg09hAYwvZb6dHejHf9H">机构资金尚未回流、均线未修复</strong>，属"等待期"。<span class="red" data-page-node-id="KSr7YAbkmPilT4yD0u8eH8">启动确认信号：主力资金连续 3–5 日净流入 + 放量站上 MA20（398.59）。</span>
+      </div>
+      <div class="ev" data-page-node-id="B0j8OiYwNyP3ALWAHZAkDR">
+        <span class="ev-item" data-page-node-id="3O6R5R9ctPi1aqDeNRKfQc">收盘 <span class="v" data-page-node-id="C2LAsZ2eOEiACo3oXLnAPk">383.31</span></span>
+        <span class="ev-item" data-page-node-id="kIa11WinXhTQE4lgqz1gqG">换手 <span class="v" data-page-node-id="5CSWyfkzFJ3bXort1lzf9S">2.27%</span></span>
+        <span class="ev-item" data-page-node-id="HiVItIwWnAp3vSam7wFREJ">振幅 <span class="v" data-page-node-id="giGIIQzV6qRW7ZP0j9SZVM">2.22%</span></span>
+        <span class="ev-item" data-page-node-id="ElxI5J0ygnVQeMqDgw1gLD">主力当日 <span class="v red" data-page-node-id="oXXTajAwR4PxVKX29iryG7">+0.95亿</span></span>
+        <span class="ev-item" data-page-node-id="VoSB3Nq72Vp5jCCLxydt7a">主力20日 <span class="v green" data-page-node-id="YidBKLQee6UTIuYrbuNDEG">-112.12亿</span></span>
+        <span class="ev-item" data-page-node-id="5Ejp4aBuABHAAATNWGG1Kk">PE(TTM) <span class="v" data-page-node-id="DFDqo4e3oDqDReBr0ySOZK">34.03</span></span>
+      </div>
+    </div>
+
+    <!-- 中际旭创 -->
+    <div class="case-card" data-page-node-id="lM494AQeq0GC38Oz07vlI0">
+      <div class="case-head" data-page-node-id="1yHhGxWGF8TkdmnN8JoYLh">
+        <div data-page-node-id="O7cL6PDATf3mZPtfwUAmFG"><span class="case-name" data-page-node-id="xyLBmPWgIsP2sUcIVAdAPq">中际旭创</span><span class="case-code" data-page-node-id="aXLubDpj6YEWMGblviz5dc">300308.SZ</span></div>
+        <span class="tag t-exit" data-page-node-id="NZHFgg1V8kYYGBrFxv3MfB">撤离初期（高位分歧派发）</span>
+      </div>
+      <div class="case-body" data-page-node-id="blOl08Q66am0uhEPsbocY5">
+        <strong data-page-node-id="FQE5pKTjxHmQuMvTiOQAhk">典型的"放量拉升 → 缩量滞涨"：</strong>9/7 暴涨 +10.38%（换手 3.89%、成交 376 亿）→ 此后换手逐级萎缩 2.59% → 1.81% → 1.05%（量比 0.84），成交额从 376 亿萎缩至 104 亿；9/10 高开低走收 897.91（-1.21%），最高 909 未能站稳 —— <span class="red" data-page-node-id="eJmDMExBAscqo2BOaLnbfV">缩量滞涨 + 冲高回落 ✓</span>。<br data-page-node-id="73bQ0q6M92kGQJnMCs8NrQ">
+        <strong data-page-node-id="Lx0pCP8OcFimRTIW3ZBtR4">技术压制：</strong>虽站上 MA5/MA10/MA20，但 <strong data-page-node-id="YmyFzz07mYeM2xsXgzCE0h">MA60（1020.19）、MA120（969.93）仍在高位压制</strong>，属中期下降趋势中的反弹；MACD 仍在零轴下方（DIF -24.29）；上方 923 附近为筹码平均成本区、44日线 951 为压力位。<br data-page-node-id="PyxYzJhC3gRJJ3CjnuwzS8">
+        <strong data-page-node-id="gCGHrfiQQSwB00CAD2yu5Q">资金撤离（决定性证据）：</strong>当日主力<span class="green" data-page-node-id="vtwNIpEVh80tREdcKZwP8T">净流出 9.07 亿</span>（超大单 -7.35 亿主导）；<strong data-page-node-id="Fw2PuwieuAKNGPR1zG3hPp">20日累计已转为净流出 52.28 亿</strong>——8 月以来的高位资金正在系统性撤离；9/9 融资净卖出 4.73 亿。龙虎榜上机构与深股通<strong data-page-node-id="lTvETsRpqVuyYUqH9BKdx0">双向对倒</strong>（三家机构合计买 33.3 亿但同时大额卖出），分歧极大。<br data-page-node-id="4gNmzQMqOGB2xc1e1TVZ5d">
+        <strong data-page-node-id="lT74FRxMoQIBwWQPjN2Esq">判定：</strong>放量拉升后缩量滞涨 + 主力净流出 + 20日资金转负 + 中期均线压制 = <span class="red" data-page-node-id="qujHWkT3aq3zueGuBbDdy6">高位派发/撤离初期</span>。虽有机构承接（净买入 28.39 亿），但属多空激烈换手而非单边建仓。
+      </div>
+      <div class="ev" data-page-node-id="MW35AIzfrnNjk386naswFO">
+        <span class="ev-item" data-page-node-id="uhlkBs0AasmkpkSIpSyF1v">收盘 <span class="v" data-page-node-id="DVVt0CcTKHI00bAuS45KIs">897.91</span></span>
+        <span class="ev-item" data-page-node-id="OKBA7NVcBuJqJkGVjyILoH">当日 <span class="v green" data-page-node-id="GYkDZ5XXHFFpSukegSaQov">-1.21%</span></span>
+        <span class="ev-item" data-page-node-id="rfeGwUMYiVBBxgjWxcxDTR">换手 <span class="v" data-page-node-id="uAuFfGrHuU7T1ERhwqbjS9">1.05%</span></span>
+        <span class="ev-item" data-page-node-id="4CVDRUZxGmZwADpJDHgRHr">主力当日 <span class="v green" data-page-node-id="wxdjJaZAQPzfu6425gEdUw">-9.07亿</span></span>
+        <span class="ev-item" data-page-node-id="Xc49Vc4HBpir6rWanLE8lS">主力20日 <span class="v green" data-page-node-id="gYgXQbD6POD3EsyzJdEW94">-52.28亿</span></span>
+        <span class="ev-item" data-page-node-id="gMNJ9Iqy12DV7PIBlb82QX">MA60 <span class="v" data-page-node-id="tzfXJWCxXeb0rJB0sRT0oz">1020.19</span>（压制）</span>
+      </div>
+    </div>
+
+    <!-- 敦煌 -->
+    <div class="case-card" data-page-node-id="Ps77fGeE10b5L22J5kjz3E">
+      <div class="case-head" data-page-node-id="ijSqxE7XeatAc0mshbHzeu">
+        <div data-page-node-id="YFZcA1x3DhV6IgupMa2fIe"><span class="case-name" data-page-node-id="OlvKi9zRNtfk2tn0ge6uRA">敦煌种业</span><span class="case-code" data-page-node-id="Cilc5v7tK2oPRS2aqiuORr">600354.SH</span></div>
+        <span class="tag t-exit" data-page-node-id="3MAhedFlc0lMkEB6D87FIf">派发期（游资博弈，机构出逃）</span>
+      </div>
+      <div class="case-body" data-page-node-id="GmoaSJpnwKASVEGfmx7djT">
+        <strong data-page-node-id="jOx0qZjpqJ9WOA5GNg8FK1">位置极端：</strong>7天4板，近20日 +89.80%、近60日 +127.61%，处绝对高位（累计涨幅 &gt;50% ✓）。<br data-page-node-id="Po9acWwFmBkesjB10vPCHX">
+        <strong data-page-node-id="Sio33GhdcRE0UPuJRw13PV">换手异常 + 宽幅震荡：</strong>换手率 <span class="red" data-page-node-id="xxB5Lq9K9vDx4m9IjGyjBN">33.82%</span>（9/9 曾达 45.5%），量比 2.70，当日振幅 17.12%（最高 12.08、最低 10.20）—— 高换手是出货的必要条件 ✓，日内剧烈博弈是派发特征 ✓。<br data-page-node-id="f73nHuYNKItfBHRDYASaqh">
+        <strong data-page-node-id="1CqEsl5oOTH8GcEbnUxzcu">技术极度超买：</strong>KDJ 的 J 值 94.6、RSI6 高达 86.1，股价 11.54 远超 MA20（8.03），已突破 BOLL 上轨（11.14）—— 指标全面钝化在超买区。<br data-page-node-id="einxInEGcOwdAZKTHeVJDJ">
+        <strong data-page-node-id="LrM1chfHJh45AfzoeLBSt6">机构出逃（决定性）：</strong>龙虎榜<span class="green" data-page-node-id="mjMf9yIm7HeqGDEY5BZEVc">净卖出 1.65 亿</span>，<strong data-page-node-id="3ht3dJbuC14yI2itH0yjM4">机构专用席位单边净卖出 2.13 亿（最大卖方）</strong>，游资"东北猛男"净卖出 0.78 亿；当日主力净流出 0.43 亿，而<strong data-page-node-id="GG2C8GRfS5cyUjSJi2V0Jy">小单净流入 0.94 亿</strong> —— <span class="red" data-page-node-id="jM3m2Z4eA9oUVEqYR8RHxs">典型的散户/游资承接主力抛售（超大单卖、中小单买）✓</span>。公司已公告提示"一个月累计涨幅 57.34%、累计换手率 394.29%，可能存在市场情绪过热和非理性炒作，交易风险大"。<br data-page-node-id="mrDqRj160bfMrdummfJXts">
+        <strong data-page-node-id="CLLm8JUBaUoVzmjIhExpsp">判定：</strong>高位 + 极端换手 + 机构单边出逃 + 散户接盘 + 公司风险提示 = <span class="red" data-page-node-id="errfX00o3v2AK7C1pYfRjw">明确派发期</span>，追高赔率最差。
+      </div>
+      <div class="ev" data-page-node-id="G7NXxVfFRqWZOi1DeIEAvm">
+        <span class="ev-item" data-page-node-id="7wlLns20Lj86Q5gKIbuK0Y">收盘 <span class="v" data-page-node-id="Gz3xPTN6E86cy0faeDI7Ds">11.54</span></span>
+        <span class="ev-item" data-page-node-id="a4tp7u6K8aav7eKcoVQhwl">当日 <span class="v red" data-page-node-id="Tn5OZmUcl7UuBCLw7TCMji">+5.10%</span></span>
+        <span class="ev-item" data-page-node-id="cb0wfEGdT6jYF8QCeemAFZ">换手 <span class="v red" data-page-node-id="jGE8NRaKCezUSoMWm26oH0">33.82%</span></span>
+        <span class="ev-item" data-page-node-id="rHR8t2UMqje16N7CdyQUuB">振幅 <span class="v red" data-page-node-id="Ox60oDgHQ70qAHB4ozvFyC">17.12%</span></span>
+        <span class="ev-item" data-page-node-id="oolyTdCsQ7muiCxxOI0pim">机构席位 <span class="v green" data-page-node-id="SaqoREQA4jNihqbzwha1wL">净卖2.13亿</span></span>
+        <span class="ev-item" data-page-node-id="60UR51asfU7U0R6xPSQbAw">RSI6 <span class="v red" data-page-node-id="agSTQWZkZuZKB4mGgBov4G">86.1</span></span>
+      </div>
+    </div>
+
+    <!-- 资金流对比图 -->
+    <div class="chart-box" data-page-node-id="ryHdUPSKXt4FJCLmBkcnFr">
+      <div class="chart-title" data-page-node-id="LpjjGNpfbvjyVo3yofEPI6">四标的主力资金流向对比（单位：亿元）</div>
+      <div id="chart2" style="width:100%;height:400px;" data-page-node-id="2aCrZonKBIQNqwfEsnBIEL"></div>
+      <p class="note" data-page-node-id="YIlVxTBj70togqApMTNhit">数据来源：westock-data fund flow，截至 2026-09-10。红=净流入，绿=净流出（A股惯例）。注意量级差异：兆易创新 20 日净流出 112.12 亿属深度失血。</p>
+    </div>
+  </div>
+
+  <!-- 打分卡 -->
+  <div class="section" data-page-node-id="kPXdyfhfhPtP2EWa669O3D">
+    <h2 data-page-node-id="3oJwZ8JHKudCZ0E5c0TMxs">八、可操作打分卡（照表打分即可判阶段）</h2>
+    <p data-page-node-id="qnYm5ULfymcXHMfCHOnSa0">把上文指标浓缩为打分卡。对目标股逐项对照打分，取最高分阶段为判定结果。<strong data-page-node-id="iYNBfquoHw2rpM0a3vLCru">相邻阶段可能同时部分得分</strong>（如洗盘末期与启动初期重叠），此时以"资金方向 + 关键位"这两项一票否决项为准。</p>
+    <table data-page-node-id="8DMufPG91QDgcsMaZLiMlx">
+      <tr data-page-node-id="5DEi7xQfDdaNFs6738oGPm"><th data-page-node-id="qGZ0BNbcIh0Bibt1XpvnlZ">阶段</th><th data-page-node-id="VhKDo5jGlRHSZYBCDRIKhA">满分</th><th data-page-node-id="NEp3DmbSj5RFwk1Cb6lASU">判定线</th><th data-page-node-id="1KAoGEeAWI6gRRlSGTULzU">一票否决项（不满足即排除该阶段）</th><th data-page-node-id="JQ19wWh43zhquxbKkQlAYH">核心观察顺序</th></tr>
+      <tr data-page-node-id="taWd9Li2TyhgUZmW4lFYF3"><td data-page-node-id="ZKHKv3UXQGRnQyvdYVPyq3"><strong data-page-node-id="Kb6j2ab7HrKblvuicZzBx2">建仓</strong></td><td data-page-node-id="6tRvOKYxRxXC5YOebhdbnU">15</td><td data-page-node-id="SuW6BYgB8VpIFc9V1hqbf7">≥9</td><td class="left" data-page-node-id="At6rlSVzfpbmpcP446g9FX">主力资金需为净流入或流出显著放缓；龙虎榜机构不能持续单边卖出</td><td class="left" data-page-node-id="6gN9ncXxNpFxRAusmGcAab">OBV背离 → 量比/换手 → 机构席位</td></tr>
+      <tr data-page-node-id="MOarDwGwmZXTH5ULNWxQGA"><td data-page-node-id="8QGr0COAQmlatvHGNxgtPs"><strong data-page-node-id="xqiWRE0knwUQWYNow6oGyR">洗盘</strong></td><td data-page-node-id="o9RrEBa8wXKkCH6lJATZty">13</td><td data-page-node-id="ndRdmjhFp8TXMMOCB32rzR">≥8</td><td class="left" data-page-node-id="ENj9nrkv8kUXGXqhVeI0vN"><strong data-page-node-id="YFb4Fyb3R3vlJntcBXBy5T">必须缩量（量比&lt;0.8）</strong>；<strong data-page-node-id="BjDtAU8eYTLgVcFGVYH9F6">不能破前低/平台</strong>；底部筹码峰不能位移</td><td class="left" data-page-node-id="IBoFQN7qWYp8P1senxWd5T">量能 → 关键位 → 筹码峰 → 修复速度</td></tr>
+      <tr data-page-node-id="XBXVBPOVTzHDr1Wwah1dwQ"><td data-page-node-id="kCZIsiUUvZ8eKR6a3ZbFQj"><strong data-page-node-id="K3DgXC3jit4DraJ4DFshqb">启动</strong></td><td data-page-node-id="VMjojnnxz6YR1TrGwa7cK9">19</td><td data-page-node-id="DQHrdMPF8pjUlxtMG7CAs0">≥12</td><td class="left" data-page-node-id="1u1vV8MI0lYtedIvjdYa63"><strong data-page-node-id="ws3ty75bT8ES0NAvneIF15">必须放量突破并收盘站稳</strong>；主力资金须净流入且超大单主导</td><td class="left" data-page-node-id="wIjRfEouP6EMyyBWUAmGwR">突破量能 → 资金结构 → 均线/MACD</td></tr>
+      <tr data-page-node-id="GOSI8RnTaiiCJbaVCIvM5l"><td data-page-node-id="AJA7JFwAz3Pane1vXyXyXN"><strong data-page-node-id="xdIKiuNDrEMZ6FnUb7EdlT">撤离</strong></td><td data-page-node-id="x1b8Xrrzzh6ieFSBN7HFow">23</td><td data-page-node-id="qPPnehpRY1BqhL2UddmT3W">≥14</td><td class="left" data-page-node-id="sReA5NJCtdUoo5VhUAYohX">出现"放量滞涨"或"底部筹码峰上移"任一，即高度警惕</td><td class="left" data-page-node-id="1ioeLOn2MylqCoUpGddwtl">量价背离 → 筹码峰 → 资金结构 → 龙虎榜</td></tr>
+    </table>
+    <div class="key-sig" data-page-node-id="fyn8VcgmmgxJSImwKJYWGH"><h4 data-page-node-id="kumCyrH9Aao76HhbtuSzqp">使用要点</h4>
+    <p style="font-size:13px;margin:0" data-page-node-id="0fYTwLufTbcF77d71G3H0L">① 先看<strong data-page-node-id="R7ZdQwEMEQzqERQsQDd6Cb">位置</strong>（高位 vs 低位）——位置错了，后面全错；② 再看<strong data-page-node-id="AsU9NfynCDGa4q2xkpGrV5">量能方向</strong>（缩量 vs 放量）；③ 最后用<strong data-page-node-id="m0ptsEFenNGE9IcUchrn3r">筹码峰与龙虎榜机构席位</strong>交叉确认。三者一致时判定最可靠，矛盾时以"资金方向+筹码峰"为准（因为这两个最难伪装）。</p></div>
+  </div>
+
+  <!-- 数据获取 -->
+  <div class="section" data-page-node-id="hgyOgE4FiS2c7wQlgFnkHP">
+    <h2 data-page-node-id="SKJnlmeDXomv1gX5BqyL3W">九、这些指标从哪里取</h2>
+    <table data-page-node-id="VUuZ0ioAHZ9bcE4E2OgNtW">
+      <tr data-page-node-id="HBij9gLJCFEMR8bUCLpTae"><th style="width:22%" data-page-node-id="r6JRTxuQpnvn360lJJcYBK">指标类别</th><th style="width:40%" data-page-node-id="2mVomqgrS3T2KCsc7Pnywb">获取方式</th><th style="width:38%" data-page-node-id="pvxB3HCDRLiEVRxSjYMmz9">注意点</th></tr>
+      <tr data-page-node-id="g5vQaHDaP0d8RTvCHW3oMr"><td class="left" data-page-node-id="bfgdrdZribCcYFd3PtnsXu">行情/量比/换手/振幅</td><td class="left" data-page-node-id="EPM8x79RzSt1qhc3MGjdSx">行情软件实时盘口；或行情接口 quote</td><td class="left" data-page-node-id="5l8a5VJRyluEVBnCpSUfzC">量比 = 当前量 / 过去5日同期均量，盘中会动态变化，以收盘为准</td></tr>
+      <tr data-page-node-id="aGQCrKGA0eBLkTsv9l9ybN"><td class="left" data-page-node-id="Ynux8QiFlyLaIwHNec4oJ3">技术指标 MACD/KDJ/RSI/BOLL/MA</td><td class="left" data-page-node-id="klikQinF6sU5DRTlh08h3t">看盘软件副图；或技术指标接口</td><td class="left" data-page-node-id="UGtGnzrKaWaUKo2JTQUIbd">周期错配是大坑：日线信号与周线矛盾时以周线为准</td></tr>
+      <tr data-page-node-id="4ZzTUA8TinlNYogqs8idT5"><td class="left" data-page-node-id="pFdlCidwQTTCntcO4Qp0rE">主力资金/超大单/大单结构</td><td class="left" data-page-node-id="2Jrrv6K6A7nApJgoSQgSeQ">资金流接口（fund flow），看 MainNetFlow 及 5/10/20 日</td><td class="left" data-page-node-id="uhCGlggVWYOrWEwncEtmbe">按大中小单分类是<strong data-page-node-id="OFdAv36MRXM7a1rgcJzwro">统计推断</strong>，参考意义有限；看连续多日而非单日</td></tr>
+      <tr data-page-node-id="z7GBPPeY7pPAFf6XDZrhRV"><td class="left" data-page-node-id="pHGJBEpe2ytzxtsSyLxbTA">龙虎榜机构席位</td><td class="left" data-page-node-id="1rhJQcucV2PcPWqiVvxQTK">龙虎榜接口（fund lhb），看"机构专用"买卖</td><td class="left" data-page-node-id="4xL11m47KawhQRSHF1bXac">要区分真机构（基金专用席位）与假机构（普通机构席位）；且是<strong data-page-node-id="sVqDgwGGNPwQGE7IiCtrrZ">滞后数据</strong></td></tr>
+      <tr data-page-node-id="NCoZ6qW6JWE3tR3VqZLMht"><td class="left" data-page-node-id="FZWZMr5bOSLxCMDG758kqR">OBV / 量价背离</td><td class="left" data-page-node-id="wFpoNUICf77vGYVpK9Io8E">看盘软件 OBV 副图</td><td class="left" data-page-node-id="mgQKTWIZzsLS8ZG0cEDrJe">OBV 上升而股价横盘 = 吸筹；股价新高 OBV 不新高 = 派发</td></tr>
+      <tr data-page-node-id="kdDqU3PCZNuUiU0ojYsVIO"><td class="left" data-page-node-id="zjbEOMlRLRnqcroWidDAbS">筹码分布/获利盘/筹码峰</td><td class="left" data-page-node-id="cfeoWxgRtX9Dnx9XTlngU1">看盘软件筹码分布（成本分布）功能</td><td class="left" data-page-node-id="GI2rvTbndvHMg6zPzNEZrQ">重点看<strong data-page-node-id="UCDGruxJ4jS9jGsAnO6v8e">底部峰是否位移</strong>；不同软件算法不同，看相对变化即可</td></tr>
+      <tr data-page-node-id="cQemCuPrlzN3cY3HFnAuMX"><td class="left" data-page-node-id="wojMoCN1xME7IHA3YnIWlP">股东户数</td><td class="left" data-page-node-id="0F7CAkpsNgX9ZloBBUkosw">公司定期报告 / 交易所互动平台</td><td class="left" data-page-node-id="4NjBPpLKqGmB5ir4jxZvul"><strong data-page-node-id="cseHb0fiuty032AqrjvEMk">季度披露、严重滞后</strong>，仅作事后验证</td></tr>
+      <tr data-page-node-id="weoV3nji7pTxCpxIstFeM0"><td class="left" data-page-node-id="VHtjbopDfBX5mefJj5gNlo">融资余额/分位</td><td class="left" data-page-node-id="sCdqc7SAHmjDA98KtSwgsA">交易所每日融资融券数据</td><td class="left" data-page-node-id="Zy08ox89DGV5LDxxxWFzi0">&gt;80% 历史分位 = 杠杆拥挤，脆弱</td></tr>
+    </table>
+    <div class="warn" data-page-node-id="RLFjAANGBe5JD35YuOS3pO"><h4 data-page-node-id="HojFZA6rdSEV749F5VoD0a">指标使用纪律</h4>
+    <ul style="margin:0 0 0 18px;font-size:13px" data-page-node-id="u7MilYOOf1IcTtnVHuveyA">
+      <li data-page-node-id="BLEhuqMWeAovhj6xt3LUtf"><strong data-page-node-id="jTrSkCpELiGOMoGzxdgcRb">单一指标不作决策</strong>——至少 3 个维度共振（量能 + 资金 + 筹码/机构席位）。</li>
+      <li data-page-node-id="DpYCAbglTRzNorNZExKzxj"><strong data-page-node-id="HFkAvgw2chtirlPBm3VbB9">主力资金流与龙虎榜都是"统计/滞后"数据</strong>，主力可对倒、可拆单伪装，需结合筹码峰与股价结构交叉验证。</li>
+      <li data-page-node-id="EroazzbQ5Wz0XlmDr2Rmlr"><strong data-page-node-id="stN9eC3F8xhw9qB3MglVkq">阈值需按股性调整</strong>：小盘题材股换手天然高于大盘蓝筹；游资主导的票不适用"机构席位"逻辑。</li>
+      <li data-page-node-id="fqinvHy0RTbHIi9r1H2Rlo"><strong data-page-node-id="6jm3MPQfS1e3uLzWQcCPp7">周期优先</strong>：周线判定方向，日线择时。日线信号与周线矛盾时以周线为准。</li>
+    </ul></div>
+  </div>
+
+  <div class="disclaimer" data-page-node-id="2Ox76bS27ROEAL7nLJCjSD">
+    <strong data-page-node-id="D4fcmdnwLn8b0UFicQ688Z">免责声明：</strong>以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。文中涉及的个股仅用于演示四阶段量化指标的识别方法，不构成任何买卖建议。文中阈值为A股经验参考值，需结合个股股性、市值与行业属性调整，不可机械套用。数据来源于 westock-data、agentic_search、财联社、东方财富等，截至 2026-09-10，部分为盘中快照，收盘数据可能略有差异。
+  </div>
+
+</div>
+<script>
+(function() {
+  var c1 = echarts.init(document.getElementById('chart1'));
+  c1.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'cross' } },
+    legend: { data: ['收盘价', '成交额'], top: 5 },
+    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+    xAxis: { type: 'category', data: ['8/28','8/31','9/1','9/2','9/3','9/4','9/7','9/8','9/9','9/10'], axisLabel: { fontSize: 11 } },
+    yAxis: [
+      { type: 'value', name: '价格(元)', scale: true },
+      { type: 'value', name: '成交额(亿)' }
+    ],
+    series: [
+      {
+        name: '成交额', type: 'bar', yAxisIndex: 1,
+        data: [73.4, 61.0, 51.8, 37.8, 37.8, 56.3, 96.1, 87.2, 61.0, 33.6],
+        itemStyle: { color: '#B5D4F4' },
+        markArea: {
+          silent: true,
+          itemStyle: { color: 'rgba(136,135,128,0.15)' },
+          data: [[{ xAxis: '9/1', name: '缩量洗盘' }, { xAxis: '9/4' }]]
+        }
+      },
+      {
+        name: '收盘价', type: 'line', yAxisIndex: 0,
+        data: [121.70, 124.91, 120.72, 118.39, 116.42, 111.50, 122.65, 124.90, 127.55, 128.91],
+        lineStyle: { color: '#c62828', width: 2.5 },
+        itemStyle: { color: '#c62828' },
+        markPoint: {
+          data: [{ coord: ['9/7', 122.65], value: '放量启动', itemStyle: { color: '#c62828' } }]
+        }
+      }
+    ]
+  });
+
+  var c2 = echarts.init(document.getElementById('chart2'));
+  c2.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['当日', '5日', '10日', '20日'], top: 5 },
+    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+    xAxis: { type: 'category', data: ['中际旭创\n300308', '沪电股份\n002463', '兆易创新\n603986', '敦煌种业\n600354'], axisLabel: { fontSize: 11 } },
+    yAxis: { type: 'value', name: '主力净流入(亿元)' },
+    series: [
+      { name: '当日', type: 'bar', data: [-9.07, 3.36, 0.95, -0.43], itemStyle: { color: '#c62828' }, label: { show: true, position: 'top', fontSize: 10, formatter: '{c}' } },
+      { name: '5日', type: 'bar', data: [76.94, 4.63, -18.15, 1.81], itemStyle: { color: '#e65100' }, label: { show: true, position: 'top', fontSize: 10, formatter: '{c}' } },
+      { name: '10日', type: 'bar', data: [49.03, 10.81, -33.95, 2.20], itemStyle: { color: '#185FA5' }, label: { show: true, position: 'top', fontSize: 10, formatter: '{c}' } },
+      { name: '20日', type: 'bar', data: [-52.28, 1.54, -112.12, 4.02], itemStyle: { color: '#5d4037' }, label: { show: true, position: 'top', fontSize: 10, formatter: '{c}' } }
+    ]
+  });
+
+  window.addEventListener('resize', function() { c1.resize(); c2.resize(); });
+})();
+</script>
+</body>
+</html>

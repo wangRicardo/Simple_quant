@@ -1,0 +1,10 @@
+# 运行时产物与本地缓存
+.cache/
+dragon/__pycache__/
+*.pyc
+
+# WorkBuddy 工作区元数据
+.workbuddy/
+
+# 生成物：site/ 为每日自动重建的看板，可按需取消注释以纳入版本控制
+# site/

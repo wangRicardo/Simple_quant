@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="YSHssE6DzZRQhFfgz1NLDv">
+<head data-page-node-id="mJ5g8HXltIrKqCtd4OpHVV">
+<meta charset="UTF-8" data-page-node-id="uv69mZdGNLyGFBcjRGJxbi">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="erYVjf1YiyltwoW293jkOc">
+<title>龙头战法深度分析报告 | 2026-09-09</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif; background: #f5f7fa; color: #1a1a2e; line-height: 1.7; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 20px; }
+  h1 { font-size: 26px; font-weight: 800; margin-bottom: 4px; color: #1a1a2e; }
+  .subtitle { font-size: 14px; color: #666; margin-bottom: 20px; }
+  .source-tag { font-size: 12px; color: #999; background: #f0f0f0; padding: 2px 8px; border-radius: 3px; margin-left: 6px; }
+
+  /* TL;DR Card */
+  .tldr { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; padding: 24px 28px; border-radius: 12px; margin-bottom: 24px; }
+  .tldr h2 { font-size: 18px; margin-bottom: 10px; font-weight: 700; }
+  .tldr p { font-size: 14px; line-height: 1.8; opacity: 0.95; }
+  .tldr .highlight { background: rgba(255,255,255,0.2); padding: 1px 6px; border-radius: 4px; font-weight: 600; }
+
+  /* Section */
+  .section { background: #fff; border-radius: 12px; padding: 24px 28px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .section h2 { font-size: 20px; font-weight: 700; color: #1a1a2e; margin-bottom: 16px; border-left: 4px solid #667eea; padding-left: 12px; }
+  .section h3 { font-size: 16px; font-weight: 600; color: #2d2d44; margin: 16px 0 8px; }
+  .section p { font-size: 14px; color: #333; margin-bottom: 8px; }
+  .section ul, .section ol { margin-left: 20px; margin-bottom: 10px; }
+  .section li { font-size: 14px; color: #333; margin-bottom: 4px; }
+
+  /* Method Card */
+  .method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .method-card { background: #f8f9fc; border: 1px solid #e8ecf3; border-radius: 8px; padding: 14px; }
+  .method-card .label { font-size: 12px; color: #667eea; font-weight: 600; margin-bottom: 6px; }
+  .method-card .desc { font-size: 13px; color: #555; line-height: 1.6; }
+
+  /* Stage Flow */
+  .stage-flow { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0; }
+  .stage-item { flex: 1; min-width: 100px; text-align: center; padding: 10px 6px; border-radius: 8px; font-size: 12px; font-weight: 600; }
+  .stage-1 { background: #e3f2fd; color: #1565c0; }
+  .stage-2 { background: #e8f5e9; color: #2e7d32; }
+  .stage-3 { background: #fff3e0; color: #e65100; }
+  .stage-4 { background: #fce4ec; color: #c62828; }
+  .stage-5 { background: #f3e5f5; color: #6a1b9a; }
+  .stage-6 { background: #efebe9; color: #4e342e; }
+  .stage-current { box-shadow: 0 0 0 3px #667eea; }
+
+  /* Stock Card */
+  .stock-card { border: 1px solid #e8ecf3; border-radius: 10px; padding: 18px 20px; margin-bottom: 14px; background: #fff; transition: box-shadow 0.2s; }
+  .stock-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .stock-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .stock-name { font-size: 17px; font-weight: 700; color: #1a1a2e; }
+  .stock-code { font-size: 13px; color: #888; margin-left: 8px; }
+  .stock-tag { font-size: 11px; padding: 2px 8px; border-radius: 10px; font-weight: 600; }
+  .tag-strong { background: #ffebee; color: #c62828; }
+  .tag-medium { background: #fff3e0; color: #e65100; }
+  .tag-watch { background: #e3f2fd; color: #1565c0; }
+  .tag-risk { background: #efebe9; color: #5d4037; }
+  .stock-body { font-size: 13px; color: #444; line-height: 1.8; }
+  .stock-body strong { color: #1a1a2e; }
+  .stock-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+  .metric { background: #f8f9fc; border-radius: 6px; padding: 4px 10px; font-size: 12px; color: #555; }
+  .metric .val { font-weight: 700; color: #1a1a2e; }
+  .red { color: #c62828; font-weight: 700; }
+  .green { color: #2e7d32; font-weight: 700; }
+
+  /* Table */
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13px; }
+  th { background: #667eea; color: #fff; padding: 8px 10px; text-align: center; font-weight: 600; }
+  td { padding: 7px 10px; border-bottom: 1px solid #eee; text-align: center; color: #333; }
+  tr:nth-child(even) { background: #f8f9fc; }
+
+  /* Risk Box */
+  .risk-box { background: #fff8e1; border: 1px solid #ffe082; border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
+  .risk-box h4 { color: #e65100; font-size: 14px; margin-bottom: 6px; }
+
+  /* Disclaimer */
+  .disclaimer { background: #f5f5f5; border-radius: 8px; padding: 16px 20px; margin-top: 20px; font-size: 13px; color: #666; line-height: 1.8; border: 1px solid #e0e0e0; }
+  .disclaimer strong { color: #333; }
+
+  /* Chart container */
+  .chart-box { background: #fff; border-radius: 8px; padding: 16px; margin: 12px 0; }
+  .chart-title { font-size: 14px; font-weight: 600; color: #333; margin-bottom: 8px; }
+
+  /* Leader assessment grid */
+  .assess-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 10px 0; }
+  .assess-item { background: #f8f9fc; border-radius: 8px; padding: 10px 14px; text-align: center; }
+  .assess-item .score { font-size: 24px; font-weight: 800; }
+  .assess-item .label { font-size: 12px; color: #888; margin-top: 4px; }
+  .score-high { color: #c62828; }
+  .score-mid { color: #e65100; }
+  .score-low { color: #1565c0; }
+
+  @media (max-width: 640px) {
+    .method-grid { grid-template-columns: 1fr; }
+    .stage-item { min-width: 80px; font-size: 11px; }
+  }
+</style>
+</head>
+<body data-page-node-id="pQvEjT3IwOANiXssyBsY5Q">
+<div class="container" data-page-node-id="LD14MNd655hq5BEN1yQQFj">
+
+  <h1 data-page-node-id="tEaQKA5dSZhgerLVn2OTAT">龙头战法深度分析报告</h1>
+  <div class="subtitle" data-page-node-id="4XlWH1u7zOGEUzw5BeZoWS">分析日期：2026-09-09 | 数据来源：westock-data、agentic_search、WebSearch（财联社/证券时报/同花顺/东方财富等）<span class="source-tag" data-page-node-id="29I85EESRBlvAodIym0ahb">A股</span></div>
+
+  <!-- TL;DR -->
+  <div class="tldr" data-page-node-id="irAhPl7X252CBkkyjHvSui">
+    <h2 data-page-node-id="gUAOf2OI0YYOS7mu3z3J3I">核心结论 (TL;DR)</h2>
+    <p data-page-node-id="FaRMokVppeLCjfWPDc8RWN">当前A股处于<strong data-page-node-id="ECC9YZKfqcvRIrXTwHmBRH">情绪拐点确认后的震荡分歧期</strong>：9/7算力硬件链全面爆发（94涨停）确认情绪反转，但9/9缩量分化（48涨停27炸板、超3600只下跌）显示短线接力降温。<span class="highlight" data-page-node-id="1C6ogPKK32ThCR4fiNccen">龙版传媒停牌核查 → 换手人气总龙头空缺</span>，市场进入"龙空龙"的"候"位——旧龙停牌、新龙孕育中。</p>
+    <p data-page-node-id="KTiaCKyKEQzO7BducouDPp">基于龙头战法框架，<strong data-page-node-id="Hp2Ec2L3fsrNEHsVozW0gD">产业逻辑+机构共振</strong>的真龙（中际旭创/沪电股份/兆易创新）比纯情绪连板妖股（敦煌种业/百大集团）更具持续性。重点关注AI算力硬件链回调后的二次启动、存储半导体超跌修复、以及航运港口新题材的延续性。</p>
+  </div>
+
+  <!-- Section 1: 龙头战法方法论 -->
+  <div class="section" data-page-node-id="KjLUeNHwc9FxjK8rA7sVYO">
+    <h2 data-page-node-id="Seh7ykEmRlPW8jCNHz7n4M">一、龙头战法核心方法论</h2>
+    <p data-page-node-id="wIbisYIURiluRL9tkyZqeX">龙头战法是A股短线交易中最具辨识度的策略体系，核心逻辑：<strong data-page-node-id="zVOaUsBUnbwuuuXJhVmccj">每一轮行情中，涨幅最大、辨识度最高、带动板块效应最强的标的即为"龙头"</strong>。做龙头不是追涨停，而是在正确的时间、正确的位置、介入正确地位的那只标的。</p>
+
+    <h3 data-page-node-id="FMfdJSukejdJxnHDIvJFlh">1. 真龙头的五大特征</h3>
+    <div class="method-grid" data-page-node-id="frMnLjxp6BAOUzsmoaDqRe">
+      <div class="method-card" data-page-node-id="3VXvILH2U0roUG5ZZ0MV0P">
+        <div class="label" data-page-node-id="1MJWXxgkSlb9Ao420bjeQE">① 人气最旺</div>
+        <div class="desc" data-page-node-id="bmDrj0EgBzJ8HWNc4RrfaA">全市场关注度最高，涨停时讨论度炸裂，资金记忆最强。不是冷门股突然涨停，而是"人人都知道它强"。</div>
+      </div>
+      <div class="method-card" data-page-node-id="EvZJ5GRMC5Cljx0nxhnJcX">
+        <div class="label" data-page-node-id="SBTKiDPQORhbvKqL65n5bO">② 题材硬</div>
+        <div class="desc" data-page-node-id="Fc2jAuejEHKSzgrskMQUeP">有扎实的产业逻辑或政策催化支撑，而非纯筹码博弈。产业逻辑+机构共振的龙头持续性远超纯游资题材（3-5天 vs 数周数月）。</div>
+      </div>
+      <div class="method-card" data-page-node-id="QdIq5SkxPtG4sJjxzZ0s6R">
+        <div class="label" data-page-node-id="EWTI2Er3vzdxVH0WSILz5R">③ 换手充分</div>
+        <div class="desc" data-page-node-id="mwH4NegmepQO79TfARS0Db">每天都能参与，换手率健康（通常5%-20%），而非一字板"吃独食"（换手<5%）买不到、开板即杀。充分换手=合力而非独食。</div>
+      </div>
+      <div class="method-card" data-page-node-id="2dJaj4mQFlox3aCFVd7YQF">
+        <div class="label" data-page-node-id="Ros95gW5XUIIeaSJgI7yaW">④ 走势流畅</div>
+        <div class="desc" data-page-node-id="2jEhlFZ0BEbp7QOAcaDSBO">K线形态干净利落，连板或趋势上行节奏清晰，回踩有承接、新高有力度，不是冲高回落、上影线频出的走势。</div>
+      </div>
+      <div class="method-card" style="grid-column: 1 / -1;" data-page-node-id="giyetPicOtiH149GRAvlmQ">
+        <div class="label" data-page-node-id="98DTQ3c9Dp3Fntv91eDuHl">⑤ 带动力强</div>
+        <div class="desc" data-page-node-id="YHYyN4i2uD0ZwpTFIoEVbu">龙头涨停时，同板块跟风股批量上涨/涨停，形成完整的连板梯队（首板→2板→3板→空间板）。没有板块效应的独涨是"孤板杂毛"，几乎没有持续性。</div>
+      </div>
+    </div>
+
+    <h3 data-page-node-id="LQpHM0lxW2FPs76WubBw0w">2. 题材生命周期六阶段</h3>
+    <div class="stage-flow" data-page-node-id="sXhBDQUmotHv7t6PMMre18">
+      <div class="stage-item stage-1" data-page-node-id="48iBih1Ot11KdZ8FRWx2CQ">预热期<br data-page-node-id="0ChplGMDH5kPvaUrAWtgdP"><span style="font-size:11px;font-weight:400" data-page-node-id="iYoxyPyscACddwAAjP9RkU">少数先动·板块未成</span></div>
+      <div class="stage-item stage-2 stage-current" data-page-node-id="WldVyMXuGKWcewLB8Ic5zw">启动期<br data-page-node-id="HbCEQLGU1yAB3k0rlSisjD"><span style="font-size:11px;font-weight:400" data-page-node-id="fOSEEHnwORFX3i4n8ltI13">龙头出现·涨停扩散</span></div>
+      <div class="stage-item stage-3" data-page-node-id="pmhSjPGMFLXfPRyFrSRIMV">发酵期<br data-page-node-id="iEVL7QxHVG83ZcZk9FxH1N"><span style="font-size:11px;font-weight:400" data-page-node-id="MPu9AxESjUtDGcYkEIm7V5">连板上升·中军跟量</span></div>
+      <div class="stage-item stage-4" data-page-node-id="Z0UVXAatZywCQCxZOfpHm7">高潮期<br data-page-node-id="1bm8mBN6YXC106rjAJfAaS"><span style="font-size:11px;font-weight:400" data-page-node-id="6kaakD5nABvl5Nc48mPHUP">高度极致·跟风普涨</span></div>
+      <div class="stage-item stage-5" data-page-node-id="iqAT1tDxJ9ZPFAOIecYguZ">分歧期<br data-page-node-id="oZdXDye5CjjWW9S4mFDcFI"><span style="font-size:11px;font-weight:400" data-page-node-id="Ej9kFM5R0wkwnBDHA2RSIK">龙头分歧·补涨掉队</span></div>
+      <div class="stage-item stage-6" data-page-node-id="ATwhdMAxfRVYj6EGzBL0uX">退潮期<br data-page-node-id="8aMOhbCxN1LROtKe9kL5ce"><span style="font-size:11px;font-weight:400" data-page-node-id="3EwrRdxUEjdNFx9sytDHH5">龙头跌停·连板减少</span></div>
+    </div>
+    <p style="font-size:12px;color:#888;margin-top:4px;" data-page-node-id="FnmEll2qYDjLbDgurV17HR">当前多板块处于"启动期→发酵期"交界，AI算力硬件9/7爆发后9/9进入分歧，农业处于发酵期中段，存储半导体处于超跌修复预热期。蓝框标注为当前重点跟踪阶段。</p>
+
+    <h3 data-page-node-id="3UqA3x3bzOizvybPZahcfz">3. 阶段匹配策略</h3>
+    <table data-page-node-id="SXakoLW0jVsuMYSjGVzrLz">
+      <tr data-page-node-id="LwxpP7yuZi5XXyaSv950wq"><th data-page-node-id="eXfgczruHRyNAdk22Jrh3I">阶段</th><th data-page-node-id="Dcel0fYckxOc3W6BUt14lb">核心策略</th><th data-page-node-id="jZA74XZZdC9Rt7Fe80ByZl">仓位</th><th data-page-node-id="oIlhPKpJAULHbLLbUumiVF">风险提示</th></tr>
+      <tr data-page-node-id="bCkCm8WVkcWhtW8EGCVaQ6"><td data-page-node-id="qjggfWKMZXuCNTwnoQfkZu">预热期</td><td data-page-node-id="vQBo1d03KG3kdvAGlNnOUW">小仓试错，跟踪辨识度</td><td data-page-node-id="yeoj1oWJPZWu5rcawSjFpb">10-20%</td><td data-page-node-id="Mzi8JOwK4I3j6u00wCuIkc">题材可能不发酵</td></tr>
+      <tr data-page-node-id="i1YHbsVb0sAuoQt0ORx2Wf"><td data-page-node-id="VnghgzDzfSARQze0x4eZm8">启动期</td><td data-page-node-id="BiLxrfwLyQ1bq01u3pBK8v">追龙头首板/2板确认</td><td data-page-node-id="74qyl5VyJrJ6HEssrf9MQh">30-50%</td><td data-page-node-id="aDRnUboP5fD0DqmthEzayN">需确认板块跟风</td></tr>
+      <tr data-page-node-id="kTXTc4HZGUbgQBLUwgBhen"><td data-page-node-id="ikFao6RtEUWIxApK7Qob22">发酵期</td><td data-page-node-id="S9x2lBTHp95Uvk3bA6GN1D">分歧低吸+加中军</td><td data-page-node-id="ZbauyrB0WtIkqGiBGM6jsp">50-70%</td><td data-page-node-id="zRuzEImRqP7u9tdeFOSQSA">中位股大面风险</td></tr>
+      <tr data-page-node-id="hPxLGXeN9bbwWwqDG9JfzB"><td data-page-node-id="6ZCcaqvcSj96IEI0qYi6y3">高潮期</td><td data-page-node-id="EkeSzhqAPG617W3JD4UECr">只看龙头/开始减仓</td><td data-page-node-id="f7EA0rFdR6MKijzKF0rRyp">降至30%</td><td data-page-node-id="dYfOfhovBghoennvvCpmj8">追高赔率最差</td></tr>
+      <tr data-page-node-id="fIYgIRHxjVcraokPzQq7eS"><td data-page-node-id="kBYvnzeMpdD0iNrTVOwEI7">分歧期</td><td data-page-node-id="lvgiSpxVQpCmIUUU0AsWH7">观望，看新一轮一致性</td><td data-page-node-id="kPRLLp15EnwcYVTG9eCxtr">10-20%</td><td data-page-node-id="mVoWDL6j0CHnTnBpp6BMpj">补涨股加速掉队</td></tr>
+      <tr data-page-node-id="3icGZRj9KdQy9QucWrUiSB"><td data-page-node-id="kf5zvjh3ntbcGdljZnwjmo">退潮期</td><td data-page-node-id="P4DwHj05KybTcQSlNqVrqU">回避，看调整后反包</td><td data-page-node-id="laLWiQou61N1YeiCCRQIya">空仓或极轻</td><td data-page-node-id="inYVQPoO7QYtWIzJzJBDn3">龙头跌停风险</td></tr>
+    </table>
+  </div>
+
+  <!-- Section 2: 市场情绪判断 -->
+  <div class="section" data-page-node-id="Bt6nhn5bqrD2gWEK5h2ZGO">
+    <h2 data-page-node-id="HTvhgIDeH4VGf9ADwXEKPb">二、当前市场情绪周期判断（截至2026-09-09）</h2>
+
+    <h3 data-page-node-id="CwyS0xBIplAV7kdxBNCG3f">近三日情绪演变</h3>
+    <table data-page-node-id="P9WeaBlwwd5Gh9GISzljsX">
+      <tr data-page-node-id="NsYyrwExkH4L3sphZ0OGBL"><th data-page-node-id="2djWoo4hbjWOxq0E8WayDc">日期</th><th data-page-node-id="ep100kLrhVRilOWhAbJxPv">涨停/炸板</th><th data-page-node-id="AYtjhEuCr0hRvQ3oAITCSN">跌停</th><th data-page-node-id="RODCSTKxx000WhOWzwLdfN">成交额</th><th data-page-node-id="5WhJkiJuctZaA4wF2qMBoe">主线</th><th data-page-node-id="tzoHWHCmhrp9Pkkd9tSvDJ">情绪定位</th></tr>
+      <tr data-page-node-id="fwk3AbaW58iDUNokp02IMY"><td data-page-node-id="JFksBRtpr2hsVAZPH0dXz3">9/7（周日复盘基准）</td><td class="red" data-page-node-id="55RDTFveAqEEmm1vY9M4Gn">94涨停</td><td class="green" data-page-node-id="JERC7wiOIyWeI926DgUUqv">2</td><td data-page-node-id="SiDnaOxvLXICCCsQmPWqQL">1.95万亿</td><td data-page-node-id="XL19cRCzRkgzIqcbTq20ow">AI算力硬件链全面爆发</td><td data-page-node-id="lj4EzpBnSreEioMOE4vDDO"><strong data-page-node-id="yKxdIp1VElAqLeFD3I7AqO">冰点→分歧转强 拐点确认</strong></td></tr>
+      <tr data-page-node-id="DCKNs7BKb2wTVQPxdK8sWB"><td data-page-node-id="LYW32P5fILc37vjIgG1jsA">9/8</td><td data-page-node-id="3sbx00Y07aawLz98UGVJBE">—</td><td data-page-node-id="YrxO9FuDbQJgP6WgpjECwf">—</td><td data-page-node-id="HjdRHjtRsgeWlfVYqiFc6Q">—</td><td data-page-node-id="aGdrVwrnh0OZZ7GI5ghLLf">内部分化加剧</td><td data-page-node-id="sBZrtt0oJEHsMwjifzrVzh">分化调整</td></tr>
+      <tr data-page-node-id="m8A9VFD8g0m7XYbhPfhTVw"><td data-page-node-id="uKVL5P2ylZEmpPk06WZFgN">9/9（今日）</td><td class="red" data-page-node-id="d93UYV5NYGsiiNxTeENCyj">48涨停 / 27炸板</td><td class="green" data-page-node-id="kxwoX7e6yZPsVTQj4uzj4v">7</td><td data-page-node-id="jt42uWPKkQvuXlymiOiT40">1.86万亿（缩量1047亿）</td><td data-page-node-id="3YHSJh4r1ln9mbfMmS1pkB">农业领涨、科技分化</td><td data-page-node-id="rucct9docKYOP3LeI6PK4m"><strong data-page-node-id="OHBGW75RsizbyRna6f62mC">缩量分歧·接力降温</strong></td></tr>
+    </table>
+    <p style="font-size:12px;color:#999;" data-page-node-id="JVkXCpqTfj6ZxswsU52EqG">数据来源：财联社9月9日市场综述、网易涨跌停分析。截至2026-09-09收盘。</p>
+
+    <h3 data-page-node-id="ad7TO4IeXyeEvjtBNvyyyF">核心情绪信号</h3>
+    <ul data-page-node-id="hWWQUTlOuABgoI1XAEhFAr">
+      <li data-page-node-id="Gws3NmDtBEiviUNzHeFjNr"><strong data-page-node-id="GzxFE8bHXDzBQoL0Bm5PNv">龙版传媒（605577）停牌核查</strong>：6连板高度龙头停牌，直接冲击短线接力情绪，连板高度骤降至5板（百大集团）。高度空缺=情绪退潮信号。</li>
+      <li data-page-node-id="mkRM2GOmVhDjriwh36Jb6b"><strong data-page-node-id="8xQpsEqXHhyxoEBIjJhMrD">连板晋级率仅27.77%</strong>：昨日连板股晋级率大幅下降，中位股（3-4板）最易大面，断层严重。</li>
+      <li data-page-node-id="yA2R8GDKm8OUfwDmCi3MM0"><strong data-page-node-id="S1MqHszUZTQKj4RpNLySux">超3600只个股下跌</strong>：虽然涨停48家，但赚钱效应并未扩散，资金"弃高就低"特征明显。</li>
+      <li data-page-node-id="T7iiVGwezbekAF0OggDGb7"><strong data-page-node-id="OitroqmSCUXA2YvsuiySO2">农业与科技跷跷板</strong>：盘中农业板块与科技股多次此消彼长，属于典型的震荡筑底与热点高低切换阶段。</li>
+      <li data-page-node-id="PAaBgiqzRfxAgUltNCEffo"><strong data-page-node-id="Hofn5hwn63LzE5Ew6nSBzk">换手人气总龙头空缺</strong>：龙版传媒独食停牌、百大集团纯情绪5板、AI硬件链龙头未确立——市场处于"龙空龙"的"候"位。</li>
+    </ul>
+
+    <div class="risk-box" data-page-node-id="9oDkDp4l6vnOYrBtbqj14P">
+      <h4 data-page-node-id="XrKrqpPCZBBF2LBrjOPLji">情绪周期定位</h4>
+      <p data-page-node-id="q5Ky71SebB6iGyKlyrAuGL">当前处于<strong data-page-node-id="PDcYaqNbDd0XjGpobSG3wG">"冰点→分歧转强"拐点后的缩量分歧阶段</strong>。9/7的爆发确认了情绪反转，但9/9的缩量+炸板率高+高度龙头停牌，说明短线接力热情下降。<strong data-page-node-id="D9TAQH3WhEkVhJUAGeKpc9">正确姿势：不追高位独食板、不打弱封板、以低吸分歧承接为主，等待新主线龙头确认后再加仓。</strong></p>
+    </div>
+  </div>
+
+  <!-- Section 3: 板块龙头全景 -->
+  <div class="section" data-page-node-id="1tfEVxdCjANkKw8EEXEvGP">
+    <h2 data-page-node-id="GFWQJzgNpR5FCUUkWy2nBy">三、四大主线板块龙头全景</h2>
+
+    <h3 data-page-node-id="g1Hsth8SCcGzvnciI3YEf8">第一主线：AI算力硬件链（产业逻辑最硬·机构+游资共振）</h3>
+    <p data-page-node-id="4lie9HiRoQfyGHxHHNqQMv">9/7主力净流入超<strong data-page-node-id="zksUxuP5TBVe9xqcPq1WGv">3000亿</strong>（芯片+649亿、CPO+497亿、5G+474亿、数据中心+448亿），是机构资金主导的产业趋势行情，而非纯游资题材炒作。9/9分化后，前排龙头仍是核心跟踪标的。</p>
+    <table data-page-node-id="GTq2zecqjFgHmSxXyTCb7L">
+      <tr data-page-node-id="U3qrsXMcUIcENrI2SNdzSL"><th data-page-node-id="wQBAD4X8699DkvsCd8JFFR">标的</th><th data-page-node-id="J82LBXkRBxun1IORbI6UwG">代码</th><th data-page-node-id="F1sDS3susOkGCIB3bAXmKg">9/7表现</th><th data-page-node-id="8D5emIPe45MHB5Qq364SLr">龙头定位</th><th data-page-node-id="DRIoUGrre7MRn2ENRC7PzD">龙头气质</th></tr>
+      <tr data-page-node-id="Yl18ReF4nvw8AAEuqlfLYc"><td data-page-node-id="Ha2K7Ag9a5aOe9FZc5DOp8">中际旭创</td><td data-page-node-id="dqdVkQqVxj6nesXRrjKRx1">300308</td><td class="red" data-page-node-id="9qHDEOgnoqnTanOremOcM5">+10.38%</td><td data-page-node-id="BvDADZkYw3esMPXTLZL1BO">CPO总龙头·万亿市值</td><td data-page-node-id="0OVLxHnKES3T9RB2L7MXWa">产业逻辑最硬·机构重仓</td></tr>
+      <tr data-page-node-id="XNfuwkG2aBAzJuQnsEYl20"><td data-page-node-id="nleT9eXUIOrBxCZt0dDZIl">沪电股份</td><td data-page-node-id="Q2UMbVAe7Brc5HfIizQfGL">002463</td><td class="red" data-page-node-id="DYwMMyXwc3py8xCadzyr8S">涨停</td><td data-page-node-id="IFDvAoMJ4B3bNYnaOHoNut">PCB龙头·2000亿市值</td><td data-page-node-id="lXFHqV94mYcNfKV3arnNEu">业绩兑现·机构重仓</td></tr>
+      <tr data-page-node-id="vZ1LT1Fg1Zs5CEfbT0P7SA"><td data-page-node-id="YBHRNBslnW30CamC3SI0G0">剑桥科技</td><td data-page-node-id="36B7aI3mp9trJ8nN6jwm00">603083</td><td class="red" data-page-node-id="OAmRMCAeE08qx8meoBtuYf">涨停</td><td data-page-node-id="rrfA7akKNe77EqSQM7J4ji">光模块人气妖股</td><td data-page-node-id="u5IGt52uK5boLSgPwqdXcD">封单6.31亿最强</td></tr>
+      <tr data-page-node-id="AcIX4BLQ1c17XnpErqF9BG"><td data-page-node-id="BQXqLGyPk6MgB6JeHnXVQ0">光迅科技</td><td data-page-node-id="0qqs5SvfUKni6inCT8YI4d">002281</td><td class="red" data-page-node-id="q0B7lIRM3KYHR1ahjg9lvC">涨停</td><td data-page-node-id="ACp5YAQzUogv3ubTZMx5VF">CPO核心·央企</td><td data-page-node-id="qDZhmpMixoEXgURDFsWM44">1.6T光模块</td></tr>
+      <tr data-page-node-id="LIqHqczh1CPeRIeEBxL13W"><td data-page-node-id="glLDTiYCLMrgTPq8COQgpR">新易盛</td><td data-page-node-id="0DVkC0velHvYkSo8UipeO9">300502</td><td data-page-node-id="Wb0BygOgy676qtunED7HU4">+8%未涨停</td><td data-page-node-id="jtR73diRck9wiFfOas7r3a">CPO核心中军</td><td data-page-node-id="EHD87aO74gVPPt2g9naMeM">趋势健康·分歧低吸标的</td></tr>
+      <tr data-page-node-id="FGqbmGzXZ7kzz5pL91jZSY"><td data-page-node-id="sELCgugY9JtbCiDCQBwcey">天孚通信</td><td data-page-node-id="Y5RSKuGHF8VNqp5mquGJO6">300394</td><td data-page-node-id="t5mhskOaTMfsZOkeFnw5dR">+7%未涨停</td><td data-page-node-id="Scquj8MUKwXiW9Bdztpdu6">光器件"卖水人"</td><td data-page-node-id="Pn64mQTphApx4eSetKXnMl">净利率42.6%·最稳健</td></tr>
+    </table>
+
+    <h3 data-page-node-id="jWN7vf61jipXF0nRU77BFf">第二主线：农业养殖/种业（防御+周期反转·趋势型）</h3>
+    <p data-page-node-id="ZmSfPyahIVp853wmpXlS1w">能繁母猪存栏降至3780万头（距政策目标仅差0.8%），去化加速；超强厄尔尼诺确认形成，全球食品价格指数创2022年来新高。板块以趋势反复新高为主，不靠连板妖股爆发。</p>
+    <table data-page-node-id="j8bPnuO0xi4EFz3jbfmKbi">
+      <tr data-page-node-id="lMxNPS7Zbs9vqW1TYovQzK"><th data-page-node-id="E4eJPggG3F9JxfOUjjqyQZ">标的</th><th data-page-node-id="rx0x5bIDUoKqGqJUEQRwDB">代码</th><th data-page-node-id="MOnFkILR4QhAG6Bgc6CvWj">板数</th><th data-page-node-id="PTjkeMTsSAbLqn98nZ8yVF">定位</th><th data-page-node-id="vm0WyaSSpzxDpeM6GvFbeP">风险提示</th></tr>
+      <tr data-page-node-id="t2NkOaVwU86kkKf4KtXcJB"><td data-page-node-id="MsurMjupuKIQCdkFmKk5kD">亚盛集团</td><td data-page-node-id="lUL6AL70hjgQ3wEjL9gDqB">600108</td><td class="red" data-page-node-id="EnwOB8xhF9ivePOwvJl2VC">4连板/9天5板</td><td data-page-node-id="TgTB4tWOUH2ti1CC1TTEQC">种业主线最高板</td><td data-page-node-id="asGO4wZVDDOUt2PyRVFXHW">5板分歧考验·放量炸板风险</td></tr>
+      <tr data-page-node-id="NdzRTUjJBz8zCDuYANFiYE"><td data-page-node-id="H6777kMGS8MLXnujLOLBdB">敦煌种业</td><td data-page-node-id="WfW3z82QNWCyoKnH1huakt">600354</td><td class="red" data-page-node-id="ZXOmLntOUChCeDcYID2GKl">8天5板</td><td data-page-node-id="6Q8HXcU5k4ZXo9Hb5Xp8OU">种业·业绩预增157%</td><td data-page-node-id="vI4yl7HqDIByNAuP6c2FFI">换手率45.5%·公司已两次风险提示</td></tr>
+      <tr data-page-node-id="vRrapA7IO4N7oszuDffIZe"><td data-page-node-id="8dEFvW3fSSjX6YAm8FrQF2">百大集团</td><td data-page-node-id="JePeHjplm7wgCHoBZzJKLk">600865</td><td class="red" data-page-node-id="Q9bDqz1zypqM2WTVpFtZpd">5连板</td><td data-page-node-id="eVoQGsbVuFQudqobEGALzV">零售新高度龙</td><td data-page-node-id="5wMtdG7GClMjJvN3FcARc0">纯情绪·筹码博弈</td></tr>
+      <tr data-page-node-id="3N4EZtZlbz2WxQhO9vswR0"><td data-page-node-id="XS7LETxsfdHsD4iXfHDDvl">金正大</td><td data-page-node-id="8a6SxpluIgQFvrs4oVUI28">002470</td><td class="red" data-page-node-id="v3WPF3uTDwiBgM1zEaGS2T">3连板/7天4板</td><td data-page-node-id="qRsacHKrdLa1GzVzdmiGJG">化肥·磷肥增长</td><td data-page-node-id="fNZPlfYOP5o2TQ13eRYgh1">高位透支</td></tr>
+    </table>
+    <p style="font-size:12px;color:#999;" data-page-node-id="O2aKgkI9oax3J2IZeuhBNq">数据来源：同花顺财经、证券时报，截至2026-09-09。</p>
+
+    <h3 data-page-node-id="NjBEuhyyKKmNzyO0AdO2MF">第三主线：存储半导体（超跌修复·周期拐点）</h3>
+    <p data-page-node-id="C9Pd0sueEj61zLCDjqbIbt">行业底部企稳，存储芯片涨价周期+AI算力需求带动，中报业绩爆发。板块暂无高位连板梯队，以中军趋势修复为主。</p>
+
+    <h3 data-page-node-id="18Ap67oLkTERHDfVfxGWnA">第四主线：航运港口（新起·持续性待验证）</h3>
+    <p data-page-node-id="8DBHaxRGj5Xws15CUqIb7l">9/9新起题材，招商轮船、海通发展、南京港涨停。催化：胡塞武装袭沙特设施+业绩预增+西芒杜项目。属于日内脉冲还是能走出持续性需进一步观察。</p>
+  </div>
+
+  <!-- Section 4: 重点推荐 -->
+  <div class="section" data-page-node-id="U0uUFVUkoNK6hFhsGwwih7">
+    <h2 data-page-node-id="S3kkj9B6AJcfvESNv3Arej">四、重点推荐：比较可能启动的行业龙头</h2>
+    <p data-page-node-id="zZ4YB2WQvHsLbhy28wl1YE">以下基于龙头战法框架，从"产业逻辑扎实度+交易位置+催化连续性+资金参与度"四个维度筛选，给出当前市场中最值得跟踪的潜在启动标的。<strong data-page-node-id="Bb4y2wwRYKyuftAxDZl5u7">不是推荐买入，而是跟踪观察清单</strong>——每个标的都需等待关键确认信号后才能行动。</p>
+
+    <!-- Stock 1: 中际旭创 -->
+    <div class="stock-card" data-page-node-id="tVC2FGwyZKvXjyHhO4VadJ">
+      <div class="stock-header" data-page-node-id="5cJ8EzVt2D7qupZHnKtUqN">
+        <div data-page-node-id="vomT3TkMRnJSmkkziKe8lP"><span class="stock-name" data-page-node-id="QjAULPJZfrPdA6WFTsj0F9">中际旭创</span><span class="stock-code" data-page-node-id="9xOUzLdhxAHV7oAedYlVh4">300308.SZ</span></div>
+        <span class="stock-tag tag-strong" data-page-node-id="r31P6Rns0fEYPvFTsOv5xN">CPO总龙头 · 超跌反弹中</span>
+      </div>
+      <div class="stock-body" data-page-node-id="CePhEsCHAIdi8YkbKiIs2c">
+        <strong data-page-node-id="s35DUPmM8QDFVGPdnYR9ha">产业逻辑：</strong>全球光模块绝对龙头（市占率28.1%），800G/1.6T硅光模块规模量产，订单已看到2027年。中报营收417.78亿（同比+182.5%），归母净利136.51亿（同比+241.7%），毛利率提升至46.25%。<strong data-page-node-id="q1bE6HHuVj19AUCZAn3XlO">这是A股AI算力链产业逻辑最硬的标的</strong>，机构+游资共同抢筹。<br data-page-node-id="scTFYT5VGrzi600pIWffw2">
+        <strong data-page-node-id="Ou4yC7EbRZKAfbCXHJpfbk">交易位置：</strong>现价908.90元，YTD +49.2%，但近60日-27.2%（从高点1416大幅回撤）。9/7单日+10.38%重回万亿市值后连续反弹，主力近10日净流入+44.5亿。MACD转正上行，但KDJ J值97偏热，中长期均线（MA60=1026）仍空头排列。<br data-page-node-id="roSmzQ2ls4n2sOwrGbaTc8">
+        <strong data-page-node-id="AZBLodTzcJceTKdKDPx2W1">催化：</strong>高盛目标价2645元（A股）、花旗H股目标1524港元、英伟达Rubin平台Q4量产→1.6T渗透率翻倍。<br data-page-node-id="XH2dBG07yr1VN8AgzokxLH">
+        <strong data-page-node-id="8IXOSjbK88uZ9VPi0jb4kM">启动信号：</strong>突破930-950元区间并放量站稳，MA60（1026元）收复则确认中期反转。<br data-page-node-id="BPFRt8fYQrm8KIH9h5tYsq">
+        <strong data-page-node-id="Ve8MhBl3AWB4d5EfQp1AAX">风险：</strong>PE(TTM) 52.3倍估值不低；融资余额318亿处于高位（近一年90%分位），多空分歧大；从"基本面标的"变为"AI信仰载体"后波动放大。
+      </div>
+      <div class="stock-metrics" data-page-node-id="jtkJXkHo95aEtohiZu3cKU">
+        <span class="metric" data-page-node-id="76h9dBItJbEsTw7DKfEkg8">现价：<span class="val" data-page-node-id="J7I0WAkBp2Iy2UbWPgOhUR">908.90</span></span>
+        <span class="metric" data-page-node-id="eIQsVRzWrwWxp0abDOgIcb">PE(TTM)：<span class="val" data-page-node-id="NqSIi437YyASPy3tHHATIJ">52.3</span></span>
+        <span class="metric" data-page-node-id="PTCvvpDGLYuvNw5M94AUQY">中报净利同比：<span class="val red" data-page-node-id="x5DDg6AIUthSaqlk4VZSrl">+241.7%</span></span>
+        <span class="metric" data-page-node-id="zqZwwJVYAdesYI66XyShJz">近10日主力：<span class="val red" data-page-node-id="eRaPQw1OFjX1JZJuCwfmvw">+44.5亿</span></span>
+        <span class="metric" data-page-node-id="pwDKmUpXx2GLRHNkDKdvok">近60日：<span class="val green" data-page-node-id="stF288wgQoCfryx6BWOlcy">-27.2%</span></span>
+      </div>
+    </div>
+
+    <!-- Stock 2: 沪电股份 -->
+    <div class="stock-card" data-page-node-id="QKrBU901UwrH86DzdNZg4T">
+      <div class="stock-header" data-page-node-id="OykejEjf9AUHx6uIC4QM9J">
+        <div data-page-node-id="bJd0dPAJRBrOZW1P2WYFnD"><span class="stock-name" data-page-node-id="mT6xLPQRYWxkzGwy9mTyUf">沪电股份</span><span class="stock-code" data-page-node-id="8xJyT97DnenkONB6564jSe">002463.SZ</span></div>
+        <span class="stock-tag tag-strong" data-page-node-id="Lt1mBJ3abscNWess6j6PGv">PCB龙头 · 高位回调整理</span>
+      </div>
+      <div class="stock-body" data-page-node-id="uQMqbjpmCU3DH2UJB2HsIA">
+        <strong data-page-node-id="DWeePbnYX5Zp87hQatn3cu">产业逻辑：</strong>AI高端PCB龙头，高速交换机/AI服务器高阶PCB量价齐升。覆铜板涨价潮（建滔年内第7份涨价函，松下涨30%），PCB行业景气度持续上行。中报营收136.89亿（+53.8%），归母净利50.63亿（+73.7%），ROE(TTM) 28.14%。224Gbps产品已小批量供货。<br data-page-node-id="wrC3OkOS1H7PXQtefzOUbh">
+        <strong data-page-node-id="hxTfmA3TmmbD1hXXWTvjzW">交易位置：</strong>现价127.55元，YTD +75.8%，近60日-9.3%（高位温和回落）。现价站上MA20（119.97）和MA5（120.60），MACD金叉转正。近10日主力净流入+14.4亿，短期资金回流明显。KDJ J值87偏高但尚未极端。<br data-page-node-id="DEJb1MktFFWHqG4ZRNNfYJ">
+        <strong data-page-node-id="FaGOJ5urKAJd0wYXB34Vgm">催化：</strong>PCB涨价传导+业绩兑现逻辑闭环、AI服务器资本开支持续扩张、新产能释放。<br data-page-node-id="pAYFsLhVoGLyIH2o8QXixL">
+        <strong data-page-node-id="HayORtRcEEyF4OW4lKMhtN">启动信号：</strong>突破130-137元区间（前高137.39）放量站稳，则确认二次启动。缩量回踩MA20不破为健康回调。<br data-page-node-id="9zaUx1kflftyFcb8OIfjgN">
+        <strong data-page-node-id="flYKP7j7yVixKf08JnOZAH">风险：</strong>PE(TTM) 48.5倍估值偏高；资产负债率52.2%（扩张期杠杆偏高）；若AI算力资本开支增速放缓，估值面临消化压力。
+      </div>
+      <div class="stock-metrics" data-page-node-id="Gs7ewX0DMlbizU1mhRAyQ4">
+        <span class="metric" data-page-node-id="MEpNfbqorHWpgmuaBltcnW">现价：<span class="val" data-page-node-id="DAZT0UP5zWiCFBBY10j1t1">127.55</span></span>
+        <span class="metric" data-page-node-id="fVcmnMq8V6Le7MVaQZB6tc">PE(TTM)：<span class="val" data-page-node-id="AwlifJ73xANyYdtq0UFV5v">48.5</span></span>
+        <span class="metric" data-page-node-id="N8v3hck00HgBhJIGGQh0x9">中报净利同比：<span class="val red" data-page-node-id="cpnA5AtH8VcvUrKCQd752W">+73.7%</span></span>
+        <span class="metric" data-page-node-id="JEgh5ScnGyHrGLW1Sxw9LX">近10日主力：<span class="val red" data-page-node-id="zczjowxDXGJKWoMHOHSDgv">+14.4亿</span></span>
+        <span class="metric" data-page-node-id="Dj8bscP5UzUxoPu6dFd5mi">ROE(TTM)：<span class="val" data-page-node-id="QtZsGjs8rI2tYWLDl8q2xw">28.1%</span></span>
+      </div>
+    </div>
+
+    <!-- Stock 3: 兆易创新 -->
+    <div class="stock-card" data-page-node-id="rs4aNBis0TepZgCYqWYfBC">
+      <div class="stock-header" data-page-node-id="8r7SHZCA41Eaz6J1ucE7MX">
+        <div data-page-node-id="i6BODJM9j1BBG4bxI8lHlw"><span class="stock-name" data-page-node-id="dn91VmbMltRO8vWOGmCHl8">兆易创新</span><span class="stock-code" data-page-node-id="bTvjA4gJqj4aTKyyfuhI4M">603986.SH</span></div>
+        <span class="stock-tag tag-medium" data-page-node-id="iG68a2kYmeRb7Q3gdsbb4L">存储MCU龙头 · 超跌修复待启动</span>
+      </div>
+      <div class="stock-body" data-page-node-id="W3CMzyieL0qARW3F0g39aP">
+        <strong data-page-node-id="j5RFIMCVMMRG2InK0H74GG">产业逻辑：</strong>存储芯片+MCU双龙头，受益存储涨价周期+AI算力需求+国产替代。中报营收115.66亿（同比+178.7%），归母净利68.57亿（同比<strong data-page-node-id="VkyLZ9ppXyjKceJzITaM6e">+1091.5%</strong>），毛利率高达63.13%，净利率59.53%。财务极稳健：资产负债率仅11.47%，现金充裕（货币资金+类现金169.6亿）。<br data-page-node-id="ohkOVGU1ycNP52Nduzu2Sm">
+        <strong data-page-node-id="a7bGO2Q7q0STnkDLmO7xzz">交易位置：</strong>现价381.87元，YTD +78.9%，但近60日<strong data-page-node-id="v8g1i2iAufS336vSsMue3K">-28.3%</strong>（从52周高点846.66大幅回落超55%）。现价低于MA20（399.64）和MA60（495.90），中短期均线空头排列，处于高位调整阶段。但MACD柱体转正、KDJ J值仅30偏低，超跌修复信号初现。<br data-page-node-id="13EW96oDch5B1PC2ZM5wiM">
+        <strong data-page-node-id="twhcvdOIS3eQ4vg9abPVea">催化：</strong>存储芯片涨价大周期、AI算力存储需求、国产替代（受益国产存储原厂扩产）、机构预测2026/27/28归母净利136/167/193亿（对应PE 21/17/15倍）。<br data-page-node-id="Dmml7BDkae5jiJloOHUmyo">
+        <strong data-page-node-id="YxFirNR1M3ytUZ6J9zWBSN">启动信号：</strong>放量突破MA20（400元）并站稳，MACD金叉确认则超跌修复启动。需等待资金回流信号——当前近20日主力净流出-94.5亿，资金尚未回流。<br data-page-node-id="z8gMp2MA4gRmEmKoshbqlT">
+        <strong data-page-node-id="S7uHvJnGK3DkaxQLgvhw5D">风险：</strong>近期主力资金大幅净流出（近20日-94.5亿），技术面仍处调整期；若存储芯片涨价周期见顶则逻辑弱化；高位套牢盘压力。
+      </div>
+      <div class="stock-metrics" data-page-node-id="por1FGvRslFvxRwBZzikQs">
+        <span class="metric" data-page-node-id="U5sLS4YXDgOnwCW2sVj2ZP">现价：<span class="val" data-page-node-id="2fD0I7TX1cwP1zAbNxcDm2">381.87</span></span>
+        <span class="metric" data-page-node-id="VOBr3hF2ntA3DdAF2ZgdWZ">PE(TTM)：<span class="val" data-page-node-id="6vddj6Z725r3m8IRCXnx2s">33.9</span></span>
+        <span class="metric" data-page-node-id="h710JiLjCFvMFBETktUjdA">中报净利同比：<span class="val red" data-page-node-id="vHAz4hEhj4bUIWBG4Rn5iL">+1091.5%</span></span>
+        <span class="metric" data-page-node-id="KqUo2JvjEBkhqxzJjuj50y">近20日主力：<span class="val green" data-page-node-id="XyJK0RXLG1aPpyLx2Gt6EB">-94.5亿</span></span>
+        <span class="metric" data-page-node-id="MENKymJoxF4EtZj8h8eJd1">负债率：<span class="val" data-page-node-id="vLkBPBjDbojyw3UEsAadGt">11.5%</span></span>
+      </div>
+    </div>
+
+    <!-- Stock 4: 新易盛 -->
+    <div class="stock-card" data-page-node-id="hAhC5irp2uWlqEXCU6HoYn">
+      <div class="stock-header" data-page-node-id="XA8d9nE5qBBwc9lzCAH9Ai">
+        <div data-page-node-id="MxZd0LDyjnkekVqio4DtVU"><span class="stock-name" data-page-node-id="IaYZhgzrmeeQU7Iuh1B4OO">新易盛</span><span class="stock-code" data-page-node-id="IFLLL1QJPK6dzDotYW6O8S">300502.SZ</span></div>
+        <span class="stock-tag tag-medium" data-page-node-id="Qtktd1cRonPhtNNCFCgAti">CPO核心中军 · 趋势健康</span>
+      </div>
+      <div class="stock-body" data-page-node-id="CltI52VTsPOj6ZurGQ3Ijm">
+        <strong data-page-node-id="dZ4Gm0eOJExDjJLxW7YFWq">产业逻辑：</strong>海外高端数通光模块龙头，海外收入占比超85%，是北美云厂资本开支上修最直接的弹性受益者。中报Q1营收83.4亿（+105.8%），净利27.8亿（+76.8%），净利率36.2%。3.2T和NPO技术领先，全球LPO大规模量产先行者。<br data-page-node-id="X5afiu4FCGsQ307SsUUVqs">
+        <strong data-page-node-id="0MznhQF7CTjiIcqbXgZ8lK">交易位置：</strong>9/7大涨超8%但未涨停，主力净流入38.97亿。趋势健康、未走加速，是分歧低吸的核心标的——产业逻辑硬、契合最强主线、但不像龙版传媒那样独食透支。<br data-page-node-id="CDK6UGLtwXKJVyZ4LYhRNG">
+        <strong data-page-node-id="wp0YzIDLQVBDyl6jOcij2b">催化：</strong>北美CSP资本开支持续扩张、800G→1.6T升级放量、LPO大规模商用。<br data-page-node-id="TqnGB7TpD38LlBzy6NcRUV">
+        <strong data-page-node-id="bWVEc9WqDfF2xwvpswnWXo">启动信号：</strong>放量突破前高并站稳，配合板块效应确认则趋势加速。回踩MA10/MA20不破为低吸机会。<br data-page-node-id="rKGHiMtwP5MceZyAYFfRu5">
+        <strong data-page-node-id="DK7pL9j8qFQoRFcTSZ1HNn">风险：</strong>海外收入集中度高（>85%），地缘政治风险；光模块价格下行风险；估值不低。
+      </div>
+      <div class="stock-metrics" data-page-node-id="4NW0jowLHuRmTjMS6uEzvu">
+        <span class="metric" data-page-node-id="CqQD5ppYjGy6f2KyD6Gj4J">9/7主力净流入：<span class="val red" data-page-node-id="NnSi6ZS1D0qV0GDobzwoth">+38.97亿</span></span>
+        <span class="metric" data-page-node-id="YV9dw10j17a0ehFLqQOMYA">Q1净利同比：<span class="val red" data-page-node-id="BjxLxsoFSM2EkLv0BpUmjx">+76.8%</span></span>
+        <span class="metric" data-page-node-id="jUDSArM4prKs6li4YbsOoo">净利率：<span class="val" data-page-node-id="F5VixRZWix6fT1fxKHCQca">36.2%</span></span>
+        <span class="metric" data-page-node-id="LXbDJU2I4bqM1PNA1tc6zg">海外收入占比：<span class="val" data-page-node-id="s5rHy9ArgmEj844wiEfOdC">>85%</span></span>
+      </div>
+    </div>
+
+    <!-- Stock 5: 招商轮船 -->
+    <div class="stock-card" data-page-node-id="RKg771NdsiT8bWY35Tb61N">
+      <div class="stock-header" data-page-node-id="DWvWJFlWgGGQPDfwGuoF4B">
+        <div data-page-node-id="1mDqXdb9JAZ11FKI4UTswC"><span class="stock-name" data-page-node-id="OJJGEADRD88PG8GhtXRinM">招商轮船</span><span class="stock-code" data-page-node-id="S2xYkuoFsUSdN35z2FVwny">601872.SH</span></div>
+        <span class="stock-tag tag-watch" data-page-node-id="WTW1F2cA5WkEuFvbG3oAGf">航运龙头 · 新题材待验证</span>
+      </div>
+      <div class="stock-body" data-page-node-id="Pv72S0boBzSHYvtx6Svshw">
+        <strong data-page-node-id="OMP5jclXnooeLa79WKiIN6">产业逻辑：</strong>航运龙头，催化密集：胡塞武装袭击沙特设施（地缘风险溢价）+业绩预增+西芒杜铁矿项目+控制权变更预期+油轮景气周期。<br data-page-node-id="dCFKcN1HT3g7UP7c7l0E1q">
+        <strong data-page-node-id="8F1Cjvg2EUhGecC56PHZ8S">交易位置：</strong>9/9首板涨停，封单8210万（换手率2.36%）。属于新起题材，处于预热期→启动期交界。<br data-page-node-id="T4p1qC6K1TqsI94x68HzB0">
+        <strong data-page-node-id="8mAC7vJumkdzBeH9iCCyGG">催化：</strong>地缘冲突升级预期、全球大宗贸易复苏、运价修复、干散货运输周期回暖。<br data-page-node-id="QafxiWFFDElu8a0bRkCjBO">
+        <strong data-page-node-id="UmGfbhDNTKWURaUIX1tNeL">启动信号：</strong>次日弱转强2板确认，则题材进入发酵期。若首板后高开低走、不能2板，则归为"一日脉冲"。<br data-page-node-id="PnIanfnBrHKSqDLBAwBg0f">
+        <strong data-page-node-id="Y8XW0uHuMrmWPZ8tqqbrG0">风险：</strong>题材持续性待验证（可能为一日游），地缘事件催化多为脉冲式；封板率64%（48涨停27炸板）显示市场接力意愿不强。
+      </div>
+      <div class="stock-metrics" data-page-node-id="ZPKivRysN7E0lX2kd6Ri9E">
+        <span class="metric" data-page-node-id="ZGOPY3ipsRIyt008DrYLmJ">9/9：<span class="val red" data-page-node-id="viiQAUWT058t5qcEGXAMEb">涨停</span></span>
+        <span class="metric" data-page-node-id="5Sc8d0RDjQcsdn828iWLve">封单：<span class="val" data-page-node-id="jU9DytYJ8dUv3f3cGW65sn">8210万</span></span>
+        <span class="metric" data-page-node-id="KW1OshRCAFIgltytaToLrC">换手率：<span class="val" data-page-node-id="uVXdLjDbfQLfivQPuKCDw5">2.36%</span></span>
+        <span class="metric" data-page-node-id="4kzoIBxeEt7AFA2tMvnAjC">封板率（全市场）：<span class="val" data-page-node-id="tXp2sTEnQKciTRyDSy5Aqx">64%</span></span>
+      </div>
+    </div>
+
+    <!-- Leader Assessment Summary -->
+    <h3 data-page-node-id="7HR5uMAiSWOSMN0qT18NPG">龙头气质综合评估</h3>
+    <table data-page-node-id="KZuT1DUJYP51nzf4pv2NVT">
+      <tr data-page-node-id="iahVthNZIDAG3NTiQGZ3th"><th data-page-node-id="79bmyxc0fXfycMGiHarEiK">标的</th><th data-page-node-id="1GUxCNenyyxR1KxUg4lcLz">产业逻辑</th><th data-page-node-id="P9Gp7c5MHt1cDDpww3fNBE">交易位置</th><th data-page-node-id="3TQQjMFx1sSChkrUC4MyPz">资金参与</th><th data-page-node-id="HeShCRnGtoQ1LESmpJpP8l">催化连续性</th><th data-page-node-id="N3xAzCAVqMQrAMLaRtJ4St">综合评级</th></tr>
+      <tr data-page-node-id="bggSx9GQkoo6FNG18RKnsK"><td data-page-node-id="YLXDnGrbRAn7lYHccd80ov">中际旭创 300308</td><td class="red" data-page-node-id="1ahkdzu6L9G1Vs8hFkT7oU">★★★★★</td><td data-page-node-id="BsRNcWYxbfv69KDHUzMUBo">★★★★</td><td class="red" data-page-node-id="wBvVfD3FevWcTwHhAzWjE6">★★★★★</td><td data-page-node-id="KdvDhdKMrYr0lbkKz4M9KT">★★★★</td><td data-page-node-id="nCk07lYOgBfZFDLMzkVKHY"><strong data-page-node-id="NigJ5FHC5K6ocsD6JSP8db">真龙·机构共振</strong></td></tr>
+      <tr data-page-node-id="s1LYDSFR8IOjyYpJ7EkCEG"><td data-page-node-id="OIOLk7agBZrIRMceUyz1DL">沪电股份 002463</td><td class="red" data-page-node-id="MIJ3sU7Z6d6FzinIji4pAb">★★★★★</td><td data-page-node-id="1Is0AW2lMyxW3OWVlLsd7F">★★★</td><td data-page-node-id="LcxaMOIsYyGIjVi0B0T17E">★★★★</td><td data-page-node-id="ttyoo9vlyi509SSnXeYUjj">★★★★</td><td data-page-node-id="uxJTqJo1dEAvYyhUCJCt7A"><strong data-page-node-id="rqmxu1n9dD49LXWYXlNT9Y">业绩兑现·机构重仓</strong></td></tr>
+      <tr data-page-node-id="LHTfdtkmiOlRBArzDsFRwv"><td data-page-node-id="uQExk3jboxiUGwVFdqr7rD">兆易创新 603986</td><td class="red" data-page-node-id="LTZ3BmIgj0mpz17GVn3Cwj">★★★★★</td><td data-page-node-id="HtqiYM7enW4TFtqbu2HCCY">★★★★★</td><td data-page-node-id="5AolnG3rsdtTybv2v8ewKp">★★</td><td data-page-node-id="AbikIAYBk6SuKU0LT0qfTR">★★★★</td><td data-page-node-id="pwl5Q520mtz2wmlra6S76I"><strong data-page-node-id="J3DghBt8oApg1dbyFgBxma">超跌修复·待资金回流</strong></td></tr>
+      <tr data-page-node-id="apjBH4VmxT4Gjxraz2TVTa"><td data-page-node-id="xmXaJUg8kQL0EIqLmU2osS">新易盛 300502</td><td data-page-node-id="kMyPuBHrBXBw4lQjQvjERz">★★★★</td><td data-page-node-id="5yHBE9HeS5fIuCutZGn23X">★★★★</td><td data-page-node-id="UmIxtDwwfiiCaD3Ekv1MC7">★★★★</td><td data-page-node-id="ucvxdPgIXZbeMZYnzoKizE">★★★★</td><td data-page-node-id="e1v01kJeuARyEtjRvfWHy2"><strong data-page-node-id="VxMKQT7Ui8PVcJ5qyCRl4A">趋势中军·分歧低吸</strong></td></tr>
+      <tr data-page-node-id="gLDFd6rDCNCVTCYR0SWA8E"><td data-page-node-id="CTqBVPR27CDXtw74HtaSa9">招商轮船 601872</td><td data-page-node-id="JvoDA4RoIJuwnL3qsCWJnI">★★★</td><td data-page-node-id="dxNwHDEGE58r12KwA8bG3z">★★★★★</td><td data-page-node-id="o4u2EVte279Ql35XAvNowA">★★★</td><td data-page-node-id="iNPY1QjH4b9jaxzLWCHeTw">★★</td><td data-page-node-id="x4tjSxXxzz2DVMMab2FCYu"><strong data-page-node-id="HZvMPEIHnowLaLHaIDHINC">新题材·待验证</strong></td></tr>
+    </table>
+    <p style="font-size:12px;color:#999;" data-page-node-id="rnovPGs8Ozf9UVHoSt58K3">评级为定性判断，基于产业逻辑扎实度、当前交易位置性价比、资金参与度、催化连续性综合评估。数据截至2026-09-09收盘。</p>
+  </div>
+
+  <!-- Section 5: 龙头战法操作纪律 -->
+  <div class="section" data-page-node-id="VHDf4NDWG82JIz6VQhxBhI">
+    <h2 data-page-node-id="ib1waPIuLUg17EBCSEGARt">五、龙头战法操作纪律（9月震荡市适用）</h2>
+    <p data-page-node-id="2FlGxg6o5mTnUD5fJsBDnQ">当前市场不再是妖股遍地、连板顺畅的行情，而是震荡分歧、梯队断层、中位杀跌的困难行情。<strong data-page-node-id="Pb3g19QgPvYyUxht1OUF13">9月龙头战法打法必须升级，不能照搬7-8月</strong>。</p>
+    <ul data-page-node-id="GXBlZFsR7Q7GVGZNT0i0q3">
+      <li data-page-node-id="NqudMZCFEObySVV9MkGDr1"><strong data-page-node-id="H2GAP7EUZFZGLQ0ircKUVk">先看情绪，再做交易：</strong>情绪退潮期只试错、不重仓；高位炸板增多、中位大面扩散，直接降仓观望。</li>
+      <li data-page-node-id="hFh2igXTp32Mc0BhCpJSFj"><strong data-page-node-id="67hcDw4BlFxKBBzrO59rAu">只做有板块效应的龙头，不做孤板杂毛：</strong>真正的龙头一定带动板块跟风；单只个股独涨、板块无人跟风，几乎没有持续性。</li>
+      <li data-page-node-id="eDR1MEhTSPqUY0B83PE3vi"><strong data-page-node-id="829nvzNgcGQkGqeOFe7ndf">放弃缩量加速，主打分歧弱转强：</strong>9月震荡市，加速板炸板率极高。优先做良性分歧承接、隔日弱转强、人气龙头低吸。</li>
+      <li data-page-node-id="DgTv7W9tHjSL6RA5fHlaxQ"><strong data-page-node-id="vT1SF8fyCOFl46pM9f6Ckc">仓位分层，严格止盈止损：</strong>试错小仓→确认加仓→高潮减仓。高位放量滞涨、板块掉队，坚决止盈，不幻想二波。</li>
+      <li data-page-node-id="0xase5yVRqonpIPqZ7kxPx"><strong data-page-node-id="jISlXkEUSDeCDcphMzUGYC">区分真龙与妖股：</strong>中际旭创、沪电股份这类机构重仓的产业真龙，才是最有龙头气质的标的——它们有业绩支撑、有订单能见度、有机构资金持续流入。而龙版传媒、百大集团这类纯情绪连板股，追高赔率最差。</li>
+      <li data-page-node-id="iGbjheUDXp4ocnuwWgdf25"><strong data-page-node-id="CO46r9LNHc3mbZOhKnhN9F">接受当下市场特征：</strong>轮动快、主线弱、妖股少。9月以趋势人气龙为主、纯连板妖股为辅，赚稳定复利，不追求短期翻倍。</li>
+    </ul>
+
+    <div class="risk-box" data-page-node-id="Acb74wopxFhrE9m8TafGNv">
+      <h4 data-page-node-id="qT3uBmdlXiv7wViJc41mMz">关键风险提示</h4>
+      <ul style="margin-bottom:0;" data-page-node-id="gLadnVvqJGWdUSJRwcXJnG">
+        <li data-page-node-id="XHmFJGgOWYqK7psOvF2rQx"><strong data-page-node-id="TVp4LwATL39qrqDCYAZK7S">高位透支风险：</strong>敦煌种业（8天5板、换手率45.5%）公司已两次公告提示"股价严重偏离基本面、玉米种业供大于求"，追高风险极大。</li>
+        <li data-page-node-id="gvvFzcv705gImoHXlIRJ8g"><strong data-page-node-id="uwNppv0uwayAZiC8Dc2eZi">龙版传媒停牌效应：</strong>高度龙头停牌核查，短期对市场接力情绪构成持续冲击，连板高度可能继续压缩。</li>
+        <li data-page-node-id="5Dko4lDRWK1jZMcZGiCqWd"><strong data-page-node-id="yFw6ApBnrlduXnFkHpthFp">AI算力硬件估值风险：</strong>中际旭创PE 52倍、沪电PE 48.5倍，估值均不低。若北美云厂商资本开支增速放缓，估值面临消化压力。</li>
+        <li data-page-node-id="67wrSRRhXDOqLZ6KGtn1TV"><strong data-page-node-id="baHGENoIJ8vVXYkNmPSSGE">兆易创新资金流出：</strong>近20日主力净流出-94.5亿，技术面仍处调整期，超跌修复需等待资金回流信号确认。</li>
+        <li data-page-node-id="O7QU8YNh3LDRYMXpfEdCIP"><strong data-page-node-id="lXld2LpUzzNcj8Bxm4QkKj">整体市场缩量：</strong>9/9成交1.86万亿缩量1047亿，超3600只个股下跌，赚钱效应集中在少数人气龙头，广度不足。</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Section 6: 数据可视化 -->
+  <div class="section" data-page-node-id="H6ySCPz628CawBVM1LSSSt">
+    <h2 data-page-node-id="BQYJ3Fal9ZYx8w4yYWhVfD">六、关键标的数据对比</h2>
+    <div class="chart-box" data-page-node-id="BODaz8U2XVoHMGfvPnTuea">
+      <div class="chart-title" data-page-node-id="MrXJVOPSZcWdedhmaxUrij">重点标的：年内涨幅 vs 近60日涨跌幅对比</div>
+      <div id="chart1" style="width:100%;height:360px;" data-page-node-id="jBrPy5Xzgh1XEmqDKn6HSE"></div>
+      <p style="font-size:11px;color:#999;margin-top:6px;" data-page-node-id="AYrCOGOE0ibxLYcewTAwma">数据来源：westock-data，截至2026-09-09收盘。红涨绿跌（A股惯例）。</p>
+    </div>
+    <div class="chart-box" data-page-node-id="moUEyJgGxxVUyPZDhFPLrb">
+      <div class="chart-title" data-page-node-id="HEht2qvhXVodCEzWcnwQHJ">重点标的：2026中报归母净利润同比增速（%）</div>
+      <div id="chart2" style="width:100%;height:320px;" data-page-node-id="3GpFXvOewTXCX97smCz0t7"></div>
+      <p style="font-size:11px;color:#999;margin-top:6px;" data-page-node-id="ydXDMKrRyl2fJLCjHe7fqD">数据来源：各公司2026年半年报，westock-data finance接口。截至2026-06-30。</p>
+    </div>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer" data-page-node-id="KZ6Q6ZymlIH6HlOcqYNi2W">
+    <strong data-page-node-id="U6BkqHh3RGzCZaYH6sWxka">免责声明：</strong>以上内容基于公开数据和量化分析，仅供参考，不构成投资建议。市场有风险，投资需谨慎。任何投资决策应结合个人风险承受能力、资金状况和投资目标独立判断，必要时咨询持牌专业机构。过往表现不预示未来收益。报告中涉及的个股仅为基于龙头战法框架的跟踪观察清单，不构成任何买卖建议。数据存在延迟，以交易所及公司公告为准。
+  </div>
+
+</div>
+<script>
+(function() {
+  var chart1 = echarts.init(document.getElementById('chart1'));
+  chart1.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    legend: { data: ['年内涨幅(YTD)', '近60日涨跌幅'], top: 5 },
+    grid: { left: '3%', right: '4%', bottom: '3%', containLabel: true },
+    xAxis: { type: 'category', data: ['中际旭创\n300308', '沪电股份\n002463', '兆易创新\n603986', '敦煌种业\n600354'] },
+    yAxis: { type: 'value', name: '涨跌幅(%)' },
+    series: [
+      {
+        name: '年内涨幅(YTD)',
+        type: 'bar',
+        data: [49.2, 75.8, 78.9, 69.7],
+        itemStyle: { color: '#e53935' },
+        label: { show: true, position: 'top', formatter: '{c}%', fontSize: 11 }
+      },
+      {
+        name: '近60日涨跌幅',
+        type: 'bar',
+        data: [-27.2, -9.3, -28.3, 110.3],
+        itemStyle: { color: '#43a047' },
+        label: { show: true, position: 'top', formatter: '{c}%', fontSize: 11 }
+      }
+    ]
+  });
+
+  var chart2 = echarts.init(document.getElementById('chart2'));
+  chart2.setOption({
+    tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' } },
+    grid: { left: '3%', right: '6%', bottom: '3%', containLabel: true },
+    xAxis: { type: 'category', data: ['中际旭创', '沪电股份', '兆易创新', '敦煌种业'], axisLabel: { fontSize: 12 } },
+    yAxis: { type: 'value', name: '同比增速(%)' },
+    series: [{
+      name: '中报归母净利同比',
+      type: 'bar',
+      data: [241.7, 73.7, 1091.5, 165.7],
+      itemStyle: {
+        color: function(params) {
+          var colors = ['#e53935', '#e53935', '#e53935', '#e53935'];
+          return colors[params.dataIndex];
+        }
+      },
+      label: { show: true, position: 'top', formatter: '{c}%', fontSize: 12, fontWeight: 'bold' }
+    }]
+  });
+
+  window.addEventListener('resize', function() {
+    chart1.resize();
+    chart2.resize();
+  });
+})();
+</script>
+</body>
+</html>
