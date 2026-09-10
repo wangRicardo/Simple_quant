@@ -3,6 +3,9 @@
 把「机构行为」这个不可见变量，通过量价 / 资金 / 筹码 / 形态四维数据，
 识别成四个可判别的阶段：**建仓 → 洗盘 → 启动 → 撤离**。
 
+**🌐 在线看板直达**：**[https://wangricardo.github.io/Simple_quant/](https://wangricardo.github.io/Simple_quant/)**
+（每日收盘后自动更新，含行业龙头阶段判定、买入/卖出双榜单、可交互K线图）
+
 **项目位置**：`E:\wb_jobs\finance`
 
 ## 快速开始
