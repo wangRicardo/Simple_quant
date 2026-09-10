@@ -114,3 +114,20 @@ RemoteDisconnected），系统因此实现了**域名故障转移 + 多数据源
 
 本项目为量化研究工具，所有输出基于公开数据与统计模型，**不构成投资建议**。
 模型依赖历史规律，不预示未来走势。投资有风险，决策请独立判断。
+
+## GitHub 仓库与线上看板
+
+- 仓库：`git@github.com:wangRicardo/Simple_quant.git`（SSH 推送）
+  - `main` 分支：完整程序包 + 文档
+  - `gh-pages` 分支：仅 `site/` 内容，供 GitHub Pages 部署
+- 线上看板：开启 Pages（Settings → Pages → Source 选 `gh-pages` 分支 `/ (root)`）后访问
+  `https://wangricardo.github.io/Simple_quant/`
+- 每日更新后同步线上：
+
+```bash
+git add -A && git commit -m "每日看板更新"
+git push origin main
+git branch -D gh-pages
+git subtree split --prefix site -b gh-pages main
+git push origin gh-pages
+```
