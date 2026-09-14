@@ -41,7 +41,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .st .vl{font-size:26px;font-weight:680;margin-top:3px;font-variant-numeric:tabular-nums}
 .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
 /* ---- 首页关注榜 ---- */
-.topgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px}
+.topgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px;margin-bottom:20px}
 .topbox{background:#fff;border:1px solid #e6e9ef;border-radius:12px;overflow:hidden;
  box-shadow:0 1px 3px rgba(16,24,40,.04)}
 .top-hd{padding:12px 17px;border-bottom:1px solid #eef0f4;font-size:14.5px;font-weight:640;
@@ -154,7 +154,7 @@ JS = """
 var DATA = __DATA__;
 var ORDER = ["ACCUMULATION","WASH","LAUNCH","DISTRIBUTION"];
 var META = DATA.meta;
-var fStage = 'ALL', fSort = 'opp', fKey = '';
+var fView = 'stock', fStage = 'ALL', fSort = 'opp', fKey = '';
 
 function el(id){return document.getElementById(id);}
 function cls(v){return v>0?'up':(v<0?'dn':'');}
@@ -208,8 +208,72 @@ function renderTop(){
     '<div style="padding:18px;color:#9ca3af;font-size:12.5px">暂无候选</div>';
 }
 
+/* ---------- ETF 热榜 ---------- */
+function etfTopRow(L,i){
+  var m = META[L.stage];
+  return '<div class="trow" onclick="openModal(\\''+L.code+'\\')">'+
+    '<span class="rk '+(i===0?'hot':'')+'">'+(i+1)+'</span>'+
+    '<span class="tn">'+L.name+' <span class="tcd">'+L.code+'</span></span>'+
+    '<span class="bg" style="background:'+m.color+'">'+m.name+'</span>'+
+    '<span class="tsc">热度'+L.hot+' · 机会'+L.opportunity+'/风险'+L.risk+'</span>'+
+    '<span class="px '+cls(L.chg)+'">'+sgn(L.chg)+'%</span>'+
+    '<span class="tact" style="color:'+L.tone+'">'+L.action+'</span></div>';
+}
+function renderEtfTop(){
+  var box = el('etfbody');
+  if(!box) return;
+  if(!DATA.etfs || !DATA.etfs.list || !DATA.etfs.list.length){
+    box.innerHTML = '<div style="padding:18px;color:#9ca3af;font-size:12.5px">本次未生成 ETF 数据</div>';
+    return;
+  }
+  var top = DATA.etfs.list.slice().sort(function(a,b){return b.hot-a.hot;}).slice(0,5);
+  box.innerHTML = top.map(etfTopRow).join('');
+}
+
+function etfRow(L,i,showRank){
+  var m = META[L.stage];
+  var px = L.price<5 ? L.price.toFixed(3) : L.price.toFixed(2);
+  return '<div class="lr" onclick="openModal(\\''+L.code+'\\')">'+
+    '<div class="lr-t">'+(showRank?'<span class="rk '+(i<3?'hot':'')+'">'+(i+1)+'</span>':'')+
+    '<span class="nm">'+L.name+'<span class="cd">'+L.code+'</span></span>'+
+    '<span class="bg" style="background:'+m.color+'">'+m.name+'</span>'+
+    '<span class="sc">阶段'+Math.round(L.score)+'分</span>'+
+    '<span class="px '+cls(L.chg)+'">'+px+' <span style="font-size:11.5px">'+sgn(L.chg)+'%</span></span></div>'+
+    '<div class="lr-b">'+ scoreBar('热度', L.hot, '#6366f1') +
+      scoreBar('机会', L.opportunity, '#c62828') +
+      scoreBar('风险', L.risk, '#6b7280') +
+      '<span class="act" style="color:'+L.tone+'">'+L.action+'</span></div>'+
+    '<div style="font-size:11px;color:#9ca3af;margin-top:6px">成交额 <b>'+
+      L.amount.toFixed(1)+'</b>亿 · 主力净额 '+(L.main_net>0?'+':'')+L.main_net.toFixed(2)+'亿'+
+      (L.main_pct!==null&&L.main_pct!==undefined?'（'+L.main_pct.toFixed(1)+'%）':'')+
+      (L.vr!==null&&L.vr!==undefined?' · 量比 '+L.vr:'')+'</div></div>';
+}
+
+function renderEtf(){
+  var kw = fKey.trim().toLowerCase();
+  var list = ((DATA.etfs&&DATA.etfs.list)||[]).filter(function(L){
+    if(fStage!=='ALL' && L.stage!==fStage) return false;
+    if(kw && (L.name+L.code).toLowerCase().indexOf(kw)<0) return false;
+    return true;
+  });
+  if(fSort==='hot'||!DATA.etfs||!DATA.etfs.list.length) list.sort(function(a,b){return b.hot-a.hot;});
+  else if(fSort==='opp') list.sort(function(a,b){return b.opportunity-a.opportunity;});
+  else if(fSort==='risk') list.sort(function(a,b){return b.risk-a.risk;});
+  else if(fSort==='score') list.sort(function(a,b){return b.score-a.score;});
+  else if(fSort==='chg') list.sort(function(a,b){return (b.chg||0)-(a.chg||0);});
+  var rows = list.map(function(L,i){return etfRow(L,i,true);}).join('');
+  el('grid').innerHTML = rows ?
+    '<div class="ind" style="grid-column:1/-1"><div class="ind-hd"><div>'+
+    '<div class="ind-nm">热门 ETF 排行榜</div>'+
+    '<div class="ind-sub">'+list.length+' 只 · 按当日成交额取榜 · 热度=成交额分位45+主力净流入20+量比15+涨幅10+量能趋势10</div></div>'+
+    '<div class="ind-rt" style="font-size:11px;color:#9ca3af">数据基准 '+(DATA.as_of||'')+'</div></div>'+
+    rows+'</div>'
+    : '<div class="empty">没有符合条件的 ETF</div>';
+}
+
 /* ---------- 行业网格 ---------- */
 function render(){
+  if(fView==='etf'){ renderEtf(); return; }
   var kw = fKey.trim().toLowerCase();
   var cards = DATA.industries.map(function(ind){
     var ls = ind.leaders.filter(function(L){
@@ -250,8 +314,16 @@ function render(){
 function setF(v,f){
   if(f==='stage') fStage=v;
   else if(f==='sort') fSort=v;
+  else if(f==='view'){
+    fView=v;
+    if(v==='etf'&&fSort==='opp') fSort='hot';
+    if(v==='stock'&&fSort==='hot') fSort='opp';
+  }
   document.querySelectorAll('[data-f]').forEach(function(b){
-    b.classList.toggle('on', b.dataset.f===f && b.dataset.v===(f==='stage'?fStage:fSort));
+    var cur = b.dataset.f==='stage' ? fStage
+            : (b.dataset.f==='sort' ? fSort
+            : (b.dataset.f==='view' ? fView : null));
+    b.classList.toggle('on', b.dataset.v===cur);
   });
   render();
 }
@@ -437,6 +509,7 @@ el('modal').onclick = function(ev){ if(ev.target===this) closeModal(); };
 document.addEventListener('keydown', function(ev){ if(ev.key==='Escape') closeModal(); });
 
 renderTop();
+renderEtfTop();
 render();
 """
 
@@ -1277,7 +1350,10 @@ def render_site(payload: Dict) -> str:
     """渲染 index.html。"""
     meta = {k: {"name": v["name"], "color": v["color"]} for k, v in STAGE_META.items()}
     data_json = json.dumps(
-        {"meta": meta, "industries": payload["industries"]},
+        {"meta": meta, "industries": payload["industries"],
+         "as_of": payload["as_of"],
+         "etfs": {"count": payload.get("etf_count", 0),
+                  "list": payload.get("etf_rows") or []}},
         ensure_ascii=False)
     data_json = (data_json.replace("</", "<\\/"))
 
@@ -1287,6 +1363,11 @@ def render_site(payload: Dict) -> str:
         f'style="background:{STAGE_META[s]["color"]}"></span>{STAGE_META[s]["name"]}</div>'
         f'<div class="vl" style="color:{STAGE_META[s]["color"]}">{st.get(s,0)}</div></div>'
         for s in ORDER)
+    if payload.get("etf_count"):
+        stat_cards += (f'<div class="st"><div class="lb">ETF 热榜</div>'
+                       f'<div class="vl" style="color:#6366f1">'
+                       f'{payload["etf_count"]}<span style="font-size:13px;color:#9ca3af"> 只</span>'
+                       f'</div></div>')
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8">
@@ -1329,8 +1410,17 @@ def render_site(payload: Dict) -> str:
       <span class="top-sub">撤离期优先 · 其余按风险分排序</span></div>
     <div class="topbody" id="sellbody"></div>
   </div>
+  <div class="topbox">
+    <div class="top-hd"><span class="ic" style="background:#6366f1">热</span>
+      热门 ETF TOP5
+      <span class="top-sub">按热度分 · 成交额+资金+量能</span></div>
+    <div class="topbody" id="etfbody"></div>
+  </div>
 </div>
 <div class="bar-wrap">
+  <button class="btn on" data-f="view" data-v="stock">龙头个股</button>
+  <button class="btn" data-f="view" data-v="etf">ETF 热榜</button>
+  <div class="sep"></div>
   <button class="btn on" data-f="stage" data-v="ALL">全部阶段</button>
   <button class="btn" data-f="stage" data-v="ACCUMULATION">建仓期</button>
   <button class="btn" data-f="stage" data-v="WASH">洗盘期</button>
@@ -1338,12 +1428,13 @@ def render_site(payload: Dict) -> str:
   <button class="btn" data-f="stage" data-v="DISTRIBUTION">撤离期</button>
   <div class="sep"></div>
   <button class="btn on" data-f="sort" data-v="opp">按机会分</button>
+  <button class="btn" data-f="sort" data-v="hot">按热度</button>
   <button class="btn" data-f="sort" data-v="risk">按风险分</button>
   <button class="btn" data-f="sort" data-v="score">按阶段分</button>
   <button class="btn" data-f="sort" data-v="chg">按涨幅</button>
   <div class="sep"></div>
-  <input class="inp" id="kw" placeholder="搜索行业 / 股票名称">
-  <span class="hint">共 {payload['leader_count']} 只 · 点击任一行查看K线图、成交量与证据链</span>
+  <input class="inp" id="kw" placeholder="搜索行业 / 股票 / ETF 名称">
+  <span class="hint">共 {payload['leader_count']} 只个股 · {payload.get('etf_count',0)} 只 ETF · 点击任一行查看K线图、成交量与证据链</span>
 </div>
 <div class="grid" id="grid"></div>
 <div class="ft">
@@ -1363,6 +1454,11 @@ def render_site(payload: Dict) -> str:
 判定基准日口径与每日看板一致（盘中查询自动剔除未收盘的当日K线）。<br/>
 <b>龙头选取</b>：每个行业按「市值排名 40% + 主力资金排名 35% + 涨幅排名 25%」加权，
 取前 3 只。用排名分位而非绝对值，避免行业体量差异造成扭曲。<br/>
+<b>ETF 热榜</b>：沪深场内基金按当日成交额取前 {payload.get('etf_count',0)} 只（剔除货币型 ETF）。
+<b>热度分</b> = 成交额分位×45 + 主力净流入强度×20 + 量比×15 + 涨幅×10 + 量能趋势×10，
+衡量「当下被交易与被资金关注的程度」；ETF 与个股共用同一套四阶段打分卡，
+但 ETF 无龙虎榜/两融数据（相关证据自动降权）、换手率口径不同，
+其阶段判定请按「弱一档置信」解读。<br/>
 <b>操作建议</b>：风险分≥65 减仓离场；≥50 谨慎持有；机会分≥65 且风险&lt;45 重点介入；
 机会分≥55 且风险&lt;50 逢低关注；否则跟踪观望。<br/><br/>
 <b>免责声明</b>：本看板由量化模型自动生成，基于公开数据与历史统计规律，
@@ -1396,10 +1492,15 @@ def render_site(payload: Dict) -> str:
 
 
 def generate(universe: List[Dict], analyses: Dict[str, Dict], as_of: str,
-             out_dir: str = "site") -> str:
+             out_dir: str = "site", etf_rows: List[Dict] = None,
+             etf_analyses: Dict[str, Dict] = None) -> str:
     """生成站点文件，返回 index.html 路径。"""
     os.makedirs(out_dir, exist_ok=True)
     payload = build_payload(universe, analyses, as_of)
+    etf_rows = etf_rows or []
+    etf_analyses = etf_analyses or {}
+    payload["etf_rows"] = etf_rows
+    payload["etf_count"] = len(etf_rows)
 
     html = render_site(payload)
     idx = os.path.join(out_dir, "index.html")
@@ -1409,6 +1510,8 @@ def generate(universe: List[Dict], analyses: Dict[str, Dict], as_of: str,
     # K线量价数据独立成 js 文件：file:// 协议下经典 <script> 无跨域限制，
     # 且让 index.html 保持轻量、K线数据可独立更新。
     kdata = build_kdata(analyses)
+    for code, rows in build_kdata(etf_analyses).items():
+        kdata.setdefault(code, rows)
     with open(os.path.join(out_dir, "klines.js"), "w", encoding="utf-8") as f:
         f.write("/* 自动生成：个股最近%d个交易日K线量价数据 */\n" % KLINE_BARS)
         f.write("var KDATA = ")
@@ -1419,6 +1522,7 @@ def generate(universe: List[Dict], analyses: Dict[str, Dict], as_of: str,
     payload_full = dict(payload)
     payload_full["meta"] = {k: {"name": v["name"], "color": v["color"]}
                             for k, v in STAGE_META.items()}
+    payload_full["etfs"] = {"count": len(etf_rows), "list": etf_rows}
     with open(os.path.join(out_dir, "data.json"), "w", encoding="utf-8") as f:
         json.dump(payload_full, f, ensure_ascii=False, indent=1, default=str)
 

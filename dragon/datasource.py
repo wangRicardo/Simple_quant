@@ -85,8 +85,16 @@ def swap_host(url: str, host: str) -> str:
 
 
 def to_tx_symbol(code: str) -> str:
-    """转成腾讯行情代码（sh/sz/bj 前缀）。"""
+    """转成腾讯行情代码（sh/sz/bj 前缀）。
+
+    注意场内基金：沪基金 5xxxxx（50/51/56/58），深基金 15/16/18 ——
+    必须在个股规则之前判断，否则 510300 会被误判为 bj。
+    """
     c = code.strip()
+    if c.startswith("5"):
+        return "sh" + c
+    if c.startswith(("15", "16", "18")):
+        return "sz" + c
     if c.startswith("6"):
         return "sh" + c
     if c.startswith(("0", "3")):

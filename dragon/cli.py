@@ -34,6 +34,7 @@ from . import analyzer as AZ
 from . import screener as SC
 from . import report as RP
 from . import industry as IND
+from . import etf as ETF
 from . import site as SITE
 from .stage import STAGE_META, confidence_label
 
@@ -66,6 +67,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     psite = sub.add_parser("site", help="生成/更新行业龙头每日看板网站")
     psite.add_argument("--per", type=int, default=3, help="每个行业取几只龙头（默认3）")
+    psite.add_argument("--etf-top", type=int, default=30,
+                       help="ETF 热榜取当日成交额前几只（默认30，0=不生成）")
+    psite.add_argument("--no-etf", action="store_true", help="本次不生成 ETF 部分")
     psite.add_argument("-o", "--out", default="site", help="输出目录")
     psite.add_argument("--no-cache", action="store_true", help="禁用缓存")
 
@@ -136,8 +140,15 @@ def run_site(client: EMClient, args, t0: float) -> int:
     by_code = {a["code"]: a for a in analyses}
     print(f"\n[分析] 成功 {len(by_code)}/{len(codes)} 只")
 
+    etf_rows, etf_analyses = [], {}
+    if not getattr(args, "no_etf", False) and args.etf_top > 0:
+        print(f"\n[ETF] 热门 ETF 榜（当日成交额前 {args.etf_top}）...")
+        etf_rows, etf_analyses = ETF.run_pipeline(client, top_n=args.etf_top)
+        print(f"[ETF] 完成 {len(etf_rows)}/{args.etf_top} 只\n")
+
     as_of = analyses[0]["as_of"] if analyses else time.strftime("%Y-%m-%d")
-    idx = SITE.generate(universe, by_code, as_of, out_dir=args.out)
+    idx = SITE.generate(universe, by_code, as_of, out_dir=args.out,
+                        etf_rows=etf_rows, etf_analyses=etf_analyses)
 
     elapsed = time.time() - t0
     print(f"\n[完成] 耗时 {elapsed:.0f}s")
