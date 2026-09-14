@@ -1,11 +1,11 @@
 {
- "updated": "2026-09-14 18:36:39",
- "as_of": "2026-09-14",
+ "updated": "2026-09-14 22:55:53",
+ "as_of": "20260914",
  "industry_count": 24,
  "leader_count": 69,
  "stage_count": {
-  "ACCUMULATION": 24,
-  "WASH": 36,
+  "ACCUMULATION": 25,
+  "WASH": 35,
   "LAUNCH": 9,
   "DISTRIBUTION": 0
  },
@@ -23,25 +23,25 @@
      "name": "强一股份",
      "price": 524.0,
      "chg": 5.9,
-     "turnover": 8.642,
+     "turnover": 864.1057800000001,
      "mktcap": 678.890732,
      "leader_score": 88.0,
      "stage": "ACCUMULATION",
      "stage_name": "建仓期",
-     "score": 66.0,
+     "score": 68.5,
      "scores": {
-      "ACCUMULATION": 66,
-      "WASH": 40,
-      "LAUNCH": 58,
-      "DISTRIBUTION": 16
+      "ACCUMULATION": 68,
+      "WASH": 28,
+      "LAUNCH": 63,
+      "DISTRIBUTION": 35
      },
-     "confidence": 8.5,
+     "confidence": 5.6,
      "conf_label": "弱信号",
-     "opportunity": 66,
-     "risk": 38,
-     "action": "重点介入",
-     "tone": "#c62828",
-     "reason": "阶段为建仓期（66分/弱信号），机会分 66、风险分 38；资金净流入5.0%，年内位置 75 分位。",
+     "opportunity": 67,
+     "risk": 57,
+     "action": "谨慎持有",
+     "tone": "#e65100",
+     "reason": "阶段为建仓期（68分/弱信号），机会分 67、风险分 57；资金净流入0.1%，年内位置 75 分位。",
      "evidence": [
       {
        "label": "温和放量",
@@ -51,7 +51,7 @@
       {
        "label": "换手温和",
        "hit": false,
-       "desc": "5日换手 8.64%"
+       "desc": "5日换手 864.11%"
       },
       {
        "label": "OBV 抬升",
@@ -66,7 +66,7 @@
       {
        "label": "主力温和净流入",
        "hit": true,
-       "desc": "5日主力 2.75亿，占比均值 4.61%"
+       "desc": "5日主力 7.55亿，占比均值 13.99%"
       },
       {
        "label": "位置处于中低位",
@@ -75,8 +75,8 @@
       },
       {
        "label": "筹码低位密集",
-       "hit": false,
-       "desc": "集中度 0.24，获利盘 92.1%"
+       "hit": true,
+       "desc": "集中度 0.07，获利盘 58.3%"
       },
       {
        "label": "横盘整理",
@@ -85,8 +85,8 @@
       },
       {
        "label": "超大单参与",
-       "hit": false,
-       "desc": "超大单占主力 0.20"
+       "hit": true,
+       "desc": "超大单占主力 0.33"
       },
       {
        "label": "量能趋势抬升",
@@ -96,12 +96,12 @@
       {
        "label": "资金流出动能收敛",
        "hit": true,
-       "desc": "5日主力 2.75亿 vs 10日 2.27亿"
+       "desc": "5日主力 7.55亿 vs 10日 6.48亿"
       },
       {
        "label": "资金逆势回流",
-       "hit": true,
-       "desc": "5日主力占成交额 5.02%"
+       "hit": false,
+       "desc": "5日主力占成交额 0.14%"
       },
       {
        "label": "深度超跌（有修复空间）",
@@ -120,25 +120,25 @@
      "name": "江丰电子",
      "price": 237.1,
      "chg": 2.88,
-     "turnover": 3.778,
+     "turnover": 3.77866,
      "mktcap": 654.32743779,
      "leader_score": 83.1,
      "stage": "WASH",
      "stage_name": "洗盘期",
      "score": 74.5,
      "scores": {
-      "ACCUMULATION": 44,
+      "ACCUMULATION": 36,
       "WASH": 74,
       "LAUNCH": 26,
-      "DISTRIBUTION": 9
+      "DISTRIBUTION": 3
      },
-     "confidence": 30.3,
+     "confidence": 38.0,
      "conf_label": "高置信",
      "opportunity": 54,
      "risk": 30,
      "action": "跟踪观察",
      "tone": "#5d4037",
-     "reason": "阶段为洗盘期（74分/高置信），机会分 54、风险分 30；资金净流出1.4%，年内位置 51 分位。",
+     "reason": "阶段为洗盘期（74分/高置信），机会分 54、风险分 30；资金净流出0.3%，年内位置 51 分位。",
      "evidence": [
       {
        "label": "缩量下跌",
@@ -163,12 +163,12 @@
       {
        "label": "底部筹码锁定",
        "hit": false,
-       "desc": "低位锁定筹码 3.0%"
+       "desc": "低位锁定筹码 2.9%"
       },
       {
        "label": "主力未大规模出逃",
        "hit": true,
-       "desc": "5日主力占成交额 -1.40%，10日 -1.71%"
+       "desc": "5日主力占成交额 -0.30%，10日 0.74%"
       },
       {
        "label": "换手降温",
@@ -202,7 +202,7 @@
      "name": "先导基电",
      "price": 31.9,
      "chg": 8.84,
-     "turnover": 4.910000000000001,
+     "turnover": 4.909999999999999,
      "mktcap": 302.05022848,
      "leader_score": 81.3,
      "stage": "ACCUMULATION",
@@ -220,7 +220,7 @@
      "risk": 25,
      "action": "重点介入",
      "tone": "#c62828",
-     "reason": "阶段为建仓期（59分/中等置信），机会分 67、风险分 25；资金净流入1.6%，年内位置 51 分位。",
+     "reason": "阶段为建仓期（59分/中等置信），机会分 67、风险分 25；资金净流入1.9%，年内位置 51 分位。",
      "evidence": [
       {
        "label": "温和放量",
@@ -245,7 +245,7 @@
       {
        "label": "主力温和净流入",
        "hit": false,
-       "desc": "5日主力 1.09亿，占比均值 -0.83%"
+       "desc": "5日主力 1.29亿，占比均值 -0.36%"
       },
       {
        "label": "位置处于中低位",
@@ -255,7 +255,7 @@
       {
        "label": "筹码低位密集",
        "hit": true,
-       "desc": "集中度 0.28，获利盘 57.9%"
+       "desc": "集中度 0.27，获利盘 57.5%"
       },
       {
        "label": "横盘整理",
@@ -265,7 +265,7 @@
       {
        "label": "超大单参与",
        "hit": true,
-       "desc": "超大单占主力 1.13"
+       "desc": "超大单占主力 1.35"
       },
       {
        "label": "量能趋势抬升",
@@ -275,12 +275,12 @@
       {
        "label": "资金流出动能收敛",
        "hit": true,
-       "desc": "5日主力 1.09亿 vs 10日 -1.32亿"
+       "desc": "5日主力 1.29亿 vs 10日 -0.07亿"
       },
       {
        "label": "资金逆势回流",
        "hit": false,
-       "desc": "5日主力占成交额 1.56%"
+       "desc": "5日主力占成交额 1.86%"
       },
       {
        "label": "深度超跌（有修复空间）",
@@ -309,25 +309,25 @@
      "name": "安克创新",
      "price": 127.84,
      "chg": 0.32,
-     "turnover": 0.9620000000000001,
+     "turnover": 0.96112,
      "mktcap": 751.76874752,
      "leader_score": 85.6,
      "stage": "WASH",
      "stage_name": "洗盘期",
      "score": 87.3,
      "scores": {
-      "ACCUMULATION": 20,
+      "ACCUMULATION": 28,
       "WASH": 87,
       "LAUNCH": 32,
-      "DISTRIBUTION": 27
+      "DISTRIBUTION": 18
      },
      "confidence": 55.6,
      "conf_label": "高置信",
-     "opportunity": 54,
+     "opportunity": 64,
      "risk": 30,
-     "action": "跟踪观察",
-     "tone": "#5d4037",
-     "reason": "阶段为洗盘期（87分/高置信），机会分 54、风险分 30；资金净流出1.7%，年内位置 80 分位。",
+     "action": "逢低关注",
+     "tone": "#185FA5",
+     "reason": "阶段为洗盘期（87分/高置信），机会分 64、风险分 30；资金净流入4.0%，年内位置 80 分位。",
      "evidence": [
       {
        "label": "缩量下跌",
@@ -352,12 +352,12 @@
       {
        "label": "底部筹码锁定",
        "hit": false,
-       "desc": "低位锁定筹码 17.2%"
+       "desc": "低位锁定筹码 17.5%"
       },
       {
        "label": "主力未大规模出逃",
        "hit": true,
-       "desc": "5日主力占成交额 -1.75%，10日 -2.83%"
+       "desc": "5日主力占成交额 3.99%，10日 3.46%"
       },
       {
        "label": "换手降温",
@@ -391,80 +391,90 @@
      "name": "奥尼电子",
      "price": 61.7,
      "chg": 1.15,
-     "turnover": 4.802,
+     "turnover": 4.80236,
      "mktcap": 100.96583743,
      "leader_score": 77.8,
-     "stage": "WASH",
-     "stage_name": "洗盘期",
-     "score": 52.9,
+     "stage": "LAUNCH",
+     "stage_name": "启动期",
+     "score": 62.4,
      "scores": {
-      "ACCUMULATION": 46,
+      "ACCUMULATION": 53,
       "WASH": 53,
-      "LAUNCH": 52,
+      "LAUNCH": 62,
       "DISTRIBUTION": 18
      },
-     "confidence": 1.3,
-     "conf_label": "模糊区间",
-     "opportunity": 54,
-     "risk": 30,
-     "action": "跟踪观察",
-     "tone": "#5d4037",
-     "reason": "阶段为洗盘期（53分/模糊区间），机会分 54、风险分 30；资金净流入3.5%，年内位置 71 分位。",
+     "confidence": 9.1,
+     "conf_label": "弱信号",
+     "opportunity": 80,
+     "risk": 37,
+     "action": "重点介入",
+     "tone": "#c62828",
+     "reason": "阶段为启动期（62分/弱信号），机会分 80、风险分 37；资金净流入10.3%，年内位置 71 分位。",
      "evidence": [
       {
-       "label": "缩量下跌",
-       "hit": true,
+       "label": "放量",
+       "hit": false,
        "desc": "当日量比 0.88"
       },
       {
-       "label": "量能持续萎缩",
+       "label": "突破平台",
        "hit": false,
-       "desc": "近5/前5量能 1.00"
+       "desc": "突破:创20日新高，量能 0.88倍"
       },
       {
-       "label": "跌幅可控",
+       "label": "站上 MA20",
        "hit": true,
-       "desc": "20日回撤 -1.67%"
+       "desc": "距MA20 10.57%"
       },
       {
-       "label": "未破关键位",
+       "label": "均线多头排列",
        "hit": true,
-       "desc": "距MA60 18.69%，距MA20 10.57%"
+       "desc": "多头排列"
       },
       {
-       "label": "底部筹码锁定",
+       "label": "MACD 多头且红柱放大",
+       "hit": false,
+       "desc": "DIF 2.98 / DEA 2.33，红柱 1.29"
+      },
+      {
+       "label": "DIF 站上零轴（水上）",
        "hit": true,
-       "desc": "低位锁定筹码 39.0%"
+       "desc": "DIF 2.98"
       },
       {
-       "label": "主力未大规模出逃",
+       "label": "资金大幅净流入",
        "hit": true,
-       "desc": "5日主力占成交额 3.54%，10日 4.83%"
+       "desc": "3日主力 0.54亿，占比均值 8.59%"
       },
       {
-       "label": "换手降温",
+       "label": "超大单主导",
+       "hit": true,
+       "desc": "超大单占主力 0.51"
+      },
+      {
+       "label": "强势 K 线",
+       "hit": false,
+       "desc": "当日涨幅 1.15%，近10日涨停 0次"
+      },
+      {
+       "label": "获利盘未过热",
+       "hit": true,
+       "desc": "获利盘 80.2%"
+      },
+      {
+       "label": "上方抛压有限",
+       "hit": true,
+       "desc": "上方套牢盘 18.1%"
+      },
+      {
+       "label": "换手活跃",
        "hit": true,
        "desc": "5日换手 4.80%"
       },
       {
-       "label": "长下影承接",
+       "label": "OBV 同步走强",
        "hit": true,
-       "desc": "近10日长下影 2天"
-      },
-      {
-       "label": "收盘重心不弱",
-       "hit": true,
-       "desc": "5日收盘位置均值 0.56"
-      },
-      {
-       "label": "无放量出货日",
-       "hit": true,
-       "desc": "近10日放量下跌天数 0"
-      },
-      {
-       "label": "整理期未拉升",
-       "hit": false,
-       "desc": "MA20 乖离 10.57%"
+       "desc": "OBV 斜率 0.10"
       }
      ]
     },
@@ -473,25 +483,25 @@
      "name": "影石创新",
      "price": 94.3,
      "chg": -0.18,
-     "turnover": 1.4,
+     "turnover": 140.3116,
      "mktcap": 378.143,
      "leader_score": 76.1,
      "stage": "ACCUMULATION",
      "stage_name": "建仓期",
-     "score": 31.5,
+     "score": 30.5,
      "scores": {
-      "ACCUMULATION": 32,
-      "WASH": 24,
-      "LAUNCH": 4,
-      "DISTRIBUTION": 13
+      "ACCUMULATION": 30,
+      "WASH": 28,
+      "LAUNCH": 8,
+      "DISTRIBUTION": 16
      },
-     "confidence": 7.0,
-     "conf_label": "弱信号",
-     "opportunity": 64,
-     "risk": 37,
-     "action": "逢低关注",
-     "tone": "#185FA5",
-     "reason": "阶段为建仓期（32分/弱信号），机会分 64、风险分 37；资金净流出6.7%，年内位置 0 分位。",
+     "confidence": 2.9,
+     "conf_label": "模糊区间",
+     "opportunity": 70,
+     "risk": 40,
+     "action": "重点介入",
+     "tone": "#c62828",
+     "reason": "阶段为建仓期（30分/模糊区间），机会分 70、风险分 40；资金净流入0.0%，年内位置 0 分位。",
      "evidence": [
       {
        "label": "温和放量",
@@ -500,8 +510,8 @@
       },
       {
        "label": "换手温和",
-       "hit": true,
-       "desc": "5日换手 1.40%"
+       "hit": false,
+       "desc": "5日换手 140.31%"
       },
       {
        "label": "OBV 抬升",
@@ -516,7 +526,7 @@
       {
        "label": "主力温和净流入",
        "hit": false,
-       "desc": "5日主力 -1.20亿，占比均值 -6.88%"
+       "desc": "5日主力 0.21亿，占比均值 1.17%"
       },
       {
        "label": "位置处于中低位",
@@ -526,7 +536,7 @@
       {
        "label": "筹码低位密集",
        "hit": false,
-       "desc": "集中度 0.63，获利盘 1.3%"
+       "desc": "集中度 0.03，获利盘 76.3%"
       },
       {
        "label": "横盘整理",
@@ -535,8 +545,8 @@
       },
       {
        "label": "超大单参与",
-       "hit": false,
-       "desc": "超大单占主力 -0.30"
+       "hit": true,
+       "desc": "超大单占主力 0.81"
       },
       {
        "label": "量能趋势抬升",
@@ -546,12 +556,12 @@
       {
        "label": "资金流出动能收敛",
        "hit": true,
-       "desc": "5日主力 -1.20亿 vs 10日 -2.95亿"
+       "desc": "5日主力 0.21亿 vs 10日 -1.49亿"
       },
       {
        "label": "资金逆势回流",
        "hit": false,
-       "desc": "5日主力占成交额 -6.70%"
+       "desc": "5日主力占成交额 0.01%"
       },
       {
        "label": "深度超跌（有修复空间）",
@@ -580,90 +590,95 @@
      "name": "长江通信",
      "price": 53.69,
      "chg": -1.7,
-     "turnover": 7.462000000000001,
+     "turnover": 7.46122,
      "mktcap": 176.96875367,
      "leader_score": 81.8,
-     "stage": "LAUNCH",
-     "stage_name": "启动期",
-     "score": 45.2,
+     "stage": "ACCUMULATION",
+     "stage_name": "建仓期",
+     "score": 62.4,
      "scores": {
-      "ACCUMULATION": 45,
+      "ACCUMULATION": 62,
       "WASH": 43,
-      "LAUNCH": 45,
+      "LAUNCH": 56,
       "DISTRIBUTION": 7
      },
-     "confidence": 0.5,
-     "conf_label": "模糊区间",
-     "opportunity": 70,
-     "risk": 37,
+     "confidence": 6.5,
+     "conf_label": "弱信号",
+     "opportunity": 72,
+     "risk": 25,
      "action": "重点介入",
      "tone": "#c62828",
-     "reason": "阶段为启动期（45分/模糊区间），机会分 70、风险分 37；资金净流入1.5%，年内位置 61 分位。",
+     "reason": "阶段为建仓期（62分/弱信号），机会分 72、风险分 25；资金净流入13.8%，年内位置 61 分位。",
      "evidence": [
       {
-       "label": "放量",
+       "label": "温和放量",
        "hit": false,
-       "desc": "当日量比 0.77"
+       "desc": "量比 0.77"
       },
       {
-       "label": "突破平台",
+       "label": "换手温和",
        "hit": false,
-       "desc": "突破:创20日新高，量能 0.77倍"
-      },
-      {
-       "label": "站上 MA20",
-       "hit": true,
-       "desc": "距MA20 7.42%"
-      },
-      {
-       "label": "均线多头排列",
-       "hit": false,
-       "desc": "均线纠缠"
-      },
-      {
-       "label": "MACD 多头且红柱放大",
-       "hit": false,
-       "desc": "DIF 1.44 / DEA 0.81，红柱 1.25"
-      },
-      {
-       "label": "DIF 站上零轴（水上）",
-       "hit": true,
-       "desc": "DIF 1.44"
-      },
-      {
-       "label": "资金大幅净流入",
-       "hit": false,
-       "desc": "3日主力 1.28亿，占比均值 2.28%"
-      },
-      {
-       "label": "超大单主导",
-       "hit": true,
-       "desc": "超大单占主力 0.53"
-      },
-      {
-       "label": "强势 K 线",
-       "hit": true,
-       "desc": "当日涨幅 -1.70%，近10日涨停 1次"
-      },
-      {
-       "label": "获利盘未过热",
-       "hit": true,
-       "desc": "获利盘 75.4%"
-      },
-      {
-       "label": "上方抛压有限",
-       "hit": false,
-       "desc": "上方套牢盘 22.3%"
-      },
-      {
-       "label": "换手活跃",
-       "hit": true,
        "desc": "5日换手 7.46%"
       },
       {
-       "label": "OBV 同步走强",
+       "label": "OBV 抬升",
+       "hit": false,
+       "desc": "OBV 20日斜率 0.03"
+      },
+      {
+       "label": "阳放阴缩",
        "hit": true,
-       "desc": "OBV 斜率 0.03"
+       "desc": "涨跌量比 1.31"
+      },
+      {
+       "label": "主力温和净流入",
+       "hit": true,
+       "desc": "5日主力 5.85亿，占比均值 14.26%"
+      },
+      {
+       "label": "位置处于中低位",
+       "hit": true,
+       "desc": "距60日高点 -26.34%，年内分位 61.49"
+      },
+      {
+       "label": "筹码低位密集",
+       "hit": false,
+       "desc": "集中度 0.34，获利盘 75.7%"
+      },
+      {
+       "label": "横盘整理",
+       "hit": true,
+       "desc": "20日振幅带 26.23%"
+      },
+      {
+       "label": "超大单参与",
+       "hit": true,
+       "desc": "超大单占主力 0.88"
+      },
+      {
+       "label": "量能趋势抬升",
+       "hit": true,
+       "desc": "近5日/前5日量能 1.44"
+      },
+      {
+       "label": "资金流出动能收敛",
+       "hit": true,
+       "desc": "5日主力 5.85亿 vs 10日 3.74亿"
+      },
+      {
+       "label": "资金逆势回流",
+       "hit": true,
+       "desc": "5日主力占成交额 13.77%"
+      },
+      {
+       "label": "深度超跌（有修复空间）",
+       "hit": false,
+       "desc": "距60日高点 -26.34%"
+      },
+      {
+       "label": "尚未进入拉升",
+       "hit": true,
+       "desc": "MA20 乖离 7.42%"
       }
      ]
     },
@@ -6369,6 +6384,3004 @@
    ]
   }
  ],
+ "etf_rows": [
+  {
+   "code": "513120",
+   "name": "港股创新药ETF广发",
+   "price": 1.283,
+   "chg": 4.39,
+   "amount": 70.21,
+   "turnover_now": 30.44,
+   "main_net": 4.12,
+   "main_pct": 5.87,
+   "vr": 1.8,
+   "hot": 82,
+   "hot_parts": {
+    "amt": 45,
+    "flow": 20,
+    "vr": 6,
+    "chg": 10,
+    "trend": 1
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 75,
+   "scores": {
+    "ACCUMULATION": 75,
+    "WASH": 59,
+    "LAUNCH": 21,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 16.5,
+   "conf_label": "中等置信",
+   "opportunity": 72,
+   "risk": 40,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（75分/中等置信），机会分 72、风险分 40；资金净流入4.0%，年内位置 51 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": true,
+     "desc": "量比 1.80"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 20.84%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": true,
+     "desc": "OBV 20日斜率 0.06"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": true,
+     "desc": "涨跌量比 1.56"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 9.51亿，占比均值 3.18%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -5.38%，年内分位 50.66"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": false,
+     "desc": "集中度 0.08，获利盘 60.4%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 12.73%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 1.00"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.97"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 9.51亿 vs 10日 7.58亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 3.99%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -5.38%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -1.50%"
+    }
+   ]
+  },
+  {
+   "code": "510500",
+   "name": "中证500ETF南方",
+   "price": 7.6,
+   "chg": -0.17,
+   "amount": 26.48,
+   "turnover_now": 6.68,
+   "main_net": 1.38,
+   "main_pct": 5.2,
+   "vr": 0.85,
+   "hot": 54,
+   "hot_parts": {
+    "amt": 31,
+    "flow": 20,
+    "vr": 0,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 54,
+   "scores": {
+    "ACCUMULATION": 29,
+    "WASH": 54,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 13
+   },
+   "confidence": 24.7,
+   "conf_label": "中等置信",
+   "opportunity": 53,
+   "risk": 30,
+   "action": "跟踪观察",
+   "tone": "#5d4037",
+   "reason": "阶段为洗盘期（54分/中等置信），机会分 53、风险分 30；资金净流出1.6%，年内位置 42 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.85"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.76"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -7.15%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -5.24%，距MA20 -2.70%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -1.59%，10日 0.48%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 6.55%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 2天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.51"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.70%"
+    }
+   ]
+  },
+  {
+   "code": "512100",
+   "name": "中证1000ETF南方",
+   "price": 3.03,
+   "chg": 0.63,
+   "amount": 23.97,
+   "turnover_now": 13.05,
+   "main_net": 2.83,
+   "main_pct": 11.82,
+   "vr": 0.93,
+   "hot": 52,
+   "hot_parts": {
+    "amt": 28,
+    "flow": 20,
+    "vr": 0,
+    "chg": 4,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 50,
+   "scores": {
+    "ACCUMULATION": 37,
+    "WASH": 50,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 18
+   },
+   "confidence": 13.1,
+   "conf_label": "中等置信",
+   "opportunity": 62,
+   "risk": 38,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（50分/中等置信），机会分 62、风险分 38；资金净流入0.5%，年内位置 29 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.93"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.78"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -5.70%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -3.49%，距MA20 -1.84%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 0.49%，10日 -1.94%"
+    },
+    {
+     "label": "换手降温",
+     "hit": false,
+     "desc": "5日换手 13.47%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 3天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.52"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -1.84%"
+    }
+   ]
+  },
+  {
+   "code": "159570",
+   "name": "港股通创新药ETF汇添富",
+   "price": 1.423,
+   "chg": 3.94,
+   "amount": 15.45,
+   "turnover_now": 7.53,
+   "main_net": 1.38,
+   "main_pct": 8.94,
+   "vr": 1.13,
+   "hot": 51,
+   "hot_parts": {
+    "amt": 20,
+    "flow": 20,
+    "vr": 1,
+    "chg": 10,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 74,
+   "scores": {
+    "ACCUMULATION": 40,
+    "WASH": 74,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 3
+   },
+   "confidence": 34.9,
+   "conf_label": "高置信",
+   "opportunity": 62,
+   "risk": 30,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（74分/高置信），机会分 62、风险分 30；资金净流出0.9%，年内位置 25 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": false,
+     "desc": "当日量比 1.13"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.88"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -6.87%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 0.76%，距MA20 -2.41%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -0.88%，10日 -1.35%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 7.32%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 2天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.48"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.41%"
+    }
+   ]
+  },
+  {
+   "code": "513310",
+   "name": "中韩半导体ETF华泰柏瑞",
+   "price": 4.631,
+   "chg": -2.09,
+   "amount": 67.65,
+   "turnover_now": 58.65,
+   "main_net": -2.02,
+   "main_pct": -2.99,
+   "vr": 0.68,
+   "hot": 48,
+   "hot_parts": {
+    "amt": 45,
+    "flow": 0,
+    "vr": 0,
+    "chg": 0,
+    "trend": 3
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 68,
+   "scores": {
+    "ACCUMULATION": 68,
+    "WASH": 57,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 25
+   },
+   "confidence": 11.2,
+   "conf_label": "弱信号",
+   "opportunity": 71,
+   "risk": 40,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（68分/弱信号），机会分 71、风险分 40；资金净流入2.0%，年内位置 58 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.68"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 78.38%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": true,
+     "desc": "OBV 20日斜率 0.15"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": true,
+     "desc": "涨跌量比 1.35"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 9.24亿，占比均值 1.99%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -30.75%，年内分位 57.70"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.05，获利盘 8.1%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 12.71%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 1.37"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": true,
+     "desc": "近5日/前5日量能 1.15"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 9.24亿 vs 10日 20.35亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 1.97%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": true,
+     "desc": "距60日高点 -30.75%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -3.02%"
+    }
+   ]
+  },
+  {
+   "code": "563360",
+   "name": "A500ETF华泰柏瑞",
+   "price": 1.247,
+   "chg": -0.56,
+   "amount": 42.34,
+   "turnover_now": 11.01,
+   "main_net": -0.14,
+   "main_pct": -0.34,
+   "vr": 1.06,
+   "hot": 46,
+   "hot_parts": {
+    "amt": 42,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 2
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 37,
+   "scores": {
+    "ACCUMULATION": 37,
+    "WASH": 36,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 13
+   },
+   "confidence": 0.8,
+   "conf_label": "模糊区间",
+   "opportunity": 69,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（37分/模糊区间），机会分 69、风险分 25；资金净流出1.0%，年内位置 32 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 1.06"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 10.36%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.26"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 0.98"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": false,
+     "desc": "5日主力 -2.11亿，占比均值 -1.38%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.37%，年内分位 32.48"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.05，获利盘 8.0%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 7.92%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 1.33"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 1.02"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 -2.11亿 vs 10日 -11.04亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 -1.04%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.37%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.46%"
+    }
+   ]
+  },
+  {
+   "code": "588000",
+   "name": "科创50ETF华夏",
+   "price": 1.61,
+   "chg": -1.59,
+   "amount": 46.64,
+   "turnover_now": 5.15,
+   "main_net": -6.56,
+   "main_pct": -14.06,
+   "vr": 0.89,
+   "hot": 45,
+   "hot_parts": {
+    "amt": 43,
+    "flow": 0,
+    "vr": 0,
+    "chg": 1,
+    "trend": 1
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 62,
+   "scores": {
+    "ACCUMULATION": 62,
+    "WASH": 40,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 11
+   },
+   "confidence": 22.4,
+   "conf_label": "中等置信",
+   "opportunity": 84,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（62分/中等置信），机会分 84、风险分 25；资金净流入5.5%，年内位置 31 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.89"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 5.44%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.37"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 0.96"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 13.94亿，占比均值 3.94%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -31.31%，年内分位 30.89"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.17，获利盘 1.8%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 18.69%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 0.44"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.94"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 13.94亿 vs 10日 34.14亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 5.49%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": true,
+     "desc": "距60日高点 -31.31%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -6.25%"
+    }
+   ]
+  },
+  {
+   "code": "588170",
+   "name": "科创半导体ETF华夏",
+   "price": 0.889,
+   "chg": -0.67,
+   "amount": 28.22,
+   "turnover_now": 7.29,
+   "main_net": 0.64,
+   "main_pct": 2.26,
+   "vr": 0.82,
+   "hot": 45,
+   "hot_parts": {
+    "amt": 34,
+    "flow": 9,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 56,
+   "scores": {
+    "ACCUMULATION": 56,
+    "WASH": 45,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 11
+   },
+   "confidence": 10.4,
+   "conf_label": "弱信号",
+   "opportunity": 76,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（56分/弱信号），机会分 76、风险分 25；资金净流入4.5%，年内位置 50 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.82"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 8.15%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.44"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.18"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 7.17亿，占比均值 3.90%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -36.36%，年内分位 50.20"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.16，获利盘 11.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 27.83%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 0.79"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.77"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 7.17亿 vs 10日 29.42亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 4.51%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": true,
+     "desc": "距60日高点 -36.36%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -8.26%"
+    }
+   ]
+  },
+  {
+   "code": "518880",
+   "name": "黄金ETF华安",
+   "price": 8.88,
+   "chg": -0.76,
+   "amount": 40.54,
+   "turnover_now": 3.86,
+   "main_net": -5.83,
+   "main_pct": -14.38,
+   "vr": 0.94,
+   "hot": 42,
+   "hot_parts": {
+    "amt": 40,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 80,
+   "scores": {
+    "ACCUMULATION": 36,
+    "WASH": 80,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 13
+   },
+   "confidence": 44.1,
+   "conf_label": "高置信",
+   "opportunity": 66,
+   "risk": 30,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（80分/高置信），机会分 66、风险分 30；资金净流出0.6%，年内位置 27 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.94"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.82"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -7.15%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 1.28%，距MA20 -3.29%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -0.56%，10日 0.75%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 4.00%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.47"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -3.29%"
+    }
+   ]
+  },
+  {
+   "code": "159915",
+   "name": "创业板ETF易方达",
+   "price": 3.3,
+   "chg": -1.11,
+   "amount": 39.22,
+   "turnover_now": 6.02,
+   "main_net": -3.12,
+   "main_pct": -7.95,
+   "vr": 0.75,
+   "hot": 40,
+   "hot_parts": {
+    "amt": 39,
+    "flow": 0,
+    "vr": 0,
+    "chg": 1,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 49,
+   "scores": {
+    "ACCUMULATION": 29,
+    "WASH": 49,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 20.0,
+   "conf_label": "中等置信",
+   "opportunity": 61,
+   "risk": 30,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（49分/中等置信），机会分 61、风险分 30；资金净流出0.8%，年内位置 33 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.75"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.83"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -11.36%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -9.60%，距MA20 -3.70%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -0.76%，10日 0.70%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 7.02%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.44"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -3.70%"
+    }
+   ]
+  },
+  {
+   "code": "159352",
+   "name": "A500ETF南方",
+   "price": 1.23,
+   "chg": -0.57,
+   "amount": 28.66,
+   "turnover_now": 8.64,
+   "main_net": -0.07,
+   "main_pct": -0.24,
+   "vr": 0.83,
+   "hot": 40,
+   "hot_parts": {
+    "amt": 37,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 44,
+   "scores": {
+    "ACCUMULATION": 37,
+    "WASH": 44,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 3
+   },
+   "confidence": 7.1,
+   "conf_label": "弱信号",
+   "opportunity": 66,
+   "risk": 30,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（44分/弱信号），机会分 66、风险分 30；资金净流入0.8%，年内位置 34 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.83"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": false,
+     "desc": "近5/前5量能 0.93"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -6.04%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -4.83%，距MA20 -2.38%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 0.79%，10日 0.33%"
+    },
+    {
+     "label": "换手降温",
+     "hit": false,
+     "desc": "5日换手 9.97%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 3天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.57"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.38%"
+    }
+   ]
+  },
+  {
+   "code": "510300",
+   "name": "沪深300ETF华泰柏瑞",
+   "price": 4.55,
+   "chg": -0.59,
+   "amount": 28.64,
+   "turnover_now": 2.69,
+   "main_net": -0.09,
+   "main_pct": -0.31,
+   "vr": 0.88,
+   "hot": 38,
+   "hot_parts": {
+    "amt": 36,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 54,
+   "scores": {
+    "ACCUMULATION": 38,
+    "WASH": 54,
+    "LAUNCH": 0,
+    "DISTRIBUTION": 13
+   },
+   "confidence": 16.0,
+   "conf_label": "中等置信",
+   "opportunity": 66,
+   "risk": 30,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（54分/中等置信），机会分 66、风险分 30；资金净流入0.6%，年内位置 29 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.88"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.84"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -4.95%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -4.00%，距MA20 -2.05%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 0.63%，10日 -0.56%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 2.75%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 3天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.51"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.05%"
+    }
+   ]
+  },
+  {
+   "code": "512050",
+   "name": "A500ETF华夏",
+   "price": 1.177,
+   "chg": -0.42,
+   "amount": 12.79,
+   "turnover_now": 6.71,
+   "main_net": 0.69,
+   "main_pct": 5.37,
+   "vr": 1.01,
+   "hot": 38,
+   "hot_parts": {
+    "amt": 16,
+    "flow": 20,
+    "vr": 0,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 47,
+   "scores": {
+    "ACCUMULATION": 47,
+    "WASH": 46,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 1.0,
+   "conf_label": "模糊区间",
+   "opportunity": 74,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（47分/模糊区间），机会分 74、风险分 25；资金净流入2.9%，年内位置 34 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 1.01"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 6.49%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.20"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.00"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 1.79亿，占比均值 2.63%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.16%，年内分位 34.10"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.06，获利盘 6.9%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 7.88%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 0.85"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.89"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 1.79亿 vs 10日 0.22亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 2.88%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.16%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.41%"
+    }
+   ]
+  },
+  {
+   "code": "159338",
+   "name": "中证A500ETF国泰",
+   "price": 1.182,
+   "chg": -0.51,
+   "amount": 28.21,
+   "turnover_now": 11.2,
+   "main_net": -0.19,
+   "main_pct": -0.66,
+   "vr": 0.95,
+   "hot": 36,
+   "hot_parts": {
+    "amt": 33,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 1
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 47,
+   "scores": {
+    "ACCUMULATION": 47,
+    "WASH": 36,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 10.9,
+   "conf_label": "弱信号",
+   "opportunity": 79,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（47分/弱信号），机会分 79、风险分 25；资金净流入2.0%，年内位置 33 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.95"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 11.48%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.20"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.00"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 2.95亿，占比均值 1.81%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.44%，年内分位 33.46"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.05，获利盘 10.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 7.85%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 0.66"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.96"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 2.95亿 vs 10日 1.76亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 2.02%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.44%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.42%"
+    }
+   ]
+  },
+  {
+   "code": "520500",
+   "name": "恒生创新药ETF华泰柏瑞",
+   "price": 1.383,
+   "chg": 3.67,
+   "amount": 10.23,
+   "turnover_now": 39.69,
+   "main_net": 0.77,
+   "main_pct": 7.53,
+   "vr": 1.47,
+   "hot": 36,
+   "hot_parts": {
+    "amt": 3,
+    "flow": 20,
+    "vr": 3,
+    "chg": 9,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 60,
+   "scores": {
+    "ACCUMULATION": 47,
+    "WASH": 60,
+    "LAUNCH": 11,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 13.3,
+   "conf_label": "中等置信",
+   "opportunity": 67,
+   "risk": 45,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（60分/中等置信），机会分 67、风险分 45；资金净流入1.3%，年内位置 22 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": false,
+     "desc": "当日量比 1.47"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.87"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -7.12%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -0.18%，距MA20 -2.83%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 1.29%，10日 2.67%"
+    },
+    {
+     "label": "换手降温",
+     "hit": false,
+     "desc": "5日换手 30.33%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.54"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.83%"
+    }
+   ]
+  },
+  {
+   "code": "515880",
+   "name": "通信ETF国泰",
+   "price": 0.66,
+   "chg": -2.67,
+   "amount": 25.14,
+   "turnover_now": 5.96,
+   "main_net": -2.53,
+   "main_pct": -10.08,
+   "vr": 0.81,
+   "hot": 32,
+   "hot_parts": {
+    "amt": 29,
+    "flow": 0,
+    "vr": 0,
+    "chg": 0,
+    "trend": 3
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 64,
+   "scores": {
+    "ACCUMULATION": 50,
+    "WASH": 64,
+    "LAUNCH": 12,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 14.0,
+   "conf_label": "中等置信",
+   "opportunity": 64,
+   "risk": 30,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（64分/中等置信），机会分 64、风险分 30；资金净流入5.6%，年内位置 49 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.81"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": false,
+     "desc": "近5/前5量能 1.10"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -6.91%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -6.13%，距MA20 -0.68%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.3%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 5.56%，10日 5.54%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 6.86%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 0天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": false,
+     "desc": "5日收盘位置均值 0.41"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -0.68%"
+    }
+   ]
+  },
+  {
+   "code": "510050",
+   "name": "上证50ETF华夏",
+   "price": 2.98,
+   "chg": -0.17,
+   "amount": 17.46,
+   "turnover_now": 8.36,
+   "main_net": -0.48,
+   "main_pct": -2.75,
+   "vr": 1.41,
+   "hot": 30,
+   "hot_parts": {
+    "amt": 23,
+    "flow": 0,
+    "vr": 3,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 57,
+   "scores": {
+    "ACCUMULATION": 57,
+    "WASH": 36,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 21.9,
+   "conf_label": "中等置信",
+   "opportunity": 84,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（57分/中等置信），机会分 84、风险分 25；资金净流入3.4%，年内位置 31 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": true,
+     "desc": "量比 1.41"
+    },
+    {
+     "label": "换手温和",
+     "hit": false,
+     "desc": "5日换手 6.02%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.15"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 0.90"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 2.15亿，占比均值 2.67%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -3.53%，年内分位 30.52"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.03，获利盘 11.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 3.86%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 1.24"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.93"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 2.15亿 vs 10日 2.31亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 3.38%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -3.53%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -1.16%"
+    }
+   ]
+  },
+  {
+   "code": "159845",
+   "name": "中证1000ETF华夏",
+   "price": 3.11,
+   "chg": 0.58,
+   "amount": 15.76,
+   "turnover_now": 23.71,
+   "main_net": 0.15,
+   "main_pct": 0.92,
+   "vr": 0.73,
+   "hot": 30,
+   "hot_parts": {
+    "amt": 22,
+    "flow": 4,
+    "vr": 0,
+    "chg": 4,
+    "trend": 1
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 44,
+   "scores": {
+    "ACCUMULATION": 37,
+    "WASH": 44,
+    "LAUNCH": 8,
+    "DISTRIBUTION": 22
+   },
+   "confidence": 7.1,
+   "conf_label": "弱信号",
+   "opportunity": 57,
+   "risk": 45,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（44分/弱信号），机会分 57、风险分 45；资金净流出1.2%，年内位置 29 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.73"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": false,
+     "desc": "近5/前5量能 0.96"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -5.96%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -3.47%，距MA20 -1.86%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -1.24%，10日 -1.52%"
+    },
+    {
+     "label": "换手降温",
+     "hit": false,
+     "desc": "5日换手 29.09%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": true,
+     "desc": "近10日长下影 2天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.52"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -1.86%"
+    }
+   ]
+  },
+  {
+   "code": "159516",
+   "name": "半导体设备ETF国泰",
+   "price": 0.65,
+   "chg": -0.77,
+   "amount": 19.21,
+   "turnover_now": 4.86,
+   "main_net": 0.02,
+   "main_pct": 0.1,
+   "vr": 0.87,
+   "hot": 29,
+   "hot_parts": {
+    "amt": 26,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 62,
+   "scores": {
+    "ACCUMULATION": 62,
+    "WASH": 49,
+    "LAUNCH": 14,
+    "DISTRIBUTION": 6
+   },
+   "confidence": 12.5,
+   "conf_label": "中等置信",
+   "opportunity": 76,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（62分/中等置信），机会分 76、风险分 25；资金净流入6.3%，年内位置 51 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.87"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 5.01%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.42"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.12"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 6.34亿，占比均值 5.40%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -34.80%，年内分位 51.06"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.17，获利盘 9.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 26.42%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 0.72"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.77"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 6.34亿 vs 10日 15.93亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 6.26%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": true,
+     "desc": "距60日高点 -34.80%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -7.32%"
+    }
+   ]
+  },
+  {
+   "code": "513090",
+   "name": "香港证券ETF易方达",
+   "price": 1.807,
+   "chg": -0.39,
+   "amount": 19.05,
+   "turnover_now": 10.87,
+   "main_net": -0.2,
+   "main_pct": -1.04,
+   "vr": 0.7,
+   "hot": 28,
+   "hot_parts": {
+    "amt": 25,
+    "flow": 0,
+    "vr": 0,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 73,
+   "scores": {
+    "ACCUMULATION": 65,
+    "WASH": 73,
+    "LAUNCH": 11,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 8.2,
+   "conf_label": "弱信号",
+   "opportunity": 71,
+   "risk": 38,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（73分/弱信号），机会分 71、风险分 38；资金净流入2.7%，年内位置 17 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.70"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.63"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -5.39%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -1.65%，距MA20 -2.57%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 2.69%，10日 0.58%"
+    },
+    {
+     "label": "换手降温",
+     "hit": false,
+     "desc": "5日换手 14.26%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 0天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.55"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.57%"
+    }
+   ]
+  },
+  {
+   "code": "513130",
+   "name": "恒生科技ETF华泰柏瑞",
+   "price": 0.536,
+   "chg": -0.37,
+   "amount": 13.65,
+   "turnover_now": 4.24,
+   "main_net": -0.22,
+   "main_pct": -1.64,
+   "vr": 0.8,
+   "hot": 21,
+   "hot_parts": {
+    "amt": 17,
+    "flow": 0,
+    "vr": 0,
+    "chg": 3,
+    "trend": 1
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 51,
+   "scores": {
+    "ACCUMULATION": 51,
+    "WASH": 48,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 2.6,
+   "conf_label": "模糊区间",
+   "opportunity": 79,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（51分/模糊区间），机会分 79、风险分 25；资金净流入5.6%，年内位置 1 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.80"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 5.32%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.37"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.08"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 4.88亿，占比均值 4.94%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.85%，年内分位 0.61"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.13，获利盘 9.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 13.07%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": false,
+     "desc": "超大单占主力 0.08"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 1.00"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 4.88亿 vs 10日 4.99亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 5.61%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.85%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -5.26%"
+    }
+   ]
+  },
+  {
+   "code": "588200",
+   "name": "科创芯片ETF嘉实",
+   "price": 1.071,
+   "chg": -1.65,
+   "amount": 13.97,
+   "turnover_now": 3.01,
+   "main_net": -0.36,
+   "main_pct": -2.59,
+   "vr": 0.68,
+   "hot": 19,
+   "hot_parts": {
+    "amt": 19,
+    "flow": 0,
+    "vr": 0,
+    "chg": 1,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 45,
+   "scores": {
+    "ACCUMULATION": 36,
+    "WASH": 45,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 16
+   },
+   "confidence": 8.9,
+   "conf_label": "弱信号",
+   "opportunity": 58,
+   "risk": 30,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为洗盘期（45分/弱信号），机会分 58、风险分 30；资金净流入1.3%，年内位置 42 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.68"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.76"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -16.00%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -15.62%，距MA20 -6.71%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.4%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 1.27%，10日 0.97%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 3.89%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": false,
+     "desc": "5日收盘位置均值 0.42"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -6.71%"
+    }
+   ]
+  },
+  {
+   "code": "588080",
+   "name": "科创50ETF易方达",
+   "price": 1.566,
+   "chg": -1.69,
+   "amount": 12.58,
+   "turnover_now": 3.03,
+   "main_net": -1.34,
+   "main_pct": -10.66,
+   "vr": 0.96,
+   "hot": 16,
+   "hot_parts": {
+    "amt": 14,
+    "flow": 0,
+    "vr": 0,
+    "chg": 1,
+    "trend": 2
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 36,
+   "scores": {
+    "ACCUMULATION": 36,
+    "WASH": 32,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 9
+   },
+   "confidence": 4.9,
+   "conf_label": "模糊区间",
+   "opportunity": 74,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（36分/模糊区间），机会分 74、风险分 25；资金净流入1.3%，年内位置 32 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.96"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 3.12%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.35"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.00"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": false,
+     "desc": "5日主力 0.85亿，占比均值 0.98%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -31.10%，年内分位 31.69"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.28，获利盘 2.1%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 18.47%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": false,
+     "desc": "超大单占主力 -3.21"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 1.03"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": false,
+     "desc": "5日主力 0.85亿 vs 10日 3.47亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 1.27%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": true,
+     "desc": "距60日高点 -31.10%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -5.98%"
+    }
+   ]
+  },
+  {
+   "code": "159361",
+   "name": "A500ETF易方达",
+   "price": 1.204,
+   "chg": -0.66,
+   "amount": 12.15,
+   "turnover_now": 4.49,
+   "main_net": -0.01,
+   "main_pct": -0.09,
+   "vr": 0.77,
+   "hot": 15,
+   "hot_parts": {
+    "amt": 11,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 2
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 43,
+   "scores": {
+    "ACCUMULATION": 43,
+    "WASH": 41,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 18
+   },
+   "confidence": 2.0,
+   "conf_label": "模糊区间",
+   "opportunity": 59,
+   "risk": 37,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为建仓期（43分/模糊区间），机会分 59、风险分 37；资金净流出13.8%，年内位置 35 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.77"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 5.67%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.30"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 0.99"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": false,
+     "desc": "5日主力 -10.72亿，占比均值 -11.20%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.50%，年内分位 34.81"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.09，获利盘 3.4%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 7.86%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 1.26"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 1.09"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 -10.72亿 vs 10日 -11.42亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 -13.81%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.50%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.52%"
+    }
+   ]
+  },
+  {
+   "code": "159949",
+   "name": "创业板50ETF华安",
+   "price": 1.542,
+   "chg": -1.53,
+   "amount": 12.22,
+   "turnover_now": 5.01,
+   "main_net": -0.54,
+   "main_pct": -4.42,
+   "vr": 0.82,
+   "hot": 13,
+   "hot_parts": {
+    "amt": 12,
+    "flow": 0,
+    "vr": 0,
+    "chg": 1,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 80,
+   "scores": {
+    "ACCUMULATION": 36,
+    "WASH": 80,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 44.1,
+   "conf_label": "高置信",
+   "opportunity": 66,
+   "risk": 30,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（80分/高置信），机会分 66、风险分 30；资金净流出1.6%，年内位置 31 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.82"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.86"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -11.78%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -10.52%，距MA20 -3.89%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 -1.57%，10日 0.15%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 5.60%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.49"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -3.89%"
+    }
+   ]
+  },
+  {
+   "code": "159792",
+   "name": "港股通互联网ETF富国",
+   "price": 0.542,
+   "chg": 0,
+   "amount": 11.73,
+   "turnover_now": 3.48,
+   "main_net": 0.1,
+   "main_pct": 0.84,
+   "vr": 1.02,
+   "hot": 13,
+   "hot_parts": {
+    "amt": 6,
+    "flow": 3,
+    "vr": 0,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 43,
+   "scores": {
+    "ACCUMULATION": 43,
+    "WASH": 34,
+    "LAUNCH": 7,
+    "DISTRIBUTION": 12
+   },
+   "confidence": 8.7,
+   "conf_label": "弱信号",
+   "opportunity": 64,
+   "risk": 37,
+   "action": "逢低关注",
+   "tone": "#185FA5",
+   "reason": "阶段为建仓期（43分/弱信号），机会分 64、风险分 37；资金净流出5.6%，年内位置 6 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 1.02"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 3.21%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.19"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.15"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": false,
+     "desc": "5日主力 -3.06亿，占比均值 -4.99%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -15.05%，年内分位 5.55"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.16，获利盘 9.5%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 13.56%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": true,
+     "desc": "超大单占主力 3.94"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.70"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 -3.06亿 vs 10日 -12.76亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": false,
+     "desc": "5日主力占成交额 -5.58%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -15.05%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -4.90%"
+    }
+   ]
+  },
+  {
+   "code": "513180",
+   "name": "恒生科技ETF华夏",
+   "price": 0.545,
+   "chg": -0.37,
+   "amount": 12.08,
+   "turnover_now": 3.11,
+   "main_net": -0.25,
+   "main_pct": -2.07,
+   "vr": 0.8,
+   "hot": 12,
+   "hot_parts": {
+    "amt": 9,
+    "flow": 0,
+    "vr": 0,
+    "chg": 3,
+    "trend": 0
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 58,
+   "scores": {
+    "ACCUMULATION": 58,
+    "WASH": 43,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 11
+   },
+   "confidence": 15.0,
+   "conf_label": "中等置信",
+   "opportunity": 84,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（58分/中等置信），机会分 84、风险分 25；资金净流入4.6%，年内位置 1 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 0.80"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 3.99%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.45"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.15"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 3.60亿，占比均值 3.50%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -12.66%，年内分位 0.90"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.12，获利盘 6.7%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 12.45%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": false,
+     "desc": "超大单占主力 0.27"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 0.92"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 3.60亿 vs 10日 0.27亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 4.61%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -12.66%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -5.16%"
+    }
+   ]
+  },
+  {
+   "code": "512880",
+   "name": "证券ETF国泰",
+   "price": 1.052,
+   "chg": -0.57,
+   "amount": 11.91,
+   "turnover_now": 2.0,
+   "main_net": -0.69,
+   "main_pct": -5.77,
+   "vr": 0.73,
+   "hot": 10,
+   "hot_parts": {
+    "amt": 8,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 0
+   },
+   "stage": "WASH",
+   "stage_name": "洗盘期",
+   "score": 80,
+   "scores": {
+    "ACCUMULATION": 66,
+    "WASH": 80,
+    "LAUNCH": 14,
+    "DISTRIBUTION": 7
+   },
+   "confidence": 13.6,
+   "conf_label": "中等置信",
+   "opportunity": 76,
+   "risk": 30,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为洗盘期（80分/中等置信），机会分 76、风险分 30；资金净流入8.2%，年内位置 18 分位。",
+   "evidence": [
+    {
+     "label": "缩量下跌",
+     "hit": true,
+     "desc": "当日量比 0.73"
+    },
+    {
+     "label": "量能持续萎缩",
+     "hit": true,
+     "desc": "近5/前5量能 0.82"
+    },
+    {
+     "label": "跌幅可控",
+     "hit": true,
+     "desc": "20日回撤 -5.48%"
+    },
+    {
+     "label": "未破关键位",
+     "hit": true,
+     "desc": "距MA60 -4.73%，距MA20 -2.94%"
+    },
+    {
+     "label": "底部筹码锁定",
+     "hit": false,
+     "desc": "低位锁定筹码 0.0%"
+    },
+    {
+     "label": "主力未大规模出逃",
+     "hit": true,
+     "desc": "5日主力占成交额 8.24%，10日 4.29%"
+    },
+    {
+     "label": "换手降温",
+     "hit": true,
+     "desc": "5日换手 2.60%"
+    },
+    {
+     "label": "长下影承接",
+     "hit": false,
+     "desc": "近10日长下影 1天"
+    },
+    {
+     "label": "收盘重心不弱",
+     "hit": true,
+     "desc": "5日收盘位置均值 0.49"
+    },
+    {
+     "label": "无放量出货日",
+     "hit": true,
+     "desc": "近10日放量下跌天数 0"
+    },
+    {
+     "label": "整理期未拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -2.94%"
+    }
+   ]
+  },
+  {
+   "code": "513330",
+   "name": "恒生互联网ETF华夏",
+   "price": 0.347,
+   "chg": -0.57,
+   "amount": 11.16,
+   "turnover_now": 4.36,
+   "main_net": -0.28,
+   "main_pct": -2.53,
+   "vr": 1.05,
+   "hot": 9,
+   "hot_parts": {
+    "amt": 5,
+    "flow": 0,
+    "vr": 0,
+    "chg": 2,
+    "trend": 2
+   },
+   "stage": "ACCUMULATION",
+   "stage_name": "建仓期",
+   "score": 58,
+   "scores": {
+    "ACCUMULATION": 58,
+    "WASH": 32,
+    "LAUNCH": 3,
+    "DISTRIBUTION": 9
+   },
+   "confidence": 26.8,
+   "conf_label": "高置信",
+   "opportunity": 84,
+   "risk": 25,
+   "action": "重点介入",
+   "tone": "#c62828",
+   "reason": "阶段为建仓期（58分/高置信），机会分 84、风险分 25；资金净流入3.1%，年内位置 4 分位。",
+   "evidence": [
+    {
+     "label": "温和放量",
+     "hit": false,
+     "desc": "量比 1.05"
+    },
+    {
+     "label": "换手温和",
+     "hit": true,
+     "desc": "5日换手 4.35%"
+    },
+    {
+     "label": "OBV 抬升",
+     "hit": false,
+     "desc": "OBV 20日斜率 -0.50"
+    },
+    {
+     "label": "阳放阴缩",
+     "hit": false,
+     "desc": "涨跌量比 1.14"
+    },
+    {
+     "label": "主力温和净流入",
+     "hit": true,
+     "desc": "5日主力 1.76亿，占比均值 2.35%"
+    },
+    {
+     "label": "位置处于中低位",
+     "hit": true,
+     "desc": "距60日高点 -16.39%，年内分位 4.23"
+    },
+    {
+     "label": "筹码低位密集",
+     "hit": true,
+     "desc": "集中度 0.16，获利盘 3.9%"
+    },
+    {
+     "label": "横盘整理",
+     "hit": true,
+     "desc": "20日振幅带 12.46%"
+    },
+    {
+     "label": "超大单参与",
+     "hit": false,
+     "desc": "超大单占主力 0.28"
+    },
+    {
+     "label": "量能趋势抬升",
+     "hit": false,
+     "desc": "近5日/前5日量能 1.02"
+    },
+    {
+     "label": "资金流出动能收敛",
+     "hit": true,
+     "desc": "5日主力 1.76亿 vs 10日 -3.62亿"
+    },
+    {
+     "label": "资金逆势回流",
+     "hit": true,
+     "desc": "5日主力占成交额 3.13%"
+    },
+    {
+     "label": "深度超跌（有修复空间）",
+     "hit": false,
+     "desc": "距60日高点 -16.39%"
+    },
+    {
+     "label": "尚未进入拉升",
+     "hit": true,
+     "desc": "MA20 乖离 -5.69%"
+    }
+   ]
+  },
+  {
+   "code": "512800",
+   "name": "银行ETF华宝",
+   "price": 0.856,
+   "chg": 1.06,
+   "amount": 9.87,
+   "turnover_now": 10.1,
+   "main_net": -0.05,
+   "main_pct": -0.54,
+   "vr": 1.13,
+   "hot": 8,
+   "hot_parts": {
+    "amt": 2,
+    "flow": 0,
+    "vr": 1,
+    "chg": 5,
+    "trend": 0
+   },
+   "stage": "LAUNCH",
+   "stage_name": "启动期",
+   "score": 64,
+   "scores": {
+    "ACCUMULATION": 20,
+    "WASH": 42,
+    "LAUNCH": 64,
+    "DISTRIBUTION": 21
+   },
+   "confidence": 22.5,
+   "conf_label": "中等置信",
+   "opportunity": 61,
+   "risk": 53,
+   "action": "谨慎持有",
+   "tone": "#e65100",
+   "reason": "阶段为启动期（64分/中等置信），机会分 61、风险分 53；资金净流入0.1%，年内位置 100 分位。",
+   "evidence": [
+    {
+     "label": "放量",
+     "hit": false,
+     "desc": "当日量比 1.13"
+    },
+    {
+     "label": "突破平台",
+     "hit": true,
+     "desc": "突破:创20日新高，量能 1.13倍"
+    },
+    {
+     "label": "站上 MA20",
+     "hit": true,
+     "desc": "距MA20 2.87%"
+    },
+    {
+     "label": "均线多头排列",
+     "hit": true,
+     "desc": "多头排列"
+    },
+    {
+     "label": "MACD 多头且红柱放大",
+     "hit": true,
+     "desc": "DIF 0.01 / DEA 0.01，红柱 0.00"
+    },
+    {
+     "label": "DIF 站上零轴（水上）",
+     "hit": true,
+     "desc": "DIF 0.01"
+    },
+    {
+     "label": "资金大幅净流入",
+     "hit": false,
+     "desc": "3日主力 -0.54亿，占比均值 0.33%"
+    },
+    {
+     "label": "超大单主导",
+     "hit": true,
+     "desc": "超大单占主力 1.94"
+    },
+    {
+     "label": "强势 K 线",
+     "hit": false,
+     "desc": "当日涨幅 1.06%，近10日涨停 0次"
+    },
+    {
+     "label": "获利盘未过热",
+     "hit": false,
+     "desc": "获利盘 97.1%"
+    },
+    {
+     "label": "上方抛压有限",
+     "hit": true,
+     "desc": "上方套牢盘 2.9%"
+    },
+    {
+     "label": "换手活跃",
+     "hit": true,
+     "desc": "5日换手 8.64%"
+    },
+    {
+     "label": "OBV 同步走强",
+     "hit": true,
+     "desc": "OBV 斜率 0.24"
+    }
+   ]
+  }
+ ],
+ "etf_count": 30,
  "meta": {
   "ACCUMULATION": {
    "name": "建仓期",
@@ -6386,5 +9399,3005 @@
    "name": "撤离期",
    "color": "#5d4037"
   }
+ },
+ "etfs": {
+  "count": 30,
+  "list": [
+   {
+    "code": "513120",
+    "name": "港股创新药ETF广发",
+    "price": 1.283,
+    "chg": 4.39,
+    "amount": 70.21,
+    "turnover_now": 30.44,
+    "main_net": 4.12,
+    "main_pct": 5.87,
+    "vr": 1.8,
+    "hot": 82,
+    "hot_parts": {
+     "amt": 45,
+     "flow": 20,
+     "vr": 6,
+     "chg": 10,
+     "trend": 1
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 75,
+    "scores": {
+     "ACCUMULATION": 75,
+     "WASH": 59,
+     "LAUNCH": 21,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 16.5,
+    "conf_label": "中等置信",
+    "opportunity": 72,
+    "risk": 40,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（75分/中等置信），机会分 72、风险分 40；资金净流入4.0%，年内位置 51 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": true,
+      "desc": "量比 1.80"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 20.84%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": true,
+      "desc": "OBV 20日斜率 0.06"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": true,
+      "desc": "涨跌量比 1.56"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 9.51亿，占比均值 3.18%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -5.38%，年内分位 50.66"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": false,
+      "desc": "集中度 0.08，获利盘 60.4%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 12.73%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 1.00"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.97"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 9.51亿 vs 10日 7.58亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 3.99%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -5.38%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -1.50%"
+     }
+    ]
+   },
+   {
+    "code": "510500",
+    "name": "中证500ETF南方",
+    "price": 7.6,
+    "chg": -0.17,
+    "amount": 26.48,
+    "turnover_now": 6.68,
+    "main_net": 1.38,
+    "main_pct": 5.2,
+    "vr": 0.85,
+    "hot": 54,
+    "hot_parts": {
+     "amt": 31,
+     "flow": 20,
+     "vr": 0,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 54,
+    "scores": {
+     "ACCUMULATION": 29,
+     "WASH": 54,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 13
+    },
+    "confidence": 24.7,
+    "conf_label": "中等置信",
+    "opportunity": 53,
+    "risk": 30,
+    "action": "跟踪观察",
+    "tone": "#5d4037",
+    "reason": "阶段为洗盘期（54分/中等置信），机会分 53、风险分 30；资金净流出1.6%，年内位置 42 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.85"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.76"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -7.15%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -5.24%，距MA20 -2.70%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -1.59%，10日 0.48%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 6.55%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 2天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.51"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.70%"
+     }
+    ]
+   },
+   {
+    "code": "512100",
+    "name": "中证1000ETF南方",
+    "price": 3.03,
+    "chg": 0.63,
+    "amount": 23.97,
+    "turnover_now": 13.05,
+    "main_net": 2.83,
+    "main_pct": 11.82,
+    "vr": 0.93,
+    "hot": 52,
+    "hot_parts": {
+     "amt": 28,
+     "flow": 20,
+     "vr": 0,
+     "chg": 4,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 50,
+    "scores": {
+     "ACCUMULATION": 37,
+     "WASH": 50,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 18
+    },
+    "confidence": 13.1,
+    "conf_label": "中等置信",
+    "opportunity": 62,
+    "risk": 38,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（50分/中等置信），机会分 62、风险分 38；资金净流入0.5%，年内位置 29 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.93"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.78"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -5.70%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -3.49%，距MA20 -1.84%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 0.49%，10日 -1.94%"
+     },
+     {
+      "label": "换手降温",
+      "hit": false,
+      "desc": "5日换手 13.47%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 3天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.52"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -1.84%"
+     }
+    ]
+   },
+   {
+    "code": "159570",
+    "name": "港股通创新药ETF汇添富",
+    "price": 1.423,
+    "chg": 3.94,
+    "amount": 15.45,
+    "turnover_now": 7.53,
+    "main_net": 1.38,
+    "main_pct": 8.94,
+    "vr": 1.13,
+    "hot": 51,
+    "hot_parts": {
+     "amt": 20,
+     "flow": 20,
+     "vr": 1,
+     "chg": 10,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 74,
+    "scores": {
+     "ACCUMULATION": 40,
+     "WASH": 74,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 3
+    },
+    "confidence": 34.9,
+    "conf_label": "高置信",
+    "opportunity": 62,
+    "risk": 30,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（74分/高置信），机会分 62、风险分 30；资金净流出0.9%，年内位置 25 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": false,
+      "desc": "当日量比 1.13"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.88"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -6.87%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 0.76%，距MA20 -2.41%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -0.88%，10日 -1.35%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 7.32%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 2天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.48"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.41%"
+     }
+    ]
+   },
+   {
+    "code": "513310",
+    "name": "中韩半导体ETF华泰柏瑞",
+    "price": 4.631,
+    "chg": -2.09,
+    "amount": 67.65,
+    "turnover_now": 58.65,
+    "main_net": -2.02,
+    "main_pct": -2.99,
+    "vr": 0.68,
+    "hot": 48,
+    "hot_parts": {
+     "amt": 45,
+     "flow": 0,
+     "vr": 0,
+     "chg": 0,
+     "trend": 3
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 68,
+    "scores": {
+     "ACCUMULATION": 68,
+     "WASH": 57,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 25
+    },
+    "confidence": 11.2,
+    "conf_label": "弱信号",
+    "opportunity": 71,
+    "risk": 40,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（68分/弱信号），机会分 71、风险分 40；资金净流入2.0%，年内位置 58 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.68"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 78.38%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": true,
+      "desc": "OBV 20日斜率 0.15"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": true,
+      "desc": "涨跌量比 1.35"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 9.24亿，占比均值 1.99%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -30.75%，年内分位 57.70"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.05，获利盘 8.1%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 12.71%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 1.37"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": true,
+      "desc": "近5日/前5日量能 1.15"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 9.24亿 vs 10日 20.35亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 1.97%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": true,
+      "desc": "距60日高点 -30.75%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -3.02%"
+     }
+    ]
+   },
+   {
+    "code": "563360",
+    "name": "A500ETF华泰柏瑞",
+    "price": 1.247,
+    "chg": -0.56,
+    "amount": 42.34,
+    "turnover_now": 11.01,
+    "main_net": -0.14,
+    "main_pct": -0.34,
+    "vr": 1.06,
+    "hot": 46,
+    "hot_parts": {
+     "amt": 42,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 2
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 37,
+    "scores": {
+     "ACCUMULATION": 37,
+     "WASH": 36,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 13
+    },
+    "confidence": 0.8,
+    "conf_label": "模糊区间",
+    "opportunity": 69,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（37分/模糊区间），机会分 69、风险分 25；资金净流出1.0%，年内位置 32 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 1.06"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 10.36%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.26"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 0.98"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": false,
+      "desc": "5日主力 -2.11亿，占比均值 -1.38%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.37%，年内分位 32.48"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.05，获利盘 8.0%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 7.92%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 1.33"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 1.02"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 -2.11亿 vs 10日 -11.04亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 -1.04%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.37%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.46%"
+     }
+    ]
+   },
+   {
+    "code": "588000",
+    "name": "科创50ETF华夏",
+    "price": 1.61,
+    "chg": -1.59,
+    "amount": 46.64,
+    "turnover_now": 5.15,
+    "main_net": -6.56,
+    "main_pct": -14.06,
+    "vr": 0.89,
+    "hot": 45,
+    "hot_parts": {
+     "amt": 43,
+     "flow": 0,
+     "vr": 0,
+     "chg": 1,
+     "trend": 1
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 62,
+    "scores": {
+     "ACCUMULATION": 62,
+     "WASH": 40,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 11
+    },
+    "confidence": 22.4,
+    "conf_label": "中等置信",
+    "opportunity": 84,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（62分/中等置信），机会分 84、风险分 25；资金净流入5.5%，年内位置 31 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.89"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 5.44%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.37"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 0.96"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 13.94亿，占比均值 3.94%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -31.31%，年内分位 30.89"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.17，获利盘 1.8%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 18.69%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 0.44"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.94"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 13.94亿 vs 10日 34.14亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 5.49%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": true,
+      "desc": "距60日高点 -31.31%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -6.25%"
+     }
+    ]
+   },
+   {
+    "code": "588170",
+    "name": "科创半导体ETF华夏",
+    "price": 0.889,
+    "chg": -0.67,
+    "amount": 28.22,
+    "turnover_now": 7.29,
+    "main_net": 0.64,
+    "main_pct": 2.26,
+    "vr": 0.82,
+    "hot": 45,
+    "hot_parts": {
+     "amt": 34,
+     "flow": 9,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 56,
+    "scores": {
+     "ACCUMULATION": 56,
+     "WASH": 45,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 11
+    },
+    "confidence": 10.4,
+    "conf_label": "弱信号",
+    "opportunity": 76,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（56分/弱信号），机会分 76、风险分 25；资金净流入4.5%，年内位置 50 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.82"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 8.15%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.44"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.18"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 7.17亿，占比均值 3.90%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -36.36%，年内分位 50.20"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.16，获利盘 11.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 27.83%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 0.79"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.77"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 7.17亿 vs 10日 29.42亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 4.51%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": true,
+      "desc": "距60日高点 -36.36%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -8.26%"
+     }
+    ]
+   },
+   {
+    "code": "518880",
+    "name": "黄金ETF华安",
+    "price": 8.88,
+    "chg": -0.76,
+    "amount": 40.54,
+    "turnover_now": 3.86,
+    "main_net": -5.83,
+    "main_pct": -14.38,
+    "vr": 0.94,
+    "hot": 42,
+    "hot_parts": {
+     "amt": 40,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 80,
+    "scores": {
+     "ACCUMULATION": 36,
+     "WASH": 80,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 13
+    },
+    "confidence": 44.1,
+    "conf_label": "高置信",
+    "opportunity": 66,
+    "risk": 30,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（80分/高置信），机会分 66、风险分 30；资金净流出0.6%，年内位置 27 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.94"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.82"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -7.15%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 1.28%，距MA20 -3.29%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -0.56%，10日 0.75%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 4.00%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.47"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -3.29%"
+     }
+    ]
+   },
+   {
+    "code": "159915",
+    "name": "创业板ETF易方达",
+    "price": 3.3,
+    "chg": -1.11,
+    "amount": 39.22,
+    "turnover_now": 6.02,
+    "main_net": -3.12,
+    "main_pct": -7.95,
+    "vr": 0.75,
+    "hot": 40,
+    "hot_parts": {
+     "amt": 39,
+     "flow": 0,
+     "vr": 0,
+     "chg": 1,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 49,
+    "scores": {
+     "ACCUMULATION": 29,
+     "WASH": 49,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 20.0,
+    "conf_label": "中等置信",
+    "opportunity": 61,
+    "risk": 30,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（49分/中等置信），机会分 61、风险分 30；资金净流出0.8%，年内位置 33 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.75"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.83"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -11.36%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -9.60%，距MA20 -3.70%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -0.76%，10日 0.70%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 7.02%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.44"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -3.70%"
+     }
+    ]
+   },
+   {
+    "code": "159352",
+    "name": "A500ETF南方",
+    "price": 1.23,
+    "chg": -0.57,
+    "amount": 28.66,
+    "turnover_now": 8.64,
+    "main_net": -0.07,
+    "main_pct": -0.24,
+    "vr": 0.83,
+    "hot": 40,
+    "hot_parts": {
+     "amt": 37,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 44,
+    "scores": {
+     "ACCUMULATION": 37,
+     "WASH": 44,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 3
+    },
+    "confidence": 7.1,
+    "conf_label": "弱信号",
+    "opportunity": 66,
+    "risk": 30,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（44分/弱信号），机会分 66、风险分 30；资金净流入0.8%，年内位置 34 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.83"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": false,
+      "desc": "近5/前5量能 0.93"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -6.04%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -4.83%，距MA20 -2.38%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 0.79%，10日 0.33%"
+     },
+     {
+      "label": "换手降温",
+      "hit": false,
+      "desc": "5日换手 9.97%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 3天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.57"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.38%"
+     }
+    ]
+   },
+   {
+    "code": "510300",
+    "name": "沪深300ETF华泰柏瑞",
+    "price": 4.55,
+    "chg": -0.59,
+    "amount": 28.64,
+    "turnover_now": 2.69,
+    "main_net": -0.09,
+    "main_pct": -0.31,
+    "vr": 0.88,
+    "hot": 38,
+    "hot_parts": {
+     "amt": 36,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 54,
+    "scores": {
+     "ACCUMULATION": 38,
+     "WASH": 54,
+     "LAUNCH": 0,
+     "DISTRIBUTION": 13
+    },
+    "confidence": 16.0,
+    "conf_label": "中等置信",
+    "opportunity": 66,
+    "risk": 30,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（54分/中等置信），机会分 66、风险分 30；资金净流入0.6%，年内位置 29 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.88"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.84"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -4.95%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -4.00%，距MA20 -2.05%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 0.63%，10日 -0.56%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 2.75%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 3天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.51"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.05%"
+     }
+    ]
+   },
+   {
+    "code": "512050",
+    "name": "A500ETF华夏",
+    "price": 1.177,
+    "chg": -0.42,
+    "amount": 12.79,
+    "turnover_now": 6.71,
+    "main_net": 0.69,
+    "main_pct": 5.37,
+    "vr": 1.01,
+    "hot": 38,
+    "hot_parts": {
+     "amt": 16,
+     "flow": 20,
+     "vr": 0,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 47,
+    "scores": {
+     "ACCUMULATION": 47,
+     "WASH": 46,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 1.0,
+    "conf_label": "模糊区间",
+    "opportunity": 74,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（47分/模糊区间），机会分 74、风险分 25；资金净流入2.9%，年内位置 34 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 1.01"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 6.49%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.20"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.00"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 1.79亿，占比均值 2.63%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.16%，年内分位 34.10"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.06，获利盘 6.9%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 7.88%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 0.85"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.89"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 1.79亿 vs 10日 0.22亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 2.88%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.16%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.41%"
+     }
+    ]
+   },
+   {
+    "code": "159338",
+    "name": "中证A500ETF国泰",
+    "price": 1.182,
+    "chg": -0.51,
+    "amount": 28.21,
+    "turnover_now": 11.2,
+    "main_net": -0.19,
+    "main_pct": -0.66,
+    "vr": 0.95,
+    "hot": 36,
+    "hot_parts": {
+     "amt": 33,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 1
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 47,
+    "scores": {
+     "ACCUMULATION": 47,
+     "WASH": 36,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 10.9,
+    "conf_label": "弱信号",
+    "opportunity": 79,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（47分/弱信号），机会分 79、风险分 25；资金净流入2.0%，年内位置 33 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.95"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 11.48%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.20"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.00"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 2.95亿，占比均值 1.81%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.44%，年内分位 33.46"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.05，获利盘 10.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 7.85%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 0.66"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.96"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 2.95亿 vs 10日 1.76亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 2.02%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.44%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.42%"
+     }
+    ]
+   },
+   {
+    "code": "520500",
+    "name": "恒生创新药ETF华泰柏瑞",
+    "price": 1.383,
+    "chg": 3.67,
+    "amount": 10.23,
+    "turnover_now": 39.69,
+    "main_net": 0.77,
+    "main_pct": 7.53,
+    "vr": 1.47,
+    "hot": 36,
+    "hot_parts": {
+     "amt": 3,
+     "flow": 20,
+     "vr": 3,
+     "chg": 9,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 60,
+    "scores": {
+     "ACCUMULATION": 47,
+     "WASH": 60,
+     "LAUNCH": 11,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 13.3,
+    "conf_label": "中等置信",
+    "opportunity": 67,
+    "risk": 45,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（60分/中等置信），机会分 67、风险分 45；资金净流入1.3%，年内位置 22 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": false,
+      "desc": "当日量比 1.47"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.87"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -7.12%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -0.18%，距MA20 -2.83%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 1.29%，10日 2.67%"
+     },
+     {
+      "label": "换手降温",
+      "hit": false,
+      "desc": "5日换手 30.33%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.54"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.83%"
+     }
+    ]
+   },
+   {
+    "code": "515880",
+    "name": "通信ETF国泰",
+    "price": 0.66,
+    "chg": -2.67,
+    "amount": 25.14,
+    "turnover_now": 5.96,
+    "main_net": -2.53,
+    "main_pct": -10.08,
+    "vr": 0.81,
+    "hot": 32,
+    "hot_parts": {
+     "amt": 29,
+     "flow": 0,
+     "vr": 0,
+     "chg": 0,
+     "trend": 3
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 64,
+    "scores": {
+     "ACCUMULATION": 50,
+     "WASH": 64,
+     "LAUNCH": 12,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 14.0,
+    "conf_label": "中等置信",
+    "opportunity": 64,
+    "risk": 30,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（64分/中等置信），机会分 64、风险分 30；资金净流入5.6%，年内位置 49 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.81"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": false,
+      "desc": "近5/前5量能 1.10"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -6.91%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -6.13%，距MA20 -0.68%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.3%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 5.56%，10日 5.54%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 6.86%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 0天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": false,
+      "desc": "5日收盘位置均值 0.41"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -0.68%"
+     }
+    ]
+   },
+   {
+    "code": "510050",
+    "name": "上证50ETF华夏",
+    "price": 2.98,
+    "chg": -0.17,
+    "amount": 17.46,
+    "turnover_now": 8.36,
+    "main_net": -0.48,
+    "main_pct": -2.75,
+    "vr": 1.41,
+    "hot": 30,
+    "hot_parts": {
+     "amt": 23,
+     "flow": 0,
+     "vr": 3,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 57,
+    "scores": {
+     "ACCUMULATION": 57,
+     "WASH": 36,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 21.9,
+    "conf_label": "中等置信",
+    "opportunity": 84,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（57分/中等置信），机会分 84、风险分 25；资金净流入3.4%，年内位置 31 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": true,
+      "desc": "量比 1.41"
+     },
+     {
+      "label": "换手温和",
+      "hit": false,
+      "desc": "5日换手 6.02%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.15"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 0.90"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 2.15亿，占比均值 2.67%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -3.53%，年内分位 30.52"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.03，获利盘 11.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 3.86%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 1.24"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.93"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 2.15亿 vs 10日 2.31亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 3.38%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -3.53%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -1.16%"
+     }
+    ]
+   },
+   {
+    "code": "159845",
+    "name": "中证1000ETF华夏",
+    "price": 3.11,
+    "chg": 0.58,
+    "amount": 15.76,
+    "turnover_now": 23.71,
+    "main_net": 0.15,
+    "main_pct": 0.92,
+    "vr": 0.73,
+    "hot": 30,
+    "hot_parts": {
+     "amt": 22,
+     "flow": 4,
+     "vr": 0,
+     "chg": 4,
+     "trend": 1
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 44,
+    "scores": {
+     "ACCUMULATION": 37,
+     "WASH": 44,
+     "LAUNCH": 8,
+     "DISTRIBUTION": 22
+    },
+    "confidence": 7.1,
+    "conf_label": "弱信号",
+    "opportunity": 57,
+    "risk": 45,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（44分/弱信号），机会分 57、风险分 45；资金净流出1.2%，年内位置 29 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.73"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": false,
+      "desc": "近5/前5量能 0.96"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -5.96%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -3.47%，距MA20 -1.86%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -1.24%，10日 -1.52%"
+     },
+     {
+      "label": "换手降温",
+      "hit": false,
+      "desc": "5日换手 29.09%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": true,
+      "desc": "近10日长下影 2天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.52"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -1.86%"
+     }
+    ]
+   },
+   {
+    "code": "159516",
+    "name": "半导体设备ETF国泰",
+    "price": 0.65,
+    "chg": -0.77,
+    "amount": 19.21,
+    "turnover_now": 4.86,
+    "main_net": 0.02,
+    "main_pct": 0.1,
+    "vr": 0.87,
+    "hot": 29,
+    "hot_parts": {
+     "amt": 26,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 62,
+    "scores": {
+     "ACCUMULATION": 62,
+     "WASH": 49,
+     "LAUNCH": 14,
+     "DISTRIBUTION": 6
+    },
+    "confidence": 12.5,
+    "conf_label": "中等置信",
+    "opportunity": 76,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（62分/中等置信），机会分 76、风险分 25；资金净流入6.3%，年内位置 51 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.87"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 5.01%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.42"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.12"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 6.34亿，占比均值 5.40%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -34.80%，年内分位 51.06"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.17，获利盘 9.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 26.42%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 0.72"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.77"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 6.34亿 vs 10日 15.93亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 6.26%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": true,
+      "desc": "距60日高点 -34.80%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -7.32%"
+     }
+    ]
+   },
+   {
+    "code": "513090",
+    "name": "香港证券ETF易方达",
+    "price": 1.807,
+    "chg": -0.39,
+    "amount": 19.05,
+    "turnover_now": 10.87,
+    "main_net": -0.2,
+    "main_pct": -1.04,
+    "vr": 0.7,
+    "hot": 28,
+    "hot_parts": {
+     "amt": 25,
+     "flow": 0,
+     "vr": 0,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 73,
+    "scores": {
+     "ACCUMULATION": 65,
+     "WASH": 73,
+     "LAUNCH": 11,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 8.2,
+    "conf_label": "弱信号",
+    "opportunity": 71,
+    "risk": 38,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（73分/弱信号），机会分 71、风险分 38；资金净流入2.7%，年内位置 17 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.70"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.63"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -5.39%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -1.65%，距MA20 -2.57%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 2.69%，10日 0.58%"
+     },
+     {
+      "label": "换手降温",
+      "hit": false,
+      "desc": "5日换手 14.26%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 0天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.55"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.57%"
+     }
+    ]
+   },
+   {
+    "code": "513130",
+    "name": "恒生科技ETF华泰柏瑞",
+    "price": 0.536,
+    "chg": -0.37,
+    "amount": 13.65,
+    "turnover_now": 4.24,
+    "main_net": -0.22,
+    "main_pct": -1.64,
+    "vr": 0.8,
+    "hot": 21,
+    "hot_parts": {
+     "amt": 17,
+     "flow": 0,
+     "vr": 0,
+     "chg": 3,
+     "trend": 1
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 51,
+    "scores": {
+     "ACCUMULATION": 51,
+     "WASH": 48,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 2.6,
+    "conf_label": "模糊区间",
+    "opportunity": 79,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（51分/模糊区间），机会分 79、风险分 25；资金净流入5.6%，年内位置 1 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.80"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 5.32%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.37"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.08"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 4.88亿，占比均值 4.94%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.85%，年内分位 0.61"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.13，获利盘 9.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 13.07%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": false,
+      "desc": "超大单占主力 0.08"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 1.00"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 4.88亿 vs 10日 4.99亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 5.61%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.85%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -5.26%"
+     }
+    ]
+   },
+   {
+    "code": "588200",
+    "name": "科创芯片ETF嘉实",
+    "price": 1.071,
+    "chg": -1.65,
+    "amount": 13.97,
+    "turnover_now": 3.01,
+    "main_net": -0.36,
+    "main_pct": -2.59,
+    "vr": 0.68,
+    "hot": 19,
+    "hot_parts": {
+     "amt": 19,
+     "flow": 0,
+     "vr": 0,
+     "chg": 1,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 45,
+    "scores": {
+     "ACCUMULATION": 36,
+     "WASH": 45,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 16
+    },
+    "confidence": 8.9,
+    "conf_label": "弱信号",
+    "opportunity": 58,
+    "risk": 30,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为洗盘期（45分/弱信号），机会分 58、风险分 30；资金净流入1.3%，年内位置 42 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.68"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.76"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -16.00%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -15.62%，距MA20 -6.71%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.4%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 1.27%，10日 0.97%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 3.89%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": false,
+      "desc": "5日收盘位置均值 0.42"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -6.71%"
+     }
+    ]
+   },
+   {
+    "code": "588080",
+    "name": "科创50ETF易方达",
+    "price": 1.566,
+    "chg": -1.69,
+    "amount": 12.58,
+    "turnover_now": 3.03,
+    "main_net": -1.34,
+    "main_pct": -10.66,
+    "vr": 0.96,
+    "hot": 16,
+    "hot_parts": {
+     "amt": 14,
+     "flow": 0,
+     "vr": 0,
+     "chg": 1,
+     "trend": 2
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 36,
+    "scores": {
+     "ACCUMULATION": 36,
+     "WASH": 32,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 9
+    },
+    "confidence": 4.9,
+    "conf_label": "模糊区间",
+    "opportunity": 74,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（36分/模糊区间），机会分 74、风险分 25；资金净流入1.3%，年内位置 32 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.96"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 3.12%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.35"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.00"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": false,
+      "desc": "5日主力 0.85亿，占比均值 0.98%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -31.10%，年内分位 31.69"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.28，获利盘 2.1%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 18.47%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": false,
+      "desc": "超大单占主力 -3.21"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 1.03"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": false,
+      "desc": "5日主力 0.85亿 vs 10日 3.47亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 1.27%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": true,
+      "desc": "距60日高点 -31.10%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -5.98%"
+     }
+    ]
+   },
+   {
+    "code": "159361",
+    "name": "A500ETF易方达",
+    "price": 1.204,
+    "chg": -0.66,
+    "amount": 12.15,
+    "turnover_now": 4.49,
+    "main_net": -0.01,
+    "main_pct": -0.09,
+    "vr": 0.77,
+    "hot": 15,
+    "hot_parts": {
+     "amt": 11,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 2
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 43,
+    "scores": {
+     "ACCUMULATION": 43,
+     "WASH": 41,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 18
+    },
+    "confidence": 2.0,
+    "conf_label": "模糊区间",
+    "opportunity": 59,
+    "risk": 37,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为建仓期（43分/模糊区间），机会分 59、风险分 37；资金净流出13.8%，年内位置 35 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.77"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 5.67%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.30"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 0.99"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": false,
+      "desc": "5日主力 -10.72亿，占比均值 -11.20%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.50%，年内分位 34.81"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.09，获利盘 3.4%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 7.86%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 1.26"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 1.09"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 -10.72亿 vs 10日 -11.42亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 -13.81%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.50%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.52%"
+     }
+    ]
+   },
+   {
+    "code": "159949",
+    "name": "创业板50ETF华安",
+    "price": 1.542,
+    "chg": -1.53,
+    "amount": 12.22,
+    "turnover_now": 5.01,
+    "main_net": -0.54,
+    "main_pct": -4.42,
+    "vr": 0.82,
+    "hot": 13,
+    "hot_parts": {
+     "amt": 12,
+     "flow": 0,
+     "vr": 0,
+     "chg": 1,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 80,
+    "scores": {
+     "ACCUMULATION": 36,
+     "WASH": 80,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 44.1,
+    "conf_label": "高置信",
+    "opportunity": 66,
+    "risk": 30,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（80分/高置信），机会分 66、风险分 30；资金净流出1.6%，年内位置 31 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.82"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.86"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -11.78%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -10.52%，距MA20 -3.89%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 -1.57%，10日 0.15%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 5.60%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.49"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -3.89%"
+     }
+    ]
+   },
+   {
+    "code": "159792",
+    "name": "港股通互联网ETF富国",
+    "price": 0.542,
+    "chg": 0,
+    "amount": 11.73,
+    "turnover_now": 3.48,
+    "main_net": 0.1,
+    "main_pct": 0.84,
+    "vr": 1.02,
+    "hot": 13,
+    "hot_parts": {
+     "amt": 6,
+     "flow": 3,
+     "vr": 0,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 43,
+    "scores": {
+     "ACCUMULATION": 43,
+     "WASH": 34,
+     "LAUNCH": 7,
+     "DISTRIBUTION": 12
+    },
+    "confidence": 8.7,
+    "conf_label": "弱信号",
+    "opportunity": 64,
+    "risk": 37,
+    "action": "逢低关注",
+    "tone": "#185FA5",
+    "reason": "阶段为建仓期（43分/弱信号），机会分 64、风险分 37；资金净流出5.6%，年内位置 6 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 1.02"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 3.21%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.19"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.15"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": false,
+      "desc": "5日主力 -3.06亿，占比均值 -4.99%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -15.05%，年内分位 5.55"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.16，获利盘 9.5%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 13.56%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": true,
+      "desc": "超大单占主力 3.94"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.70"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 -3.06亿 vs 10日 -12.76亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": false,
+      "desc": "5日主力占成交额 -5.58%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -15.05%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -4.90%"
+     }
+    ]
+   },
+   {
+    "code": "513180",
+    "name": "恒生科技ETF华夏",
+    "price": 0.545,
+    "chg": -0.37,
+    "amount": 12.08,
+    "turnover_now": 3.11,
+    "main_net": -0.25,
+    "main_pct": -2.07,
+    "vr": 0.8,
+    "hot": 12,
+    "hot_parts": {
+     "amt": 9,
+     "flow": 0,
+     "vr": 0,
+     "chg": 3,
+     "trend": 0
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 58,
+    "scores": {
+     "ACCUMULATION": 58,
+     "WASH": 43,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 11
+    },
+    "confidence": 15.0,
+    "conf_label": "中等置信",
+    "opportunity": 84,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（58分/中等置信），机会分 84、风险分 25；资金净流入4.6%，年内位置 1 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 0.80"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 3.99%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.45"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.15"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 3.60亿，占比均值 3.50%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -12.66%，年内分位 0.90"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.12，获利盘 6.7%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 12.45%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": false,
+      "desc": "超大单占主力 0.27"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 0.92"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 3.60亿 vs 10日 0.27亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 4.61%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -12.66%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -5.16%"
+     }
+    ]
+   },
+   {
+    "code": "512880",
+    "name": "证券ETF国泰",
+    "price": 1.052,
+    "chg": -0.57,
+    "amount": 11.91,
+    "turnover_now": 2.0,
+    "main_net": -0.69,
+    "main_pct": -5.77,
+    "vr": 0.73,
+    "hot": 10,
+    "hot_parts": {
+     "amt": 8,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 0
+    },
+    "stage": "WASH",
+    "stage_name": "洗盘期",
+    "score": 80,
+    "scores": {
+     "ACCUMULATION": 66,
+     "WASH": 80,
+     "LAUNCH": 14,
+     "DISTRIBUTION": 7
+    },
+    "confidence": 13.6,
+    "conf_label": "中等置信",
+    "opportunity": 76,
+    "risk": 30,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为洗盘期（80分/中等置信），机会分 76、风险分 30；资金净流入8.2%，年内位置 18 分位。",
+    "evidence": [
+     {
+      "label": "缩量下跌",
+      "hit": true,
+      "desc": "当日量比 0.73"
+     },
+     {
+      "label": "量能持续萎缩",
+      "hit": true,
+      "desc": "近5/前5量能 0.82"
+     },
+     {
+      "label": "跌幅可控",
+      "hit": true,
+      "desc": "20日回撤 -5.48%"
+     },
+     {
+      "label": "未破关键位",
+      "hit": true,
+      "desc": "距MA60 -4.73%，距MA20 -2.94%"
+     },
+     {
+      "label": "底部筹码锁定",
+      "hit": false,
+      "desc": "低位锁定筹码 0.0%"
+     },
+     {
+      "label": "主力未大规模出逃",
+      "hit": true,
+      "desc": "5日主力占成交额 8.24%，10日 4.29%"
+     },
+     {
+      "label": "换手降温",
+      "hit": true,
+      "desc": "5日换手 2.60%"
+     },
+     {
+      "label": "长下影承接",
+      "hit": false,
+      "desc": "近10日长下影 1天"
+     },
+     {
+      "label": "收盘重心不弱",
+      "hit": true,
+      "desc": "5日收盘位置均值 0.49"
+     },
+     {
+      "label": "无放量出货日",
+      "hit": true,
+      "desc": "近10日放量下跌天数 0"
+     },
+     {
+      "label": "整理期未拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -2.94%"
+     }
+    ]
+   },
+   {
+    "code": "513330",
+    "name": "恒生互联网ETF华夏",
+    "price": 0.347,
+    "chg": -0.57,
+    "amount": 11.16,
+    "turnover_now": 4.36,
+    "main_net": -0.28,
+    "main_pct": -2.53,
+    "vr": 1.05,
+    "hot": 9,
+    "hot_parts": {
+     "amt": 5,
+     "flow": 0,
+     "vr": 0,
+     "chg": 2,
+     "trend": 2
+    },
+    "stage": "ACCUMULATION",
+    "stage_name": "建仓期",
+    "score": 58,
+    "scores": {
+     "ACCUMULATION": 58,
+     "WASH": 32,
+     "LAUNCH": 3,
+     "DISTRIBUTION": 9
+    },
+    "confidence": 26.8,
+    "conf_label": "高置信",
+    "opportunity": 84,
+    "risk": 25,
+    "action": "重点介入",
+    "tone": "#c62828",
+    "reason": "阶段为建仓期（58分/高置信），机会分 84、风险分 25；资金净流入3.1%，年内位置 4 分位。",
+    "evidence": [
+     {
+      "label": "温和放量",
+      "hit": false,
+      "desc": "量比 1.05"
+     },
+     {
+      "label": "换手温和",
+      "hit": true,
+      "desc": "5日换手 4.35%"
+     },
+     {
+      "label": "OBV 抬升",
+      "hit": false,
+      "desc": "OBV 20日斜率 -0.50"
+     },
+     {
+      "label": "阳放阴缩",
+      "hit": false,
+      "desc": "涨跌量比 1.14"
+     },
+     {
+      "label": "主力温和净流入",
+      "hit": true,
+      "desc": "5日主力 1.76亿，占比均值 2.35%"
+     },
+     {
+      "label": "位置处于中低位",
+      "hit": true,
+      "desc": "距60日高点 -16.39%，年内分位 4.23"
+     },
+     {
+      "label": "筹码低位密集",
+      "hit": true,
+      "desc": "集中度 0.16，获利盘 3.9%"
+     },
+     {
+      "label": "横盘整理",
+      "hit": true,
+      "desc": "20日振幅带 12.46%"
+     },
+     {
+      "label": "超大单参与",
+      "hit": false,
+      "desc": "超大单占主力 0.28"
+     },
+     {
+      "label": "量能趋势抬升",
+      "hit": false,
+      "desc": "近5日/前5日量能 1.02"
+     },
+     {
+      "label": "资金流出动能收敛",
+      "hit": true,
+      "desc": "5日主力 1.76亿 vs 10日 -3.62亿"
+     },
+     {
+      "label": "资金逆势回流",
+      "hit": true,
+      "desc": "5日主力占成交额 3.13%"
+     },
+     {
+      "label": "深度超跌（有修复空间）",
+      "hit": false,
+      "desc": "距60日高点 -16.39%"
+     },
+     {
+      "label": "尚未进入拉升",
+      "hit": true,
+      "desc": "MA20 乖离 -5.69%"
+     }
+    ]
+   },
+   {
+    "code": "512800",
+    "name": "银行ETF华宝",
+    "price": 0.856,
+    "chg": 1.06,
+    "amount": 9.87,
+    "turnover_now": 10.1,
+    "main_net": -0.05,
+    "main_pct": -0.54,
+    "vr": 1.13,
+    "hot": 8,
+    "hot_parts": {
+     "amt": 2,
+     "flow": 0,
+     "vr": 1,
+     "chg": 5,
+     "trend": 0
+    },
+    "stage": "LAUNCH",
+    "stage_name": "启动期",
+    "score": 64,
+    "scores": {
+     "ACCUMULATION": 20,
+     "WASH": 42,
+     "LAUNCH": 64,
+     "DISTRIBUTION": 21
+    },
+    "confidence": 22.5,
+    "conf_label": "中等置信",
+    "opportunity": 61,
+    "risk": 53,
+    "action": "谨慎持有",
+    "tone": "#e65100",
+    "reason": "阶段为启动期（64分/中等置信），机会分 61、风险分 53；资金净流入0.1%，年内位置 100 分位。",
+    "evidence": [
+     {
+      "label": "放量",
+      "hit": false,
+      "desc": "当日量比 1.13"
+     },
+     {
+      "label": "突破平台",
+      "hit": true,
+      "desc": "突破:创20日新高，量能 1.13倍"
+     },
+     {
+      "label": "站上 MA20",
+      "hit": true,
+      "desc": "距MA20 2.87%"
+     },
+     {
+      "label": "均线多头排列",
+      "hit": true,
+      "desc": "多头排列"
+     },
+     {
+      "label": "MACD 多头且红柱放大",
+      "hit": true,
+      "desc": "DIF 0.01 / DEA 0.01，红柱 0.00"
+     },
+     {
+      "label": "DIF 站上零轴（水上）",
+      "hit": true,
+      "desc": "DIF 0.01"
+     },
+     {
+      "label": "资金大幅净流入",
+      "hit": false,
+      "desc": "3日主力 -0.54亿，占比均值 0.33%"
+     },
+     {
+      "label": "超大单主导",
+      "hit": true,
+      "desc": "超大单占主力 1.94"
+     },
+     {
+      "label": "强势 K 线",
+      "hit": false,
+      "desc": "当日涨幅 1.06%，近10日涨停 0次"
+     },
+     {
+      "label": "获利盘未过热",
+      "hit": false,
+      "desc": "获利盘 97.1%"
+     },
+     {
+      "label": "上方抛压有限",
+      "hit": true,
+      "desc": "上方套牢盘 2.9%"
+     },
+     {
+      "label": "换手活跃",
+      "hit": true,
+      "desc": "5日换手 8.64%"
+     },
+     {
+      "label": "OBV 同步走强",
+      "hit": true,
+      "desc": "OBV 斜率 0.24"
+     }
+    ]
+   }
+  ]
  }
 }
