@@ -497,6 +497,11 @@ function openModal(code){
     }
     if(L) break;
   }
+  if(!L && DATA.etfs && DATA.etfs.list){
+    for(var k=0;k<DATA.etfs.list.length;k++){
+      if(DATA.etfs.list[k].code===code){ L=DATA.etfs.list[k]; indLabel='ETF 热榜 · 热度'+L.hot; break; }
+    }
+  }
   if(!L) return;
   renderLeaderModal(L, indLabel);
 }
