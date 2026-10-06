@@ -64,6 +64,13 @@ def hot_list(client, top_n: int = 30, pz: int = 80,
              verbose: bool = True) -> List[Dict]:
     """当日成交额最大的 N 只 ETF（剔除货币型）。返回按成交额降序的原始行。"""
     d = client.get_json(CLIST_URL.format(pz=pz))
+    # get_json 在全部重试失败时返回 None（连接层错误/限流），此处必须显式判空：
+    # 否则 d.get 会抛 AttributeError，让整条 site 流水线在写文件前崩溃。
+    if not d or not d.get("data"):
+        if verbose:
+            print(f"[ETF] 榜池接口不可用（返回空），本次跳过 ETF 热榜。"
+                  f"常见原因：push2 域名被网络层屏蔽或接口限流。")
+        return []
     rows = (d.get("data") or {}).get("diff") or []
     if isinstance(rows, dict):
         rows = list(rows.values())

@@ -143,7 +143,13 @@ def run_site(client: EMClient, args, t0: float) -> int:
     etf_rows, etf_analyses = [], {}
     if not getattr(args, "no_etf", False) and args.etf_top > 0:
         print(f"\n[ETF] 热门 ETF 榜（当日成交额前 {args.etf_top}）...")
-        etf_rows, etf_analyses = ETF.run_pipeline(client, top_n=args.etf_top)
+        # ETF 为附加板块，任何异常都不得中断主线：ETF 拿不到就出「无 ETF 数据」的空板块，
+        # 行业龙头看板必须照常落盘（否则整天数据白跑，站点会停在上一交易日）。
+        try:
+            etf_rows, etf_analyses = ETF.run_pipeline(client, top_n=args.etf_top)
+        except Exception as e:  # noqa: BLE001
+            print(f"[ETF] 异常中止（不影响行业龙头部分）: {type(e).__name__}: {e}")
+            etf_rows, etf_analyses = [], {}
         print(f"[ETF] 完成 {len(etf_rows)}/{args.etf_top} 只\n")
 
     as_of = analyses[0]["as_of"] if analyses else time.strftime("%Y-%m-%d")
