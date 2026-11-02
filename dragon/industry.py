@@ -66,6 +66,69 @@ FOCUS_INDUSTRIES: List[Tuple[str, List[str]]] = [
 ]
 
 
+# ---- 申万二级节点映射（东财不可用时的主干源） ----
+# 为什么不用名称模糊匹配：新浪行业表只有 49 个自有粗分类，与 24 个关注
+# 行业只能对上 8 个，且会出现「化工 → 化纤行业」这类错配（化纤只是化工
+# 的一个子类，会把桐昆、恒逸当成化工龙头）。申万二级是 131 个细分行业，
+# 语义与 FOCUS_INDUSTRIES 基本一一对应，故改为显式映射，宁缺毋滥。
+# 一个 label 可挂多个节点（银行四类、军工两类），成分股合并去重。
+SW2_FOCUS: List[Tuple[str, List[str]]] = [
+    ("半导体", ["sw2_270100"]),
+    ("消费电子", ["sw2_270500"]),
+    ("通信设备", ["sw2_730200"]),
+    ("软件与IT", ["sw2_710400", "sw2_710300"]),
+    ("电子元件", ["sw2_270200"]),
+    ("面板光电子", ["sw2_270300"]),
+    ("电池", ["sw2_630700"]),
+    ("光伏", ["sw2_630500"]),
+    ("汽车", ["sw2_280200"]),
+    ("医药", ["sw2_370100"]),
+    ("医疗器械", ["sw2_370500"]),
+    ("白酒食品", ["sw2_340500"]),
+    ("银行", ["sw2_480200", "sw2_480300", "sw2_480400", "sw2_480500"]),
+    ("证券金融", ["sw2_490100"]),
+    ("有色贵金属", ["sw2_240400", "sw2_240300"]),
+    ("电力", ["sw2_410100"]),
+    ("军工", ["sw2_650100", "sw2_650200"]),
+    ("传媒游戏", ["sw2_720400"]),
+    ("煤炭石油", ["sw2_740100", "sw2_750100"]),
+    ("房地产", ["sw2_430100"]),
+    ("化工", ["sw2_220300"]),
+    ("机械装备", ["sw2_640600"]),
+    ("钢铁煤炭链", ["sw2_230400"]),
+    ("交通运输", ["sw2_420800"]),
+]
+
+# 新浪申万节点树（含全部 sw1/sw2 节点码，131 个二级行业）
+SINA_HQ_NODES = ("https://vip.stock.finance.sina.com.cn/quotes_service/api/"
+                 "json_v2.php/Market_Center.getHQNodes")
+
+
+def fetch_sw2_nodes(client: EMClient) -> Dict[str, str]:
+    """新浪申万二级节点表 {行业名: sw2_xxxxxx}。
+
+    节点树是一个嵌套数组，行业叶子形如 ["半导体","","sw2_270100"]，
+    递归收集第三项以 sw2_ 开头的叶子即可。缓存 12 小时（节点码极少变动）。
+    """
+    d = client.get_json(SINA_HQ_NODES, referer="https://finance.sina.com.cn/")
+    if not d:
+        return {}
+    out: Dict[str, str] = {}
+
+    def walk(n):
+        if isinstance(n, list):
+            if (len(n) >= 3 and isinstance(n[0], str)
+                    and isinstance(n[2], str) and n[2].startswith("sw2_")):
+                out[n[0]] = n[2]
+                return
+            for c in n:
+                walk(c)
+
+    walk(d)
+    return out
+
+
+
 def fetch_boards(client: EMClient, pz: int = 100, pages: int = 7) -> List[Dict]:
     """拉取行业板块列表（按主力净流入排序）。
 
@@ -189,6 +252,41 @@ def fetch_members_sina(client: EMClient, board_code: str, pz: int = 60,
     return out
 
 
+def _norm_sw_name(s: str) -> str:
+    """标准化申万行业名：去掉 Ⅱ/Ⅲ 罗马数字后缀与空白，便于跨源匹配。"""
+    if not s:
+        return ""
+    for ch in ("Ⅱ", "Ⅲ", "Ⅰ", " "):
+        s = s.replace(ch, "")
+    return s.strip()
+
+
+def fetch_members_sw2(client: EMClient, nodes: List[str], pz: int = 120
+                      ) -> List[Dict]:
+    """按申万二级节点取成分股，多节点合并去重（按成交额降序保留）。
+
+    num 上限取 120：新浪单次最多返回 num 条，超过部分需翻页；实测多数二级
+    行业不足 120 只，少数大行业（软件开发、汽车零部件）会被截断 —— 截断后
+    仍是「成交额前 120」，对「选行业龙头」这一用途影响有限，但会让市值维度
+    的分位略微偏高（小市值冷门股被排除在外），故在结果里标注 truncated。
+    """
+    seen: Dict[str, Dict] = {}
+    for node in nodes:
+        rows = fetch_members_sina(client, node, pz=pz)
+        for r in rows:
+            cur = seen.get(r["code"])
+            if cur is None:
+                seen[r["code"]] = r
+            else:
+                # 同一标的出现在多个节点时，保留成交额更大的那条
+                if (r.get("amount") or 0) > (cur.get("amount") or 0):
+                    seen[r["code"]] = r
+        if not rows:
+            continue
+    return list(seen.values())
+
+
+
 def sina_node_by_name(client: EMClient, board_name: str,
                       cache: Optional[Dict[str, str]] = None) -> str:
     """按行业名称在新浪行业表中找节点码（东财 BK 码 → 新浪 new_* 码的唯一通道）。
@@ -298,38 +396,172 @@ def fetch_members(client: EMClient, board_code: str, pz: int = 60,
 
 
 def _rank_pct(items: List[Dict], key: str) -> List[float]:
-    """返回每个元素在 key 上的排名分位（0=最低, 1=最高）。"""
+    """返回每个元素在 key 上的排名分位（0=最低, 1=最高）。
+
+    并列值取平均分位。这一点很关键：新浪/腾讯源没有个股主力净额时，
+    main_net 全为 0，若按「排序后位置」给分位，会把列表原始顺序变成
+    35% 权重的排名信号（等于给龙头评选注入随机噪声）。
+    """
     n = len(items)
     if n == 0:
         return []
-    order = sorted(range(n), key=lambda i: -(items[i].get(key) or -1e18))
-    pct = [0.0] * n
     if n == 1:
         return [1.0]
-    for pos, i in enumerate(order):
-        pct[i] = 1.0 - pos / (n - 1)
+    vals = [(items[i].get(key) if items[i].get(key) is not None else -1e18)
+            for i in range(n)]
+    order = sorted(range(n), key=lambda i: -vals[i])
+    pct = [0.0] * n
+    i = 0
+    while i < n:
+        j = i
+        while j + 1 < n and vals[order[j + 1]] == vals[order[i]]:
+            j += 1
+        # 该并列组占据的位置区间 [i, j]，取平均分位
+        avg = 1.0 - ((i + j) / 2.0) / (n - 1)
+        for k in range(i, j + 1):
+            pct[order[k]] = avg
+        i = j + 1
     return pct
 
 
+def _norm_score(items: List[Dict], key: str, log: bool = False,
+                clip: Optional[float] = None) -> List[float]:
+    """把某维度映射到 0~1（min-max 归一），全等值时返回 0.5。
+
+    为什么不用排名分位：分位把任意分布拉平成均匀分布，会丢掉「极端值」信息。
+    半导体行业里市值第 1（5484 亿）与第 30（约 300 亿）的分位差只有 0.3，
+    而涨幅 0→13% 的分位差是 1.0 —— 结果是龙头评选被涨幅主导，选出的是
+    「当日涨得最凶的中小票」而不是行业龙头。改用数值归一后，市值差距按
+    实际倍率体现。
+    log=True：市值右偏极重（千亿级与十亿级同框），取对数再归一。
+    clip：涨幅做对称截尾，涨停板不应独占满分。
+    """
+    raw = []
+    for m in items:
+        v = m.get(key)
+        raw.append(None if v is None else float(v))
+    vals = [v for v in raw if v is not None]
+    if not vals:
+        return [0.5] * len(items)
+    if clip is not None:
+        vals = [max(-clip, min(clip, v)) for v in vals]
+    if log:
+        vals = [math.log(max(v, 1e-6)) for v in vals]
+    lo, hi = min(vals), max(vals)
+    if hi - lo < 1e-12:
+        return [0.5] * len(items)
+    out = []
+    for v in raw:
+        if v is None:
+            out.append(0.5)
+            continue
+        if clip is not None:
+            v = max(-clip, min(clip, v))
+        if log:
+            v = math.log(max(v, 1e-6))
+        out.append((v - lo) / (hi - lo))
+    return out
+
+
 def pick_leaders(members: List[Dict], n: int = 3) -> List[Dict]:
-    """在行业内按「市值 + 资金 + 涨幅」三项排名加权选出龙头。
+    """在行业内按「市值 + 资金 + 涨幅」三项加权选出龙头。
 
     权重依据龙头三角色的相对重要性：
         市值 40%（行业地位，决定能否承载大资金）
         资金 35%（当下主力态度）
         涨幅 25%（赚钱效应与带动能力）
+
+    某维度若「有效不同取值 < 2」（例如备源没有个股主力净额，main_net 全为 0），
+    该维度整体剔除、剩余权重归一 —— 而不是让它以常数身份参与打分。
+    降级情况随结果一起返回，报告与看板据此标注，避免把残缺打分当完整结论。
     """
-    if not members:
+    dims = [
+        ("mktcap", 0.40, {"log": True}),
+        ("main_net", 0.35, {}),
+        ("chg", 0.25, {"clip": 20.0}),
+    ]
+    usable = []
+    for key, w, kw in dims:
+        distinct = {round(float(m.get(key) or 0), 6) for m in members
+                    if m.get(key) is not None}
+        if len(distinct) >= 2:
+            usable.append((key, w, kw))
+    if not usable:
         return []
-    cap_r = _rank_pct(members, "mktcap")
-    main_r = _rank_pct(members, "main_net")
-    chg_r = _rank_pct(members, "chg")
+    total = sum(w for _, w, _ in usable) or 1.0
+    scores = {k: _norm_score(members, k, **kw) for k, _, kw in usable}
     for i, m in enumerate(members):
-        m["leader_score"] = round((0.40 * cap_r[i]
-                                   + 0.35 * main_r[i]
-                                   + 0.25 * chg_r[i]) * 100, 1)
+        m["leader_score"] = round(
+            sum(w / total * scores[k][i] for k, w, _ in usable) * 100, 1)
     items = sorted(members, key=lambda x: -x["leader_score"])
     return items[:n]
+
+
+def build_industry_universe_sw2(client: EMClient, per_industry: int = 3,
+                                verbose: bool = True) -> List[Dict]:
+    """申万二级主干路径：东财 push2 整域不可达时使用。
+
+    与东财路径的差异（必须在报告里交代）：
+      · 板块层涨跌幅/主力净额取自腾讯申万二级板块（hy2），无个股级主力净额，
+        故 pick_leaders 的「资金 35%」维度退化为全 0 → 实际为市值 61.5%、
+        涨幅 38.5% 的两维度加权（排名分位等权归一后的相对权重）；
+      · 成分股为「成交额前 120」，大体量行业被截断，市值分位略偏高；
+      · 行业词典为申万二级（131 个），比东财三级口径粗一档。
+    """
+    import time as _t
+
+    boards = client.board_list_tencent("hy2")
+    bmap: Dict[str, Dict] = {}
+    for b in boards:
+        bmap[_norm_sw_name(b.get("name") or "")] = b
+    if verbose:
+        print(f"[行业] 申万二级板块 {len(boards)} 个（腾讯源）")
+
+    nodes_map = fetch_sw2_nodes(client)
+    code2name = {v: k for k, v in nodes_map.items()}
+    if verbose and not nodes_map:
+        print("[行业] 申万节点表获取失败，成分股可能全部缺失")
+
+    universe: List[Dict] = []
+    for label, nodes in SW2_FOCUS:
+        members = fetch_members_sw2(client, nodes, pz=120)
+        _t.sleep(0.3)
+        if len(members) < 2:
+            if verbose:
+                print(f"       [跳过] {label} 成分股获取失败")
+            continue
+        leaders = pick_leaders(members, per_industry)
+        if not leaders:
+            continue
+
+        # 板块元数据：先按 label、再按任一节点名去腾讯板块表里找
+        meta = bmap.get(_norm_sw_name(label))
+        if meta is None:
+            for nd in nodes:
+                meta = bmap.get(_norm_sw_name(code2name.get(nd, "")))
+                if meta:
+                    break
+        chg = (meta or {}).get("chg")
+        if chg is None:                      # 腾讯无该板块时，用成分股中位涨幅
+            vals = sorted(m["chg"] for m in members if m.get("chg") is not None)
+            chg = vals[len(vals) // 2] if vals else 0.0
+        main_net = (meta or {}).get("main_net") or 0.0
+
+        show = code2name.get(nodes[0], label)
+        universe.append({
+            "label": label,
+            "board": nodes[0],
+            "board_name": show,
+            "chg": chg,
+            "main_net": main_net,
+            "member_count": len(members),
+            "leaders": leaders,
+        })
+        if verbose:
+            names = "、".join(f"{x['name']}({x['leader_score']:.0f})" for x in leaders)
+            print(f"       {label:<8} {show:<12} 涨{chg:+.2f}% "
+                  f"主力{main_net:+.1f}亿 → {names}")
+    return universe
 
 
 def build_industry_universe(client: EMClient, per_industry: int = 3,
@@ -340,11 +572,18 @@ def build_industry_universe(client: EMClient, per_industry: int = 3,
     返回 [{'label','board','chg','main_net','leaders':[{code,name,...}]}, ...]
     """
     boards = fetch_boards(client)
-    if not boards:
+    # 东财板块代码形如 BK0475；fetch_boards 的兜底源返回 new_*（新浪）/pt*（腾讯），
+    # 出现非 BK 前缀即代表 push2 不可用，此时改走申万二级主干路径（24 个关注行业全覆盖）
+    em_boards = [b for b in boards if str(b.get("code") or "").startswith("BK")]
+    if not em_boards:
         if verbose:
+            print("[行业] 东财板块不可用，切换到申万二级主干路径")
+        if focus is None:
+            return build_industry_universe_sw2(client, per_industry, verbose)
+        if not boards:
             print("[行业] 板块列表获取失败")
-        return []
-    targets = match_focus(boards, focus)
+            return []
+    targets = match_focus(em_boards or boards, focus)
     if verbose:
         print(f"[行业] 板块 {len(boards)} 个，匹配到关注行业 {len(targets)} 个")
 

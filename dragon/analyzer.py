@@ -184,8 +184,11 @@ def need_trim_today(kline: List[Dict]) -> bool:
     """
     if not kline:
         return False
-    today = _time.strftime("%Y-%m-%d")
-    if kline[-1]["date"] != today:
+    # 日期格式归一：腾讯源历史缓存里是 YYYYMMDD，东财是 YYYY-MM-DD，
+    # 直接字符串比较会永不相等 —— 那样盘中未完成的当日 K 线就不会被剔除
+    last = str(kline[-1]["date"]).replace("-", "")
+    today = _time.strftime("%Y%m%d")
+    if last != today:
         return False
     now = datetime.now()
     return (now.hour < 15) or (now.hour == 15 and now.minute < 5)

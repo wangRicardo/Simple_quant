@@ -36,7 +36,8 @@ CLIST_URL = (
 )
 
 # 货币/现金管理型 ETF：成交额巨大但无阶段分析意义，从热榜剔除
-MONEY_KEYWORDS = ("货币", "日利", "添益", "理财", "现金", "增利", "快线")
+MONEY_KEYWORDS = ("货币", "日利", "添益", "理财", "现金", "增利", "快线",
+                  "短融", "保证金")
 
 
 def to_tx_symbol_etf(code: str) -> str:
@@ -68,9 +69,8 @@ def hot_list(client, top_n: int = 30, pz: int = 80,
     # 否则 d.get 会抛 AttributeError，让整条 site 流水线在写文件前崩溃。
     if not d or not d.get("data"):
         if verbose:
-            print(f"[ETF] 榜池接口不可用（返回空），本次跳过 ETF 热榜。"
-                  f"常见原因：push2 域名被网络层屏蔽或接口限流。")
-        return []
+            print("[ETF] 东财榜池不可用，切换到新浪场内基金源 ...")
+        return hot_list_sina(client, top_n, verbose)
     rows = (d.get("data") or {}).get("diff") or []
     if isinstance(rows, dict):
         rows = list(rows.values())
@@ -101,6 +101,55 @@ def hot_list(client, top_n: int = 30, pz: int = 80,
 
     if verbose:
         print(f"[ETF] 榜池就绪：{len(out)} 只（按当日成交额，剔除货币型）")
+    return out
+
+
+SINA_FUND = ("https://vip.stock.finance.sina.com.cn/quotes_service/api/"
+             "json_v2.php/Market_Center.getHQNodeData")
+
+
+def hot_list_sina(client, top_n: int = 30, verbose: bool = True) -> List[Dict]:
+    """新浪场内基金源（node=etf_hq_fund），东财 push2 整域不可用时的备源。
+
+    口径差异：新浪只给成交额/换手/涨跌幅，**没有个股级主力净额**，故
+    hot_score 的「主力净流入 20 分」分量恒为 0（不奖励也不惩罚），
+    热度分实际上限降至 80，跨日比较时需注意。其余字段口径一致。
+    """
+    rows = []
+    for page in (1, 2):
+        url = (f"{SINA_FUND}?page={page}&num=200&sort=amount&asc=0"
+               f"&node=etf_hq_fund")
+        d = client.get_json(url, referer="https://finance.sina.com.cn/")
+        if not d or not isinstance(d, list):
+            break
+        rows.extend(d)
+        if len(rows) < 200:
+            break
+    out: List[Dict] = []
+    for r in rows:
+        name = str(r.get("name") or "")
+        code = str(r.get("code") or "")
+        if "ETF" not in name:
+            continue
+        if any(k in name for k in MONEY_KEYWORDS):
+            continue
+        amt = _f(r.get("amount"))
+        if amt is None or amt <= 0:
+            continue
+        out.append({
+            "code": code,
+            "name": name,
+            "price": _f(r.get("trade")) or 0,
+            "chg": _f(r.get("changepercent")) or 0,
+            "amount": amt / 1e8,
+            "turnover_now": _f(r.get("turnoverratio")),
+            "main_net": 0.0,
+            "main_pct": None,
+        })
+    out.sort(key=lambda x: -x["amount"])
+    out = out[:top_n]
+    if verbose:
+        print(f"[ETF] 榜池就绪（新浪源）：{len(out)} 只，主力净额缺失")
     return out
 
 

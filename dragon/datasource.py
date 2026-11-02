@@ -199,7 +199,12 @@ class EMClient:
         if pool:
             # 已被判定为「硬故障」的域名直接跳过，不在它身上浪费超时
             alive = [h for h in pool if h not in self._bad_hosts]
-            cands = (alive or pool)[:max(1, min(len(alive or pool), self.retries))]
+            if not alive:
+                # 该域名池本轮已全部判定不可达：直接降级，不再消耗 4 次重试
+                # （东财 push2 整域被 RST 时，否则每个请求白等 ~7.5s）
+                self._miss += 1
+                return None
+            cands = alive[:max(1, min(len(alive), self.retries))]
 
         last_err = None
         for attempt in range(self.retries):
@@ -363,7 +368,14 @@ class EMClient:
             prev = rows[-1]["close"] if rows else c
             chg = (c - prev) / prev * 100 if prev else 0.0
             rows.append({
-                "date": date.replace("-", ""),
+                # 统一成 YYYY-MM-DD，与东财 K 线一致：
+                # need_trim_today 与资金流按日期做字符串比较，两源格式混用会让
+                # 盘中「剔除未完成当日K线」的判定永不命中（2026-11-02 修复）
+                "date": (f"{date[:4]}-{date[4:6]}-{date[6:8]}"
+                         if len(date) == 8 and date.isdigit()
+                         else date.replace("-", "")[:4] + "-"
+                         + date.replace("-", "")[4:6] + "-"
+                         + date.replace("-", "")[6:8]),
                 "open": o, "close": c, "high": h, "low": l,
                 "volume": v, "amount": amount,
                 "amplitude": rng, "chg": chg,
@@ -684,6 +696,42 @@ class EMClient:
         """某板块内个股（按涨幅）。"""
         return self.rank_list(f"b:{board_code}", fid="f3", pz=pz,
                               fields="f12,f14,f2,f3,f62,f184")
+
+    # ---------- 腾讯板块（东财 push2 不可用时的行业层备源） ----------
+    def board_list_tencent(self, level: str = "hy2", count: int = 200
+                           ) -> List[Dict]:
+        """腾讯申万行业板块列表，返回结构与 board_list 对齐。
+
+        level: hy=申万一级(31个) hy2=申万二级(124个) hy3=三级(无数据)
+
+        腾讯接口不受东财 push2 整域封禁影响，且自带 zljlr（主力净流入，万元）
+        与 zdf（涨跌幅）—— 这是新浪行业表缺失的两个字段，因此板块层优先用它。
+        """
+        url = (
+            "https://proxy.finance.qq.com/cgi/cgi-bin/rank/pt/getRank"
+            f"?board_type={level}&sort_type=price&direct=down"
+            f"&offset=0&count={count}"
+        )
+        d = self.get_json(url, referer="https://gu.qq.com/")
+        if not d or d.get("code") not in (0, "0"):
+            return []
+        rows = (d.get("data") or {}).get("rank_list") or []
+        out = []
+        for x in rows:
+            def _f(v):
+                try:
+                    return float(v)
+                except (TypeError, ValueError):
+                    return None
+            out.append({
+                "code": x.get("code"),
+                "name": (x.get("name") or "").replace("Ⅱ", ""),
+                "chg": _f(x.get("zdf")),
+                "main_net": (_f(x.get("zljlr")) or 0.0) / 1e4,   # 万元 → 亿元
+                "main_pct": None,
+                "amount": _f(x.get("turnover")),
+            })
+        return out
 
     # ---------- 个股所属概念（用于龙头属性判断） ----------
     def concepts(self, code: str) -> List[str]:
